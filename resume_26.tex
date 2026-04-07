@@ -1,0 +1,147 @@
+% LaTeX resume using res.cls
+\documentclass[line,margin]{res}
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+\usepackage{newcent}   % uses new century schoolbook postscript font
+%\usepackage{textcomp}
+%\usepackage[showframe=true]{geometry}
+\usepackage{enumitem}
+
+
+\begin{document}
+
+\name{He Li}
+% \address used twice to have two lines of address
+\address{San Francisco Bay Area}
+\address{650-665-0436. lhlich@gmail.com}
+
+\begin{resume}
+
+\section{Professional Summary}
+Senior Machine Learning Engineer with 6+ years at Meta and Uber, specializing in search quality, RAG systems, and LLM-based ranking. Proven track record of independently leading end-to-end ML projects from ideation to production with measurable business impact. PhD in Electrical and Computer Engineering with deep expertise in privacy-preserving systems and applied cryptography.
+
+\section{Work \\ Experience} 
+
+\textbf{Senior Machine Learning Engineer --- Applied AI\ \textbar\ Uber Technologies\ \textbar\ Dec 2024 -- Present}
+\begin{itemize}\itemsep -2pt
+    \item Led development of AI-generated profiles for Uber Eats restaurants and groceries, designing system workflow, data operations, and evaluation strategy; achieved global coverage with a cross-functional team.
+    \item Designed and deployed user and store embeddings derived from AI-generated profiles as ranking signals; independently led end-to-end A/B testing and achieved statistically significant gains in CTR and feed-attributed CVR/order volume.
+\end{itemize}
+
+\textbf{Research Scientist\ \textbar\ Meta, Inc.\ \textbar\ Oct 2018 -- Nov 2024}\\
+%Senior Research Scientist.
+Senior Engineer in search AI and personalization
+\begin{itemize}\itemsep -2pt
+    \item Designed and implemented a Retrieval-Augmented Generation (RAG) workflow and product prototype, defining core use-cases and building an LLM evaluator to showcase potential, leading to organizational prioritization.
+    \item Built a RAG library powering Meta AI chatbot experience, contributing to the initial launch.
+
+    \item Independently originated and led the development of a recommendation system, overseeing the entire lifecycle from ideation to deployment, resulting in significant increases in business performance.
+        \begin{itemize}\itemsep -2pt
+        \item Designed the end-to-end architecture of the recommendation system and developed it. This includes data collection, feature extraction, deployment, and monitoring/alerting.
+        \item Designed and kicked off multi-round multi-arm online experiments to evaluate model improvements and validate statistical significance.
+        \item Proposed different quantitative approaches to improve ranking models, integrate them and launched ranking model with business metrics win. 
+    \end{itemize}
+    
+    
+    \item Led the development of LLM-based NLP signals for search query intent detection:
+    \begin{itemize}\itemsep -2pt
+        \item Developed core LLM through prompting, fine-tuning, and distillation.
+        \item Integrated models into product pipeline and developed comprehensive evaluation frameworks.
+        \item Collaborated cross-functionally with human annotators to improve model performance.
+        \item Achieved significant offline relevance rating improvements.
+    \end{itemize}
+\end{itemize}
+
+Tech lead in Machine learning infrastructure for fraud detection and enforcement
+\begin{itemize}\itemsep -2pt
+    \item Directed a team in migrating feature authoring and serving platforms, improving the scalability and monitoring of ML models used in fraud detection.
+    \item Integrated cutting-edge ML architectures, including deep neural networks, transfer learning (with GNN/sequential embedding), and auto-ML frameworks to accelerate deployment and improve model performance.
+    \item Promoted a culture of machine learning excellence through model fairness research and developed tools for recurring analysis.
+\end{itemize}
+
+Tech lead in billing experience personalization
+\begin{itemize}\itemsep -2pt
+    \item Led product and ML innovations on billing limits with a cross-functional team of 4+ engineers. Ensured upfront alignment, proposed core engineering designs, scoped timelines, and drove execution.
+    \item Crafted and scoped projects for the billing experience personalization roadmap for 3+ engineers. Reviewed related eng and ML designs.
+    \item Collaborated with cross-functional teams to roll out critical billing features, finalizing milestones and overseeing the process.
+\end{itemize}
+
+Machine Learning Engineer in fraud detection and enforcement
+\begin{itemize}\itemsep -2pt
+  \item Designed, developed, and deployed ML models for fraud detection and user trust assessment, reducing financial losses and user blockage.
+  \item Proposed and implemented payment risk integration strategies for Instagram, developing fraud detection models that protected billions in annual revenue.
+  \item Led incident investigations for fraud attacks with \$20Mn+ losses, quickly deploying ML models to prevent further damage, resolving the root cause in two weeks.
+  \item Enhanced team capabilities in fraud detection by reviewing and retraining models, and exploring advanced embeddings.
+\end{itemize}
+
+\textbf{Software Engineer Intern\ \textbar\ Facebook, Inc.\ \textbar\ May 2016 -- Aug 2016}
+\begin{itemize}[noitemsep]
+\item Onboarded new product on secure service, which thwarts potential account takeover attacks. Worked on multiple codebase involving various programming languages under few guidance, and completed project individually.
+\end{itemize}
+
+
+\section{Research Experience}
+\textbf{Research Assistant\ \textbar\ Virginia Tech\ \textbar\ Aug 2014 -- Oct 2018}
+\begin{itemize}[noitemsep]
+    \item Research domain: Privacy, applied cryptography, and lightweight authentication.
+    \item Published academic works on privacy-preserving signature protocols, privacy-preserving resource allocation protocols, and lightweight authentication protocols.
+\end{itemize}
+
+\textbf{Research Assistant\ \textbar\ Shanghai Jiao Tong University, China\ \textbar\ May 2010 -- Apr 2013}
+\begin{itemize}[noitemsep]
+    \item Research domain: Cognitive radio and dynamic spectrum access.
+    \item Published academic works on energy-efficient signal detection, user activity modeling, and decision optimization in cognitive radio.
+\end{itemize}
+    
+\section{Skills}
+\begin{itemize}\itemsep -2pt
+    \item Programming Languages: Python, C/C++, Haskell, PHP, Bash
+    \item Machine Learning Frameworks: PyTorch, PyTorch Lightning, Ray, Keras
+    \item Big Data Processing: Spark, Hive, Presto/Trino
+    \item Tools: Git, Mercurial
+    \item Domains: Search Quality, Retrieval-Augmented Generation (RAG), Recommendation Systems, Natural Language Processing, LLM Fine-Tuning \& Distillation, Deep Learning, Distributed Systems, Fraud Detection
+    \item Systems: Unix
+\end{itemize}
+
+\section{Education}
+\textbf{Virginia Tech} PhD in Electrical and Computer Engineering, MS in Math\\
+\textbf{Shanghai Jiao Tong University} MS and BS in electrical engineering
+
+           
+\section{Selected Publications}
+\begin{itemize}[leftmargin=*]  \itemsep -2pt % reduce space between items
+
+	\item \textbf{He Li}, Yaling Yang, Yanzhi Dou, Jung-Min (Jerry) Park and Kui Ren. "PeDSS: Privacy Enhanced and Database-Driven Dynamic spectrum Sharing". In  Int'l Conference on Computer Communications (INFOCOM) 2019.
+
+
+	\item \textbf{He Li}, Yanzhi Dou, Chang Lu, Doug Zabransky, Yaling Yang, and Jung-Min Park. Preserving incumbent users' location privacy in the 3.5 ghz band. In Dynamic Spectrum Access Networks (DYSPAN), 2018 IEEE International Symposium on. IEEE, 2018.
+	
+	\item \textbf{He Li}, Yaling Yang, Yanzhi Dou, Chang Lu, Doug Zabransky, and Jung-Min(Jerry) Park. "Comparison of incumbent user privacy preserving technologies in database driven dynamic spectrum access systems". 13th EAI International Conference on Cognitive Radio Oriented Wireless Networ (CrownCom 2018).
+
+	\item Vireshwar Kumar, \textbf{He Li}, Jung-Min(Jerry) Park, and Kaigui Bian. "Enforcement in spectrum sharing: Crowd-sourced blind authentication of co-channel transmitters" [C]. 2018 IEEE Intl Symposium on Dynamic Spectrum Access Networks (DySPAN), Seoul, South Korea, Oct. 2018
+
+	\item Douglas Zabransky, \textbf{He Li}, Chang Lu, and Yaling Yang. "SZ-SAS: A Framework for Preserving Incumbent User Privacy in SAS-based DSA Systems". 13th EAI International Conference on Cognitive Radio Oriented Wireless Networ (CrownCom 2018).
+
+				\item Yanzhi Dou, Kexiong Zeng, \textbf{He Li}, Yaling Yang, Bo Gao, Kui Ren, Shaoqian Li. ``$ P^{2} $-SAS: Privacy-Preserving Centralized Dynamic Spectrum Access System"[J]. IEEE Journal on Selected Areas in Communications, 2017, 35(1): 173-187
+					
+
+                 \item Vireshwar Kumar, \textbf{He Li}, Jung-Min (Jerry) Park, Kaigui Bian, Yaling Yang, ``Group Signatures with Probabilistic Revocation: A Computationally-Scalable Approach for Providing Privacy-Preserving Authentication",  In Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security (CCS '15). ACM, New York, NY, USA, 1334-1345. (128 out of 646)
+                \item Yanzhi Dou, Kexiong Curtis Zeng, \textbf{He Li}, Yaling Yang, Bo Gao, Chaowen Guan, Kui Ren, and Shaoqian Li. ``$P^2$-SAS: Preserving Users' Privacy in Centralized Dynamic Spectrum Access Systems." Proceedings of the 17th ACM MobiHoc (2016).
+
+
+                \end{itemize}                  
+ 
+
+% \section{AWARDS}
+%                  \begin{itemize}[leftmargin=*]  \itemsep -2pt % reduce space between items
+%                     \item Second Prize in the 8th National Post-graduate Mathmatical Contest in Modeling, 2011
+%                     \item Excellent Academic Scholarship (first class), 2011
+%                     \item First class Blackberry Scholarship , 2011
+%                     \item Third Prize in National Undergraduate Electronic Design Contest, Shanghai division, 2009
+%                     \item Excellent Academic Scholarship for three years (40 of 900 selected), 2006-2009
+%                 \end{itemize}
+
+
+
+     
+\end{resume}
+\end{document}
