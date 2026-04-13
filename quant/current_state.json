@@ -1,0 +1,59 @@
+{
+  "generated": "2026-04-12T18:01:00.334340",
+  "vix": {
+    "latest": 14.33,
+    "date": "2025-12-30",
+    "avg_4w": 15.49,
+    "trend": "Flat"
+  },
+  "regime": "2025+",
+  "circuit_breaker": {
+    "status": "clear",
+    "label": "Clear",
+    "active": false
+  },
+  "gate": {
+    "min": 12,
+    "max": 15,
+    "action": "entry",
+    "label": "Small size",
+    "est_premium": 55,
+    "yield_pct": 2.8,
+    "size_mult": 0.5
+  },
+  "recommendation": "Low vol regime (2025+). Favor SPY/QQQ with 50% position sizes.",
+  "prices": {
+    "SPY": 685.138916015625,
+    "QQQ": 618.64990234375,
+    "UPRO": 118.17486572265625,
+    "TQQQ": 54.01070022583008
+  },
+  "top_picks": [
+    {
+      "ticker": "TQQQ",
+      "dte": 35,
+      "strike": 51.31,
+      "premium_est": 1.74,
+      "yield_est": "35.3%"
+    },
+    {
+      "ticker": "UPRO",
+      "dte": 35,
+      "strike": 112.27,
+      "premium_est": 3.06,
+      "yield_est": "28.4%"
+    },
+    {
+      "ticker": "SPY",
+      "dte": 35,
+      "strike": 650.88,
+      "premium_est": 1.49,
+      "yield_est": "2.4%"
+    }
+  ],
+  "latest_brief": {
+    "date": "2026-04-12",
+    "url": "briefs/2026-04-12.html"
+  },
+  "strategy_name": "Put Selling / Theta Harvesting"
+}

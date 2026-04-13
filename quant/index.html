@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quant Options Playbook</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Page-specific ── */
+    .hero { padding: 5.5rem 2rem 3rem; }
+
+    /* Animated counter */
+    .count-up { transition: none; }
+
+    /* Strategy pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+    .pillar {
+      background: var(--navy-panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.5rem;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+      box-shadow: var(--shadow-sm);
+    }
+    .pillar:hover {
+      border-color: var(--teal-dim);
+      box-shadow: 0 0 28px var(--teal-glow);
+      transform: translateY(-3px);
+    }
+    .pillar-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .pillar-title { font-weight: 700; color: var(--text); margin-bottom: 0.5rem; font-size: 0.98rem; letter-spacing: 0.2px; }
+    .pillar-desc { font-size: 0.8rem; color: var(--text-dim); line-height: 1.65; }
+
+    /* Underlying cards */
+    .underlying-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .und-card {
+      background: var(--navy-panel);
+      padding: 1.4rem 1.5rem;
+      transition: background 0.25s, box-shadow 0.25s;
+    }
+    .und-card:hover {
+      background: var(--navy-hover);
+      box-shadow: inset 0 0 16px rgba(0,212,245,0.08);
+    }
+    .und-ticker {
+      font-family: var(--mono);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+    .und-name { font-size: 0.73rem; color: var(--text-dim); margin-bottom: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .und-stat { display: flex; justify-content: space-between; font-size: 0.76rem; margin-bottom: 0.35rem; }
+    .und-stat .k { color: var(--text-dim); font-weight: 500; }
+    .und-stat .v { font-weight: 700; color: var(--text); font-family: var(--mono); letter-spacing: -0.01em; }
+    .und-stat .v.gold { color: var(--gold); }
+    .und-stat .v.green { color: var(--green); }
+
+    /* VIX band bars */
+    .vix-bands {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin: 1.5rem 0;
+      background: var(--navy-card);
+      padding: 1.4rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .vix-band {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8rem;
+    }
+    .vix-band-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      width: 78px;
+      color: var(--text-dim);
+      flex-shrink: 0;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .vix-band-bar-wrap {
+      flex: 1;
+      height: 24px;
+      background: var(--navy-panel);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+    }
+    .vix-band-bar {
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding-left: 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.95);
+      white-space: nowrap;
+      overflow: hidden;
+      transition: width 1.3s cubic-bezier(0.3, 0.7, 0.4, 1);
+      letter-spacing: 0.3px;
+    }
+    .band-skip-bar    { background: linear-gradient(90deg, rgba(255,77,109,0.75), rgba(255,77,109,0.4)); }
+    .band-low-bar     { background: linear-gradient(90deg, rgba(6,214,160,0.8), rgba(6,214,160,0.45)); }
+    .band-normal-bar  { background: linear-gradient(90deg, rgba(0,212,245,0.8), rgba(0,212,245,0.45)); }
+    .band-high-bar    { background: linear-gradient(90deg, rgba(255,209,102,0.75), rgba(255,209,102,0.45)); }
+    .band-extreme-bar { background: linear-gradient(90deg, rgba(255,159,28,0.8), rgba(255,159,28,0.45)); }
+    .band-cb-bar      { background: linear-gradient(90deg, rgba(255,77,109,0.9), rgba(255,77,109,0.55)); }
+    .vix-band-yield {
+      width: 56px;
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+      letter-spacing: -0.01em;
+    }
+
+    /* Regime performance mini-chart */
+    .regime-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+      background: var(--navy-card);
+      padding: 1.4rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .regime-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.78rem;
+    }
+    .regime-name { width: 165px; flex-shrink: 0; color: var(--text-dim); font-size: 0.73rem; font-weight: 500; letter-spacing: 0.2px; }
+    .regime-bar-wrap {
+      flex: 1;
+      height: 22px;
+      background: var(--navy-panel);
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+    }
+    .regime-bar {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 1.4s cubic-bezier(0.3, 0.7, 0.4, 1);
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      font-size: 0.67rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.3px;
+    }
+    .regime-yield { width: 48px; text-align: right; font-family: var(--mono); font-size: 0.72rem; color: var(--gold); flex-shrink: 0; font-weight: 700; letter-spacing: -0.01em; }
+
+    /* Pipeline steps */
+    .pipeline {
+      display: flex;
+      gap: 0;
+      margin: 2rem 0;
+      overflow-x: auto;
+      padding: 1rem 0;
+    }
+    .pipe-step {
+      flex: 1;
+      min-width: 130px;
+      text-align: center;
+      position: relative;
+      padding: 1.2rem 0.8rem;
+    }
+    .pipe-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--teal-dim);
+      font-size: 1.3rem;
+      z-index: 1;
+      opacity: 0.7;
+    }
+    .pipe-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--navy-card);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin: 0 auto 0.7rem;
+      transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+      box-shadow: 0 2px 8px rgba(0,212,245,0.08);
+    }
+    .pipe-step:hover .pipe-icon {
+      border-color: var(--teal-dim);
+      box-shadow: 0 4px 12px rgba(0,212,245,0.15);
+      background: var(--navy-hover);
+    }
+    .pipe-label { font-size: 0.7rem; color: var(--text-dim); font-weight: 700; letter-spacing: 0.2px; }
+    .pipe-sub { font-size: 0.63rem; color: var(--text-dim); opacity: 0.75; margin-top: 0.3rem; letter-spacing: 0.2px; }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="topnav">
+    <a href="index.html" class="nav-logo">Quant Options Playbook</a>
+    <div class="nav-spacer"></div>
+    <a href="#strategy">Strategy</a>
+    <a href="#backtest">Backtest</a>
+    <a href="briefs/index.html">Briefs</a>
+    <div class="nav-pill"><span class="dot"></span>Backtest: 2015–2025</div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ─────────────────────────────────────────────────── -->
+    <div class="hero">
+      <div class="hero-eyebrow">Systematic Options Income Strategy</div>
+      <h1 class="glow-text">Theta Harvesting<br>at Scale</h1>
+      <p class="subtitle">
+        Sell puts. Collect premium. Repeat weekly.<br>
+        VIX-gated entries · 50% profit exits · backtest-validated across 13 market regimes.
+      </p>
+      <div class="btn-row">
+        <a href="briefs/index.html" class="btn btn-primary">📋 Weekly Briefs</a>
+        <a href="#strategy" class="btn btn-outline">Strategy Overview ↓</a>
+      </div>
+    </div>
+
+    <!-- ── Stat strip ─────────────────────────────────────────────── -->
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <div class="label">Backtest Period</div>
+        <div class="value" data-target="10">10</div>
+        <div class="sub">years · 2015–2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Trades Analyzed</div>
+        <div class="value" data-target="2011">2,011</div>
+        <div class="sub">across 4 underlyings</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">SPY 35DTE Yield</div>
+        <div class="value gold">5.3%</div>
+        <div class="sub">annualized per trade</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">TQQQ 35DTE Yield</div>
+        <div class="value gold">53.8%</div>
+        <div class="sub">annualized per trade</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Median Days Held</div>
+        <div class="value green">14</div>
+        <div class="sub">SPY / QQQ 35DTE</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Regimes Tested</div>
+        <div class="value">13</div>
+        <div class="sub">Bull · Bear · Crash · Recovery</div>
+      </div>
+    </div>
+
+    <!-- ── This Week (Dynamic) ─────────────────────────────────────── -->
+    <div id="this-week-panel" class="card reveal" style="border-left: 4px solid var(--teal); display:none; margin-top:2.5rem">
+      <div class="card-title">This Week's Outlook</div>
+      <div id="this-week-content" style="font-size:0.9rem; line-height:1.7">
+        <p style="color:var(--text-dim);font-size:0.85rem">Loading live data...</p>
+      </div>
+    </div>
+
+    <div id="this-week-fallback" style="display:none;padding:1.6rem;background:var(--navy-card);border:1px solid var(--border);border-radius:var(--radius-lg);margin:2.5rem 0;color:var(--text-dim);font-size:0.9rem;">
+      <strong style="color:var(--text)">This Week's Outlook</strong><br>
+      Run <code>python3 generate_overview.py</code> in the invest folder to populate live data here. The dynamic panel will show current VIX levels, market regime, and top put-selling opportunities.
+    </div>
+
+    <hr>
+
+    <!-- ── Strategy ───────────────────────────────────────────────── -->
+    <section id="strategy">
+      <h2>What Is Theta Harvesting</h2>
+
+      <div class="pillars reveal">
+        <div class="pillar">
+          <div class="pillar-icon">⚡</div>
+          <div class="pillar-title">Sell Puts Weekly</div>
+          <div class="pillar-desc">Sell 5% OTM cash-secured puts on Monday open. Collect premium upfront.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">📉</div>
+          <div class="pillar-title">VIX-Gated Entry</div>
+          <div class="pillar-desc">Only enter when VIX qualifies the premium. Skip thin vol environments.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🎯</div>
+          <div class="pillar-title">50% Profit Target</div>
+          <div class="pillar-desc">Close at half the premium collected. Capture theta decay without tail exposure.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🛡️</div>
+          <div class="pillar-title">Circuit Breakers</div>
+          <div class="pillar-desc">VIX > 50 or bear-mode MA filter halts all new entries automatically.</div>
+        </div>
+      </div>
+
+      <h2>Underlyings</h2>
+
+      <div class="underlying-grid reveal">
+        <div class="und-card">
+          <div class="und-ticker">SPY</div>
+          <div class="und-name">S&amp;P 500 ETF</div>
+          <div class="und-stat"><span class="k">DTE windows</span><span class="v">7, 35</span></div>
+          <div class="und-stat"><span class="k">Est. premium</span><span class="v">~$120</span></div>
+          <div class="und-stat"><span class="k">Med. yield/yr</span><span class="v gold">5.3%</span></div>
+          <div class="und-stat"><span class="k">Med. days held</span><span class="v green">14</span></div>
+        </div>
+        <div class="und-card">
+          <div class="und-ticker">QQQ</div>
+          <div class="und-name">Nasdaq 100 ETF</div>
+          <div class="und-stat"><span class="k">DTE windows</span><span class="v">7, 35</span></div>
+          <div class="und-stat"><span class="k">Est. premium</span><span class="v">~$130</span></div>
+          <div class="und-stat"><span class="k">Med. yield/yr</span><span class="v gold">9.1%</span></div>
+          <div class="und-stat"><span class="k">Med. days held</span><span class="v green">14</span></div>
+        </div>
+        <div class="und-card">
+          <div class="und-ticker">UPRO</div>
+          <div class="und-name">3× S&amp;P 500 ETF</div>
+          <div class="und-stat"><span class="k">DTE windows</span><span class="v">35</span></div>
+          <div class="und-stat"><span class="k">Est. premium</span><span class="v">~$55</span></div>
+          <div class="und-stat"><span class="k">Med. yield/yr</span><span class="v gold">47.2%</span></div>
+          <div class="und-stat"><span class="k">IV multiplier</span><span class="v">2.8×</span></div>
+        </div>
+        <div class="und-card">
+          <div class="und-ticker">TQQQ</div>
+          <div class="und-name">3× Nasdaq ETF</div>
+          <div class="und-stat"><span class="k">DTE windows</span><span class="v">7, 35</span></div>
+          <div class="und-stat"><span class="k">Est. premium</span><span class="v">~$16</span></div>
+          <div class="und-stat"><span class="k">Med. yield/yr</span><span class="v gold">53.8%</span></div>
+          <div class="und-stat"><span class="k">IV multiplier</span><span class="v">3.2×</span></div>
+        </div>
+      </div>
+
+      <h2>VIX Gate — Entry Sizing</h2>
+
+      <div class="vix-bands reveal" id="vix-bands">
+        <div class="vix-band">
+          <div class="vix-band-label">VIX &lt; 12</div>
+          <div class="vix-band-bar-wrap"><div class="vix-band-bar band-skip-bar" style="width:0" data-w="18%">Skip — thin premium</div></div>
+          <div class="vix-band-yield">—</div>
+        </div>
+        <div class="vix-band">
+          <div class="vix-band-label">12 – 15</div>
+          <div class="vix-band-bar-wrap"><div class="vix-band-bar band-low-bar" style="width:0" data-w="25%">Small size · $55</div></div>
+          <div class="vix-band-yield">2.8%</div>
+        </div>
+        <div class="vix-band">
+          <div class="vix-band-label">15 – 18</div>
+          <div class="vix-band-bar-wrap"><div class="vix-band-bar band-normal-bar" style="width:0" data-w="38%">Standard · $128</div></div>
+          <div class="vix-band-yield">4.5%</div>
+        </div>
+        <div class="vix-band">
+          <div class="vix-band-label">18 – 22</div>
+          <div class="vix-band-bar-wrap"><div class="vix-band-bar band-high-bar" style="width:0" data-w="54%">Standard · $219</div></div>
+          <div class="vix-band-yield">7.5%</div>
+        </div>
+        <div class="vix-band">
+          <div class="vix-band-label">22 – 28</div>
+          <div class="vix-band-bar-wrap"><div class="vix-band-bar band-high-bar" style="width:0" data-w="66%">Reduce 50% · $303</div></div>
+          <div class="vix-band-yield">12.4%</div>
+        </div>
+        <div class="vix-band">
+          <div class="vix-band-label">28 – 35</div>
+          <div class="vix-band-bar-wrap"><div class="vix-band-bar band-extreme-bar" style="width:0" data-w="80%">Reduce 25% · $445</div></div>
+          <div class="vix-band-yield">26%</div>
+        </div>
+        <div class="vix-band">
+          <div class="vix-band-label">VIX &gt; 50</div>
+          <div class="vix-band-bar-wrap"><div class="vix-band-bar band-cb-bar" style="width:0" data-w="100%">🔴 Circuit breaker — no entry</div></div>
+          <div class="vix-band-yield">—</div>
+        </div>
+      </div>
+
+      <p style="font-size:0.8rem">
+        Secondary circuit breaker: VIX &gt; 25 <em>and</em> price below 21-day MA for ≥ 10 consecutive days → bear mode, no new entries.
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- ── Backtest ───────────────────────────────────────────────── -->
+    <section id="backtest">
+      <h2>Regime Performance</h2>
+      <p>SPY 35DTE · annualized yield per trade · 2015–2025 backtest</p>
+
+      <!-- Timeline bar -->
+      <div class="regime-timeline reveal">
+        <div class="regime-seg seg-normal" style="flex:1.5" title="2015–16 Normal">15–16</div>
+        <div class="regime-seg seg-bull"   style="flex:2"   title="2017–18 Bull">Bull</div>
+        <div class="regime-seg seg-bear"   style="flex:0.75" title="2018 Q4">Q4</div>
+        <div class="regime-seg seg-rec"    style="flex:1"   title="2019">2019</div>
+        <div class="regime-seg seg-crash"  style="flex:0.25" title="COVID">💥</div>
+        <div class="regime-seg seg-rec"    style="flex:0.75" title="2020 Recovery">Rec</div>
+        <div class="regime-seg seg-bull"   style="flex:1"   title="2021 Bull">Bull</div>
+        <div class="regime-seg seg-bear"   style="flex:1"   title="2022 Bear">Bear</div>
+        <div class="regime-seg seg-rec"    style="flex:1.5" title="2023 Recovery">Recovery</div>
+        <div class="regime-seg seg-bull"   style="flex:1"   title="2024 Bull">Bull</div>
+        <div class="regime-seg seg-normal" style="flex:1"   title="2025+">2025+</div>
+      </div>
+      <p style="font-size:0.72rem; color:var(--text-dim); text-align:right; margin-top:0.2rem">← 2015 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2025 →</p>
+
+      <!-- Regime bars -->
+      <div class="regime-bars reveal" id="regime-bars">
+        <div class="regime-row">
+          <div class="regime-name">2015–16 Normal</div>
+          <div class="regime-bar-wrap"><div class="regime-bar" style="width:0;background:rgba(0,212,245,0.5)" data-w="44%" data-yield="4.4%">4.4%</div></div>
+          <div class="regime-yield">4.4%</div>
+        </div>
+        <div class="regime-row">
+          <div class="regime-name">2017–18 Bull</div>
+          <div class="regime-bar-wrap"><div class="regime-bar" style="width:0;background:rgba(6,214,160,0.6)" data-w="31%" data-yield="3.1%">3.1%</div></div>
+          <div class="regime-yield">3.1%</div>
+        </div>
+        <div class="regime-row">
+          <div class="regime-name">2018 Q4 Selloff</div>
+          <div class="regime-bar-wrap"><div class="regime-bar" style="width:0;background:rgba(255,209,102,0.65)" data-w="100%" data-yield="11.2%">11.2%</div></div>
+          <div class="regime-yield">11.2%</div>
+        </div>
+        <div class="regime-row">
+          <div class="regime-name">2019 Recovery</div>
+          <div class="regime-bar-wrap"><div class="regime-bar" style="width:0;background:rgba(6,214,160,0.55)" data-w="38%" data-yield="3.8%">3.8%</div></div>
+          <div class="regime-yield">3.8%</div>
+        </div>
+        <div class="regime-row">
+          <div class="regime-name">COVID Crash</div>
+          <div class="regime-bar-wrap"><div class="regime-bar" style="width:0;background:rgba(255,77,109,0.7)" data-w="176%" data-yield="19.7%">19.7%</div></div>
+          <div class="regime-yield">19.7%</div>
+        </div>
+        <div class="regime-row">
+          <div class="regime-name">2020 Recovery</div>
+          <div class="regime-bar-wrap"><div class="regime-bar" style="width:0;background:rgba(255,209,102,0.55)" data-w="58%" data-yield="6.5%">6.5%</div></div>
+          <div class="regime-yield">6.5%</div>
+        </div>
+        <div class="regime-row">
+          <div class="regime-name">2021 Bull</div>
+          <div class="regime-bar-wrap"><div class="regime-bar" style="width:0;background:rgba(6,214,160,0.5)" data-w="33%" data-yield="3.3%">3.3%</div></div>
+          <div class="regime-yield">3.3%</div>
+        </div>
+        <div class="regime-row">
+          <div class="regime-name">2022 Bear</div>
+          <div class="regime-bar-wrap"><div class="regime-bar" style="width:0;background:rgba(255,159,28,0.65)" data-w="87%" data-yield="9.8%">9.8%</div></div>
+          <div class="regime-yield">9.8%</div>
+        </div>
+        <div class="regime-row">
+          <div class="regime-name">2023–24 Recovery</div>
+          <div class="regime-bar-wrap"><div class="regime-bar" style="width:0;background:rgba(0,212,245,0.55)" data-w="51%" data-yield="5.1%">5.1%</div></div>
+          <div class="regime-yield">5.1%</div>
+        </div>
+      </div>
+
+      <h2>Methodology</h2>
+      <div class="card reveal">
+        <div class="card-title">Data Pipeline</div>
+        <div class="pipeline">
+          <div class="pipe-step">
+            <div class="pipe-icon">📡</div>
+            <div class="pipe-label">yfinance</div>
+            <div class="pipe-sub">Price + VIX pull</div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-icon">⚙️</div>
+            <div class="pipe-label">Black-Scholes</div>
+            <div class="pipe-sub">586k options built</div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-icon">🔬</div>
+            <div class="pipe-label">Backtest</div>
+            <div class="pipe-sub">13 regimes</div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-icon">📋</div>
+            <div class="pipe-label">Weekly Brief</div>
+            <div class="pipe-sub">Cowork generated</div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-icon">🌐</div>
+            <div class="pipe-label">GitHub Pages</div>
+            <div class="pipe-sub">Published here</div>
+          </div>
+        </div>
+        <p style="font-size:0.8rem;margin-bottom:0">
+          <strong style="color:var(--text)">Limitations:</strong>
+          Black-Scholes reconstructed premiums carry no put skew or bid-ask spread.
+          Premium levels are directionally valid but will differ from real fills.
+          A ThetaData subscription would provide true historical quotes for production use.
+        </p>
+      </div>
+    </section>
+
+    <hr>
+
+    <div style="text-align:center; padding: 1rem 0 2rem">
+      <a href="briefs/index.html" class="btn btn-primary" style="font-size:1rem; padding: 0.8rem 2rem">
+        📋 View Weekly Briefs →
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    Quant Options Playbook &nbsp;·&nbsp;
+    Data: yfinance · Black-Scholes &nbsp;·&nbsp;
+    Backtest 2015–2025 &nbsp;·&nbsp;
+    <em>Not financial advice.</em>
+  </footer>
+
+  <script>
+    /* ── Scroll reveal ── */
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+
+    /* ── Animate bars when visible ── */
+    function animateBars(containerSelector, barSelector) {
+      const container = document.querySelector(containerSelector);
+      if (!container) return;
+      const barObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          container.querySelectorAll(barSelector).forEach((bar, i) => {
+            const target = bar.dataset.w || "0%";
+            setTimeout(() => { bar.style.width = target; }, i * 80);
+          });
+          barObs.unobserve(container);
+        }
+      }, { threshold: 0.2 });
+      barObs.observe(container);
+    }
+
+    animateBars("#vix-bands",    ".vix-band-bar");
+    animateBars("#regime-bars",  ".regime-bar");
+
+    /* ── Tooltips on regime timeline ── */
+    document.querySelectorAll(".regime-seg").forEach(seg => {
+      seg.title = seg.title || seg.textContent.trim();
+    });
+
+    /* ── Load and render live state from current_state.json ── */
+    async function loadCurrentState() {
+      try {
+        const resp = await fetch('current_state.json');
+        if (!resp.ok) throw new Error('JSON not found');
+        const state = await resp.json();
+
+        // VIX color coding
+        let vixColor = 'var(--green)';      // < 12: green
+        let vixLabel = 'Low';
+        if (state.vix.latest < 12) { vixColor = 'var(--green)'; vixLabel = 'Low'; }
+        else if (state.vix.latest < 18) { vixColor = 'var(--teal)'; vixLabel = 'Moderate'; }
+        else if (state.vix.latest < 25) { vixColor = 'var(--gold)'; vixLabel = 'Elevated'; }
+        else if (state.vix.latest < 35) { vixColor = 'var(--orange)'; vixLabel = 'High'; }
+        else { vixColor = 'var(--red)'; vixLabel = 'Extreme'; }
+
+        // Circuit breaker color
+        let cbColor = 'var(--green)';
+        if (state.circuit_breaker.status === 'secondary') cbColor = 'var(--orange)';
+        else if (state.circuit_breaker.status === 'primary') cbColor = 'var(--red)';
+
+        // Build top picks table
+        let topPicksHtml = '';
+        if (state.top_picks && state.top_picks.length > 0) {
+          topPicksHtml = '<table style="width:100%;font-size:0.8rem;margin-top:1rem;border-collapse:collapse">';
+          topPicksHtml += '<tr style="border-bottom:1px solid var(--border);color:var(--text-dim)">';
+          topPicksHtml += '<th style="text-align:left;padding:0.4rem 0.6rem;font-weight:600">Ticker</th>';
+          topPicksHtml += '<th style="text-align:right;padding:0.4rem 0.6rem;font-weight:600">Strike</th>';
+          topPicksHtml += '<th style="text-align:right;padding:0.4rem 0.6rem;font-weight:600">Premium</th>';
+          topPicksHtml += '<th style="text-align:right;padding:0.4rem 0.6rem;font-weight:600">Yield/yr</th></tr>';
+          for (const pick of state.top_picks) {
+            topPicksHtml += '<tr style="border-bottom:1px solid var(--border-dim)">';
+            topPicksHtml += `<td style="padding:0.4rem 0.6rem;color:var(--teal);font-weight:600;font-family:var(--mono)">${pick.ticker}</td>`;
+            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;font-family:var(--mono)">$${pick.strike}</td>`;
+            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;font-family:var(--mono)">$${pick.premium_est}</td>`;
+            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;color:var(--gold);font-weight:600">${pick.yield_est}</td></tr>`;
+          }
+          topPicksHtml += '</table>';
+        }
+
+        // Latest brief link
+        let briefHtml = '';
+        if (state.latest_brief) {
+          briefHtml = `<p style="margin-top:1rem;font-size:0.85rem"><a href="${state.latest_brief.url}" style="color:var(--teal)">→ View latest brief (${state.latest_brief.date})</a></p>`;
+        }
+
+        const html = `
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;font-weight:600">VIX Level</div>
+              <div style="font-size:2.2rem;font-family:var(--mono);font-weight:700;color:${vixColor};letter-spacing:-0.02em">${state.vix.latest}</div>
+              <div style="font-size:0.75rem;color:var(--text-dim);margin-top:0.2rem">${vixLabel} · ${state.vix.trend} · 4w avg: ${state.vix.avg_4w}</div>
+            </div>
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;font-weight:600">Market Regime</div>
+              <div style="font-size:1.5rem;font-weight:700;color:var(--text)">${state.regime}</div>
+              <div style="font-size:0.75rem;color:${cbColor};margin-top:0.3rem;font-weight:600">🔒 ${state.circuit_breaker.label}</div>
+            </div>
+          </div>
+
+          <div style="background:var(--navy-card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem">
+            <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;font-weight:600">VIX Entry Gate</div>
+            <div style="font-size:0.95rem;color:var(--text);font-weight:600;margin-bottom:0.3rem">${state.gate.label}</div>
+            <div style="font-size:0.8rem;color:var(--text-dim)">Size multiplier: <span style="color:var(--gold)">${(state.gate.size_mult * 100).toFixed(0)}%</span></div>
+          </div>
+
+          <div style="background:rgba(0,212,245,0.05);border:1px solid var(--teal-glow);border-radius:var(--radius);padding:1rem;margin-bottom:1rem">
+            <div style="font-size:0.75rem;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;font-weight:600">Recommendation</div>
+            <div style="font-size:0.9rem;color:var(--text);line-height:1.6">${state.recommendation}</div>
+          </div>
+
+          ${topPicksHtml ? `<div style="background:var(--navy-card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
+            <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;font-weight:600">Top 35 DTE Candidates</div>
+            ${topPicksHtml}
+          </div>` : ''}
+
+          ${briefHtml}
+        `;
+
+        document.getElementById('this-week-content').innerHTML = html;
+        document.getElementById('this-week-panel').style.display = 'block';
+        document.getElementById('this-week-fallback').style.display = 'none';
+
+      } catch (e) {
+        // Silently fail — show fallback
+        console.log('current_state.json not available:', e);
+        document.getElementById('this-week-panel').style.display = 'none';
+        document.getElementById('this-week-fallback').style.display = 'block';
+      }
+    }
+
+    // Load on page ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadCurrentState);
+    } else {
+      loadCurrentState();
+    }
+  </script>
+</body>
+</html>
