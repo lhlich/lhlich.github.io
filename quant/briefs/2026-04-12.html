@@ -35,12 +35,13 @@
     </div>
 
     <div class="brief-body">
-<blockquote><strong>Public version</strong> — position sizes and dollar amounts redacted.</blockquote>
-<blockquote>For full data contact the author.</blockquote>
+<blockquote><strong>Public version</strong> — open position sizes and realized P&L redacted.</blockquote>
+<blockquote>Candidate trades, VIX data, and percentage figures are fully shown.</blockquote>
+<blockquote>Not financial advice.</blockquote>
 <br>
 <h1>Quant Options Playbook — Weekly Brief</h1>
 <p><strong>Week of:</strong> April 12, 2026</p>
-<p><strong>Generated:</strong> 2026-04-12 10:43</p>
+<p><strong>Generated:</strong> 2026-04-12 22:49</p>
 <p><strong>Regime:</strong> 2025+</p>
 <br>
 <hr>
@@ -52,29 +53,38 @@
 <tr><td>VIX 4-week avg</td><td>15.49</td></tr>
 <tr><td>VIX trend</td><td>Flat →</td></tr>
 <tr><td>Circuit breaker</td><td>🟢 Clear</td></tr>
-<tr><td>Days below 21-day MA</td><td>—</td></tr>
+<tr><td>Days below 21-day MA</td><td>7</td></tr>
 </tbody></table>
 <br>
-<p><strong>Regime note:</strong> Low vol regime. Favor SPY/QQQ only, smaller size.</p>
+<p><strong>Regime note:</strong> Vol regime: Small size. Size multiplier: 0.5x standard.</p>
 <br>
 <hr>
 <br>
 <h2>Entry Gate</h2>
 <br>
-<p><strong>Entry OK — VIX 12–15 · target ~[redacted]/contract · ~2.8% OTM premium</strong></p>
+<p><strong>Entry OK — VIX 12–15 · Small size · target ~$55/contract · ~2.8% yield</strong></p>
 <br>
 <hr>
 <br>
 <h2>Candidate Trades This Week</h2>
 <br>
-<table class="data-table"><thead><tr><th>Ticker</th><th>DTE</th><th>Spot</th><th>Strike</th><th>Est. Premium</th><th>Delta</th><th>IV</th><th>Expiry</th><th>Note</th></tr></thead><tbody>
-<tr><td>SPY</td><td>—</td><td>[redacted]</td><td>[redacted]</td><td>[redacted]</td><td>0.42%</td><td>14.3%</td><td>2026-04-19</td><td>⚠ thin</td></tr>
-<tr><td>SPY</td><td>—</td><td>[redacted]</td><td>[redacted]</td><td>[redacted]</td><td>10.11%</td><td>14.3%</td><td>2026-05-17</td><td></td></tr>
-<tr><td>QQQ</td><td>—</td><td>[redacted]</td><td>[redacted]</td><td>[redacted]</td><td>0.42%</td><td>14.3%</td><td>2026-04-19</td><td>⚠ thin</td></tr>
-<tr><td>QQQ</td><td>—</td><td>[redacted]</td><td>[redacted]</td><td>[redacted]</td><td>10.11%</td><td>14.3%</td><td>2026-05-17</td><td></td></tr>
-<tr><td>UPRO</td><td>—</td><td>[redacted]</td><td>[redacted]</td><td>[redacted]</td><td>30.52%</td><td>40.1%</td><td>2026-05-17</td><td></td></tr>
-<tr><td>TQQQ</td><td>—</td><td>[redacted]</td><td>[redacted]</td><td>[redacted]</td><td>19.68%</td><td>45.9%</td><td>2026-04-19</td><td></td></tr>
-<tr><td>TQQQ</td><td>—</td><td>[redacted]</td><td>[redacted]</td><td>[redacted]</td><td>32.18%</td><td>45.9%</td><td>2026-05-17</td><td></td></tr>
+<table class="data-table"><thead><tr><th>Ticker</th><th>DTE</th><th>OTM</th><th>Spot</th><th>Strike</th><th>Est. Premium</th><th>Delta</th><th>IV</th><th>Expiry</th><th>Note</th></tr></thead><tbody>
+<tr><td>SPY</td><td>7DTE</td><td>ATM</td><td>$685.14</td><td>$685.14</td><td>$5.13</td><td>47.9%</td><td>14.3%</td><td>2026-04-19</td><td></td></tr>
+<tr><td>SPY</td><td>14DTE</td><td>ATM</td><td>$685.14</td><td>$685.14</td><td>$7.09</td><td>47.0%</td><td>14.3%</td><td>2026-04-26</td><td></td></tr>
+<tr><td>SPY</td><td>14DTE</td><td>5% OTM</td><td>$685.14</td><td>$650.88</td><td>$0.21</td><td>2.9%</td><td>14.3%</td><td>2026-04-26</td><td>⚠ thin</td></tr>
+<tr><td>SPY</td><td>35DTE</td><td>5% OTM</td><td>$685.14</td><td>$650.88</td><td>$1.49</td><td>10.1%</td><td>14.3%</td><td>2026-05-17</td><td></td></tr>
+<tr><td>QQQ</td><td>7DTE</td><td>ATM</td><td>$618.65</td><td>$618.65</td><td>$4.63</td><td>47.9%</td><td>14.3%</td><td>2026-04-19</td><td></td></tr>
+<tr><td>QQQ</td><td>14DTE</td><td>ATM</td><td>$618.65</td><td>$618.65</td><td>$6.40</td><td>47.0%</td><td>14.3%</td><td>2026-04-26</td><td></td></tr>
+<tr><td>QQQ</td><td>14DTE</td><td>5% OTM</td><td>$618.65</td><td>$587.72</td><td>$0.19</td><td>2.9%</td><td>14.3%</td><td>2026-04-26</td><td>⚠ thin</td></tr>
+<tr><td>QQQ</td><td>35DTE</td><td>5% OTM</td><td>$618.65</td><td>$587.72</td><td>$1.34</td><td>10.1%</td><td>14.3%</td><td>2026-05-17</td><td></td></tr>
+<tr><td>UPRO</td><td>14DTE</td><td>ATM</td><td>$118.17</td><td>$118.17</td><td>$3.60</td><td>47.5%</td><td>40.1%</td><td>2026-04-26</td><td></td></tr>
+<tr><td>UPRO</td><td>14DTE</td><td>5% OTM</td><td>$118.17</td><td>$112.27</td><td>$1.35</td><td>23.8%</td><td>40.1%</td><td>2026-04-26</td><td></td></tr>
+<tr><td>UPRO</td><td>35DTE</td><td>5% OTM</td><td>$118.17</td><td>$112.27</td><td>$3.06</td><td>30.5%</td><td>40.1%</td><td>2026-05-17</td><td></td></tr>
+<tr><td>TQQQ</td><td>7DTE</td><td>ATM</td><td>$54.01</td><td>$54.01</td><td>$1.34</td><td>48.2%</td><td>45.9%</td><td>2026-04-19</td><td></td></tr>
+<tr><td>TQQQ</td><td>7DTE</td><td>5% OTM</td><td>$54.01</td><td>$51.31</td><td>$0.39</td><td>19.7%</td><td>45.9%</td><td>2026-04-19</td><td></td></tr>
+<tr><td>TQQQ</td><td>14DTE</td><td>ATM</td><td>$54.01</td><td>$54.01</td><td>$1.89</td><td>47.4%</td><td>45.9%</td><td>2026-04-26</td><td></td></tr>
+<tr><td>TQQQ</td><td>14DTE</td><td>5% OTM</td><td>$54.01</td><td>$51.31</td><td>$0.81</td><td>26.3%</td><td>45.9%</td><td>2026-04-26</td><td></td></tr>
+<tr><td>TQQQ</td><td>35DTE</td><td>5% OTM</td><td>$54.01</td><td>$51.31</td><td>$1.74</td><td>32.2%</td><td>45.9%</td><td>2026-05-17</td><td></td></tr>
 </tbody></table>
 <br>
 <p><em>Candidates pass: VIX gate · delta < 0.15 · premium ≥ minimum · no circuit breaker active</em></p>
@@ -110,19 +120,19 @@
 <h2>Regime Performance Reference (Backtest)</h2>
 <br>
 <table class="data-table"><thead><tr><th>Regime</th><th>Ticker</th><th>DTE</th><th>Trades</th><th>Win%</th><th>Med Yield/yr</th><th>Avg VIX</th></tr></thead><tbody>
-<tr><td>2015–16 Normal</td><td>SPY</td><td>—</td><td>32</td><td>100.0%</td><td>4.1%</td><td>15.9</td></tr>
-<tr><td>2017–18 Bull</td><td>SPY</td><td>—</td><td>18</td><td>100.0%</td><td>2.9%</td><td>14.2</td></tr>
-<tr><td>2018 Q4 Selloff</td><td>SPY</td><td>—</td><td>2</td><td>100.0%</td><td>7.4%</td><td>21.2</td></tr>
-<tr><td>2019 Recovery</td><td>SPY</td><td>—</td><td>12</td><td>100.0%</td><td>3.0%</td><td>15.7</td></tr>
-<tr><td>2021 Bull</td><td>SPY</td><td>—</td><td>14</td><td>100.0%</td><td>7.6%</td><td>18.6</td></tr>
-<tr><td>2022 Bear Q1-Q2</td><td>SPY</td><td>—</td><td>6</td><td>100.0%</td><td>9.4%</td><td>24.2</td></tr>
-<tr><td>2022 Bear Q3-Q4</td><td>SPY</td><td>—</td><td>5</td><td>100.0%</td><td>11.8%</td><td>24.2</td></tr>
-<tr><td>2023 Recovery</td><td>SPY</td><td>—</td><td>12</td><td>100.0%</td><td>4.4%</td><td>16.3</td></tr>
-<tr><td>2024 AI Bull</td><td>SPY</td><td>—</td><td>9</td><td>100.0%</td><td>4.7%</td><td>14.2</td></tr>
-<tr><td>Aug 2024 Flash</td><td>SPY</td><td>—</td><td>1</td><td>100.0%</td><td>2.4%</td><td>14.7</td></tr>
-<tr><td>COVID Recovery</td><td>SPY</td><td>—</td><td>11</td><td>100.0%</td><td>18.5%</td><td>30.7</td></tr>
-<tr><td>Late 2024–2025</td><td>SPY</td><td>—</td><td>15</td><td>100.0%</td><td>4.7%</td><td>17.7</td></tr>
-<tr><td>Other</td><td>SPY</td><td>—</td><td>3</td><td>100.0%</td><td>3.0%</td><td>13.7</td></tr>
+<tr><td>2015–16 Normal</td><td>SPY</td><td>35</td><td>32</td><td>100.0%</td><td>4.1%</td><td>15.9</td></tr>
+<tr><td>2017–18 Bull</td><td>SPY</td><td>35</td><td>18</td><td>100.0%</td><td>2.9%</td><td>14.2</td></tr>
+<tr><td>2018 Q4 Selloff</td><td>SPY</td><td>35</td><td>2</td><td>100.0%</td><td>7.4%</td><td>21.2</td></tr>
+<tr><td>2019 Recovery</td><td>SPY</td><td>35</td><td>12</td><td>100.0%</td><td>3.0%</td><td>15.7</td></tr>
+<tr><td>2021 Bull</td><td>SPY</td><td>35</td><td>14</td><td>100.0%</td><td>7.6%</td><td>18.6</td></tr>
+<tr><td>2022 Bear Q1-Q2</td><td>SPY</td><td>35</td><td>6</td><td>100.0%</td><td>9.4%</td><td>24.2</td></tr>
+<tr><td>2022 Bear Q3-Q4</td><td>SPY</td><td>35</td><td>5</td><td>100.0%</td><td>11.8%</td><td>24.2</td></tr>
+<tr><td>2023 Recovery</td><td>SPY</td><td>35</td><td>12</td><td>100.0%</td><td>4.4%</td><td>16.3</td></tr>
+<tr><td>2024 AI Bull</td><td>SPY</td><td>35</td><td>9</td><td>100.0%</td><td>4.7%</td><td>14.2</td></tr>
+<tr><td>Aug 2024 Flash</td><td>SPY</td><td>35</td><td>1</td><td>100.0%</td><td>2.4%</td><td>14.7</td></tr>
+<tr><td>COVID Recovery</td><td>SPY</td><td>35</td><td>11</td><td>100.0%</td><td>18.5%</td><td>30.7</td></tr>
+<tr><td>Late 2024–2025</td><td>SPY</td><td>35</td><td>15</td><td>100.0%</td><td>4.7%</td><td>17.7</td></tr>
+<tr><td>Other</td><td>SPY</td><td>35</td><td>3</td><td>100.0%</td><td>3.0%</td><td>13.7</td></tr>
 </tbody></table>
 <br>
 <hr>
