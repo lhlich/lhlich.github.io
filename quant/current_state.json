@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-04T15:19:52.923951",
+  "generated": "2026-05-11T09:41:26.133099",
   "vix": {
     "latest": 14.33,
     "date": "2025-12-30",
@@ -52,8 +52,8 @@
     }
   ],
   "latest_brief": {
-    "date": "2026-05-04",
-    "url": "briefs/2026-05-04.html"
+    "date": "2026-05-11",
+    "url": "briefs/2026-05-11.html"
   },
   "strategy_name": "Put Selling / Theta Harvesting"
 }
