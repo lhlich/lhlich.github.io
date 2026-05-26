@@ -1,10 +1,10 @@
 {
-  "generated": "2026-05-18T10:58:39.302089",
+  "generated": "2026-05-25T23:33:52.862218",
   "vix": {
-    "latest": 14.33,
-    "date": "2025-12-30",
-    "avg_4w": 15.49,
-    "trend": "Flat"
+    "latest": 16.59,
+    "date": "2026-05-25",
+    "avg_4w": 17.56,
+    "trend": "Falling"
   },
   "regime": "2025+",
   "circuit_breaker": {
@@ -12,43 +12,53 @@
     "label": "Clear",
     "active": false
   },
-  "gate": {
-    "min": 12,
-    "max": 15,
-    "action": "entry",
-    "label": "Small size",
-    "est_premium": 55,
-    "yield_pct": 2.8,
-    "size_mult": 0.5
+  "trend_guard": {
+    "active": false,
+    "days_below": 0,
+    "label": "clear"
   },
-  "recommendation": "Low vol regime (2025+). Favor SPY/QQQ with 50% position sizes.",
+  "data_freshness": {
+    "stale": false,
+    "max_lag": 1,
+    "limit": 2
+  },
+  "gate": {
+    "min": 15,
+    "max": 18,
+    "action": "entry",
+    "label": "Standard",
+    "est_premium": 128,
+    "yield_pct": 4.5,
+    "size_mult": 1.0
+  },
+  "recommendation": "Low vol regime (2025+). Favor SPY/QQQ with standard position sizes.",
   "prices": {
-    "SPY": 685.138916015625,
-    "QQQ": 618.64990234375,
-    "UPRO": 118.17486572265625,
-    "TQQQ": 54.01070022583008
+    "SPY": 745.6400146484375,
+    "QQQ": 717.5399780273438,
+    "UPRO": 143.0800018310547,
+    "TQQQ": 77.83999633789062
   },
   "top_picks": [
     {
       "ticker": "TQQQ",
       "dte": 35,
-      "strike": 51.31,
-      "premium_est": 1.74,
-      "yield_est": "35.3%"
+      "strike": 73.95,
+      "premium_est": 3.14,
+      "yield_est": "44.2%"
     },
     {
       "ticker": "UPRO",
       "dte": 35,
-      "strike": 112.27,
-      "premium_est": 3.06,
-      "yield_est": "28.4%"
+      "strike": 135.93,
+      "premium_est": 4.7,
+      "yield_est": "36.1%"
     },
     {
       "ticker": "SPY",
       "dte": 35,
-      "strike": 650.88,
-      "premium_est": 1.49,
-      "yield_est": "2.4%"
+      "strike": 708.36,
+      "premium_est": 2.65,
+      "yield_est": "3.9%"
     }
   ],
   "latest_brief": {
