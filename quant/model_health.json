@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T22:30:06",
+  "generated_at": "2026-05-26T22:32:18",
   "status": "warning",
   "errors": [],
   "warnings": [
@@ -30,6 +30,9 @@
     "max_leveraged_notional_usd": 152898.0,
     "max_leveraged_share_pct": 11.0,
     "max_single_ticker_share_pct": 47.7,
+    "walkforward_years": 9,
+    "walkforward_total_pnl_usd": 11907.94,
+    "walkforward_worst_year_pnl_usd": -3207.56,
     "calibration_rows": 18,
     "calibration_avg_abs_error_pct": 44.87
   }
