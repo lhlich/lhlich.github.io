@@ -1,11 +1,10 @@
 {
-  "generated_at": "2026-05-26T22:32:18",
+  "generated_at": "2026-05-27T01:36:46",
   "status": "warning",
   "errors": [],
   "warnings": [
-    "avg abs model/chain error is 44.9%",
-    "wide option spreads: UPRO 14DTE 5%OTM",
-    "low option open interest: SPY 7DTE 5%OTM, UPRO 14DTE 0%OTM, UPRO 14DTE 5%OTM, UPRO 35DTE 5%OTM, TQQQ 35DTE 5%OTM"
+    "option-chain calibration has no bid/ask mid rows; rerun during regular market hours",
+    "avg abs model/chain error is 39.0%"
   ],
   "metrics": {
     "options_rows": 628531,
@@ -19,7 +18,7 @@
       "TQQQ",
       "UPRO"
     ],
-    "options_business_day_lag": 2,
+    "options_business_day_lag": 3,
     "backtest_trades": 6125,
     "backtest_combos": 18,
     "expected_combos": 18,
@@ -33,7 +32,11 @@
     "walkforward_years": 9,
     "walkforward_total_pnl_usd": 11907.94,
     "walkforward_worst_year_pnl_usd": -3207.56,
+    "option_chain_archive_latest": "2026-05-27",
+    "option_chain_archive_rows": 2639,
+    "option_chain_archive_lag_days": 0,
     "calibration_rows": 18,
-    "calibration_avg_abs_error_pct": 44.87
+    "calibration_avg_abs_error_pct": 39.02,
+    "calibration_bid_ask_rows": 0
   }
 }
