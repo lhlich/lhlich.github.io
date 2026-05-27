@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-26T20:43:19.097725",
+  "generated": "2026-05-26T22:27:31.844530",
   "vix": {
     "latest": 16.59,
     "date": "2026-05-25",
@@ -41,24 +41,30 @@
   "top_picks": [
     {
       "ticker": "TQQQ",
-      "dte": 35,
-      "strike": 73.95,
-      "premium_est": 3.14,
-      "yield_est": "44.2%"
+      "dte": 10,
+      "strike": 78.0,
+      "premium_est": 1.84,
+      "yield_est": "134.7%",
+      "expected_ann": "33.6%",
+      "source": "Chain"
     },
     {
       "ticker": "UPRO",
-      "dte": 35,
-      "strike": 135.93,
-      "premium_est": 4.7,
-      "yield_est": "36.1%"
+      "dte": 17,
+      "strike": 143.0,
+      "premium_est": 4.15,
+      "yield_est": "84.8%",
+      "expected_ann": "19.3%",
+      "source": "Chain"
     },
     {
-      "ticker": "SPY",
-      "dte": 35,
-      "strike": 708.36,
-      "premium_est": 2.65,
-      "yield_est": "3.9%"
+      "ticker": "TQQQ",
+      "dte": 17,
+      "strike": 78.0,
+      "premium_est": 2.71,
+      "yield_est": "108.5%",
+      "expected_ann": "15.2%",
+      "source": "Chain"
     }
   ],
   "latest_brief": {
