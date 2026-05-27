@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-05-27T01:45:42",
+  "latest": {
+    "date": "2026-05-26",
+    "vix": 17.01,
+    "vix_ma21": 17.5314,
+    "vix_ma63": 21.1476,
+    "vix_z63": -1.0357,
+    "vix_rank_252": 47.2222,
+    "SPY_close": 750.59,
+    "SPY_ma21_ratio": 0.0247,
+    "SPY_ma50_ratio": 0.0749,
+    "SPY_ma200_ratio": 0.1089,
+    "SPY_drawdown_252_pct": 0.0,
+    "SPY_rv21_pct": 10.1469,
+    "SPY_days_below_ma21": 0,
+    "QQQ_close": 730.28,
+    "QQQ_ma21_ratio": 0.0484,
+    "QQQ_ma50_ratio": 0.1326,
+    "QQQ_ma200_ratio": 0.1886,
+    "QQQ_drawdown_252_pct": 0.0,
+    "QQQ_rv21_pct": 16.4424,
+    "QQQ_days_below_ma21": 0,
+    "risk_score": 23.0,
+    "vol_regime": "Normal vol",
+    "trend_regime": "Bullish",
+    "composite_regime": "Constructive"
+  },
+  "n_rows": 2865
+}

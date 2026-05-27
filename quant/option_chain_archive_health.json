@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-05-27T01:45:42",
+  "archive_path": "option_chain_archive\\2026-05-27\\chains.csv",
+  "snapshot_date": "2026-05-27",
+  "rows": 2639,
+  "bid_ask_mid_rows": 38,
+  "bid_ask_mid_pct": 1.4,
+  "candidate_count": 18,
+  "candidate_bid_ask_count": 0,
+  "candidate_tradeable_count": 0,
+  "quality_by_ticker": [
+    {
+      "ticker": "QQQ",
+      "rows": 1106,
+      "puts": 580,
+      "calls": 526,
+      "bid_ask_mid_rows": 11,
+      "last_price_rows": 1095,
+      "bid_ask_mid_pct": 1.0,
+      "median_spread_pct": 2.54,
+      "median_open_interest": 0.0,
+      "median_volume": 10.0
+    },
+    {
+      "ticker": "SPY",
+      "rows": 1078,
+      "puts": 549,
+      "calls": 529,
+      "bid_ask_mid_rows": 27,
+      "last_price_rows": 1051,
+      "bid_ask_mid_pct": 2.5,
+      "median_spread_pct": 2.46,
+      "median_open_interest": 0.0,
+      "median_volume": 14.0
+    },
+    {
+      "ticker": "TQQQ",
+      "rows": 337,
+      "puts": 166,
+      "calls": 171,
+      "bid_ask_mid_rows": 0,
+      "last_price_rows": 337,
+      "bid_ask_mid_pct": 0.0,
+      "median_spread_pct": 0.0,
+      "median_open_interest": 0,
+      "median_volume": 26
+    },
+    {
+      "ticker": "UPRO",
+      "rows": 118,
+      "puts": 62,
+      "calls": 56,
+      "bid_ask_mid_rows": 0,
+      "last_price_rows": 118,
+      "bid_ask_mid_pct": 0.0,
+      "median_spread_pct": 0.0,
+      "median_open_interest": 0.0,
+      "median_volume": 3.5
+    }
+  ]
+}

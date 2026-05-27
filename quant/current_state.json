@@ -1,10 +1,10 @@
 {
-  "generated": "2026-05-26T22:30:24.611249",
+  "generated": "2026-05-27T01:45:56.024049",
   "vix": {
-    "latest": 16.59,
-    "date": "2026-05-25",
-    "avg_4w": 17.56,
-    "trend": "Falling"
+    "latest": 16.97,
+    "date": "2026-05-27",
+    "avg_4w": 17.42,
+    "trend": "Flat"
   },
   "regime": "2025+",
   "circuit_breaker": {
@@ -19,7 +19,7 @@
   },
   "data_freshness": {
     "stale": false,
-    "max_lag": 2,
+    "max_lag": 1,
     "limit": 2
   },
   "gate": {
@@ -33,46 +33,72 @@
   },
   "recommendation": "Low vol regime (2025+). Favor SPY/QQQ with standard position sizes.",
   "prices": {
-    "SPY": 745.6400146484375,
-    "QQQ": 717.5399780273438,
-    "UPRO": 143.0800018310547,
-    "TQQQ": 77.83999633789062
+    "SPY": 750.5900268554688,
+    "QQQ": 730.280029296875,
+    "UPRO": 145.86000061035156,
+    "TQQQ": 81.94999694824219
   },
   "top_picks": [
     {
       "ticker": "TQQQ",
-      "dte": 10,
-      "strike": 78.0,
-      "premium_est": 1.84,
-      "sized_notional": "$7.8k",
-      "yield_est": "134.7%",
-      "expected_ann": "33.6%",
-      "source": "Chain"
+      "dte": 7,
+      "strike": 81.95,
+      "premium_est": 2.56,
+      "sized_notional": "$8.2k",
+      "yield_est": "397.1%",
+      "expected_ann": "107.0%",
+      "source": "Model"
     },
     {
       "ticker": "UPRO",
-      "dte": 17,
-      "strike": 143.0,
-      "premium_est": 4.15,
-      "sized_notional": "$14.3k",
-      "yield_est": "84.8%",
-      "expected_ann": "19.3%",
-      "source": "Chain"
+      "dte": 14,
+      "strike": 145.86,
+      "premium_est": 5.43,
+      "sized_notional": "$14.6k",
+      "yield_est": "159.6%",
+      "expected_ann": "48.0%",
+      "source": "Model"
     },
     {
       "ticker": "TQQQ",
-      "dte": 17,
-      "strike": 78.0,
-      "premium_est": 2.71,
-      "sized_notional": "$7.8k",
-      "yield_est": "108.5%",
-      "expected_ann": "15.2%",
-      "source": "Chain"
+      "dte": 14,
+      "strike": 81.95,
+      "premium_est": 3.5,
+      "sized_notional": "$8.2k",
+      "yield_est": "197.5%",
+      "expected_ann": "41.5%",
+      "source": "Model"
     }
   ],
   "latest_brief": {
     "date": "2026-05-25",
     "url": "briefs/2026-05-25.html"
+  },
+  "regime_model": {
+    "date": "2026-05-26",
+    "vix": 17.01,
+    "vix_ma21": 17.5314,
+    "vix_ma63": 21.1476,
+    "vix_z63": -1.0357,
+    "vix_rank_252": 47.2222,
+    "SPY_close": 750.59,
+    "SPY_ma21_ratio": 0.0247,
+    "SPY_ma50_ratio": 0.0749,
+    "SPY_ma200_ratio": 0.1089,
+    "SPY_drawdown_252_pct": 0.0,
+    "SPY_rv21_pct": 10.1469,
+    "SPY_days_below_ma21": 0,
+    "QQQ_close": 730.28,
+    "QQQ_ma21_ratio": 0.0484,
+    "QQQ_ma50_ratio": 0.1326,
+    "QQQ_ma200_ratio": 0.1886,
+    "QQQ_drawdown_252_pct": 0.0,
+    "QQQ_rv21_pct": 16.4424,
+    "QQQ_days_below_ma21": 0,
+    "risk_score": 23.0,
+    "vol_regime": "Normal vol",
+    "trend_regime": "Bullish",
+    "composite_regime": "Constructive"
   },
   "strategy_name": "Put Selling / Theta Harvesting"
 }
