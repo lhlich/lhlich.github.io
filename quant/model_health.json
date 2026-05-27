@@ -1,11 +1,13 @@
 {
-  "generated_at": "2026-05-27T01:45:58",
+  "generated_at": "2026-05-27T01:54:10",
   "status": "warning",
   "errors": [],
   "warnings": [
     "option-chain archive candidate coverage has no bid/ask mids",
     "option-chain calibration has no bid/ask mid rows; rerun during regular market hours",
-    "avg abs model/chain error is 39.0%"
+    "avg abs model/chain error is 39.0%",
+    "top candidates fragile under sensitivity stress: TQQQ 14DTE ATM",
+    "no eligible candidate stays positive under combined sensitivity stress"
   ],
   "metrics": {
     "options_rows": 628754,
@@ -48,6 +50,15 @@
     "option_chain_candidate_tradeable_count": 0,
     "calibration_rows": 18,
     "calibration_avg_abs_error_pct": 39.02,
-    "calibration_bid_ask_rows": 0
+    "calibration_bid_ask_rows": 0,
+    "sensitivity_baseline_date": "2026-05-27",
+    "sensitivity_baseline_vix": 16.97,
+    "sensitivity_candidate_count": 11,
+    "sensitivity_eligible_candidates": 9,
+    "sensitivity_robust_candidates": 0,
+    "sensitivity_watch_candidates": 5,
+    "sensitivity_fragile_candidates": 4,
+    "sensitivity_stress_positive_candidates": 0,
+    "sensitivity_business_day_lag": 0
   }
 }
