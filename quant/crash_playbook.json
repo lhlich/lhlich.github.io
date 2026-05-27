@@ -1,0 +1,346 @@
+{
+  "generated_at": "2026-05-27T02:00:02",
+  "current_stage": "Clear",
+  "latest": {
+    "date": "2026-05-26",
+    "vix": 17.01,
+    "risk_score": 23.0,
+    "vol_regime": "Normal vol",
+    "trend_regime": "Bullish",
+    "composite_regime": "Constructive",
+    "SPY_drawdown_252_pct": 0.0,
+    "QQQ_drawdown_252_pct": 0.0,
+    "SPY_days_below_ma21": 0,
+    "QQQ_days_below_ma21": 0
+  },
+  "active_triggers": [],
+  "current_rule": {
+    "entry": "Use the weekly ranking, standard VIX gate, and live bid/ask mids when available.",
+    "allowed": "All configured candidates, with sensitivity label checked before entry.",
+    "forbidden": "Do not override stale data, missing chain mids, or circuit breakers.",
+    "size": "Per current VIX gate."
+  },
+  "rules": {
+    "Clear": {
+      "entry": "Use the weekly ranking, standard VIX gate, and live bid/ask mids when available.",
+      "allowed": "All configured candidates, with sensitivity label checked before entry.",
+      "forbidden": "Do not override stale data, missing chain mids, or circuit breakers.",
+      "size": "Per current VIX gate."
+    },
+    "Caution": {
+      "entry": "Prefer SPY/QQQ and reduce concentration. Demand better premium and liquid bid/ask.",
+      "allowed": "SPY/QQQ ATM or 5% OTM; leveraged only if sensitivity is Watch or better.",
+      "forbidden": "No adding to existing stressed underlyings. Avoid low-liquidity chain rows.",
+      "size": "Use VIX gate size; cap any single new entry at half of normal discretion."
+    },
+    "Stress": {
+      "entry": "New entries are optional, not required. Favor defined, index-only theta.",
+      "allowed": "SPY/QQQ 14DTE or 35DTE 5% OTM only, minimum practical size.",
+      "forbidden": "No TQQQ/UPRO ATM. No roll that increases notional. No averaging down.",
+      "size": "25% to 50% of normal, whichever is lower than the VIX gate."
+    },
+    "Secondary Breaker": {
+      "entry": "No new entries. Manage open risk only.",
+      "allowed": "Closing winners, reducing risk, or rolling only to reduce assignment/notional risk.",
+      "forbidden": "No new short puts. No leveraged ETF entries.",
+      "size": "Zero new notional."
+    },
+    "Crisis Watch": {
+      "entry": "No new entries until volatility and trend stabilize.",
+      "allowed": "Risk reduction and pre-planned assignment decisions only.",
+      "forbidden": "No new puts, no rolling down for extra credit, no leveraged entries.",
+      "size": "Zero new notional."
+    },
+    "Circuit Breaker": {
+      "entry": "Hard stop. No new entries.",
+      "allowed": "Close, hedge, or accept/avoid assignment according to manual capital plan.",
+      "forbidden": "No new short premium and no rescue sizing.",
+      "size": "Zero new notional."
+    }
+  },
+  "reentry_ladder": [
+    {
+      "step": 1,
+      "trigger": "VIX falls below 35 and is below its 21d average for 2+ sessions.",
+      "action": "Allow only SPY/QQQ 35DTE 5% OTM at minimum size."
+    },
+    {
+      "step": 2,
+      "trigger": "VIX falls below 28 and regime risk score is below 60.",
+      "action": "Allow SPY/QQQ 14DTE or 35DTE candidates; keep leveraged tickers off."
+    },
+    {
+      "step": 3,
+      "trigger": "SPY and QQQ both reclaim 21d MA and days-below count is under 5.",
+      "action": "Allow leveraged OTM candidates only if sensitivity label is Watch or better."
+    },
+    {
+      "step": 4,
+      "trigger": "VIX returns below 22, trend regime is Bullish, and model health has no hard errors.",
+      "action": "Return to normal weekly ranking; ATM leveraged entries still require a fresh liquidity check."
+    }
+  ],
+  "triage_ladder": [
+    {
+      "state": "Short put comfortably OTM",
+      "action": "Do not add risk. Close at target if available; otherwise let the original thesis work."
+    },
+    {
+      "state": "Underlying near strike and VIX rising",
+      "action": "Stop new entries. Consider closing or rolling only if the roll reduces risk or time pressure."
+    },
+    {
+      "state": "Deep ITM",
+      "action": "Choose assignment vs loss explicitly. Avoid rolling down solely to collect credit."
+    },
+    {
+      "state": "Liquidity disappears",
+      "action": "Use limit orders only. Do not trust stale last prices as executable mids."
+    }
+  ],
+  "historical_analogs": [
+    {
+      "episode_type": "vix_50_plus",
+      "start": "2020-03-11",
+      "end": "2020-04-02",
+      "days": 17,
+      "max_vix": 82.69,
+      "max_risk_score": 100.0,
+      "min_spy_drawdown_pct": -33.7,
+      "min_qqq_drawdown_pct": -28.6,
+      "max_spy_days_below_ma21": 29,
+      "max_qqq_days_below_ma21": 25
+    },
+    {
+      "episode_type": "vix_50_plus",
+      "start": "2020-03-09",
+      "end": "2020-03-09",
+      "days": 1,
+      "max_vix": 54.46,
+      "max_risk_score": 100.0,
+      "min_spy_drawdown_pct": -18.9,
+      "min_qqq_drawdown_pct": -18.3,
+      "max_spy_days_below_ma21": 11,
+      "max_qqq_days_below_ma21": 11
+    },
+    {
+      "episode_type": "vix_50_plus",
+      "start": "2025-04-08",
+      "end": "2025-04-08",
+      "days": 1,
+      "max_vix": 52.33,
+      "max_risk_score": 98.9,
+      "min_spy_drawdown_pct": -18.8,
+      "min_qqq_drawdown_pct": -22.8,
+      "max_spy_days_below_ma21": 4,
+      "max_qqq_days_below_ma21": 10
+    },
+    {
+      "episode_type": "secondary_breaker",
+      "start": "2020-03-06",
+      "end": "2020-04-03",
+      "days": 21,
+      "max_vix": 82.69,
+      "max_risk_score": 100.0,
+      "min_spy_drawdown_pct": -33.7,
+      "min_qqq_drawdown_pct": -28.6,
+      "max_spy_days_below_ma21": 30,
+      "max_qqq_days_below_ma21": 25
+    },
+    {
+      "episode_type": "secondary_breaker",
+      "start": "2025-04-08",
+      "end": "2025-04-23",
+      "days": 11,
+      "max_vix": 52.33,
+      "max_risk_score": 99.5,
+      "min_spy_drawdown_pct": -18.8,
+      "min_qqq_drawdown_pct": -22.8,
+      "max_spy_days_below_ma21": 14,
+      "max_qqq_days_below_ma21": 20
+    },
+    {
+      "episode_type": "secondary_breaker",
+      "start": "2015-08-21",
+      "end": "2015-09-04",
+      "days": 11,
+      "max_vix": 40.74,
+      "max_risk_score": 97.9,
+      "min_spy_drawdown_pct": -11.9,
+      "min_qqq_drawdown_pct": -13.9,
+      "max_spy_days_below_ma21": 13,
+      "max_qqq_days_below_ma21": 22
+    },
+    {
+      "episode_type": "secondary_breaker",
+      "start": "2024-08-05",
+      "end": "2024-08-07",
+      "days": 3,
+      "max_vix": 38.57,
+      "max_risk_score": 96.7,
+      "min_spy_drawdown_pct": -8.4,
+      "min_qqq_drawdown_pct": -13.6,
+      "max_spy_days_below_ma21": 11,
+      "max_qqq_days_below_ma21": 16
+    },
+    {
+      "episode_type": "secondary_breaker",
+      "start": "2022-03-03",
+      "end": "2022-03-15",
+      "days": 9,
+      "max_vix": 36.45,
+      "max_risk_score": 98.1,
+      "min_spy_drawdown_pct": -12.9,
+      "min_qqq_drawdown_pct": -21.1,
+      "max_spy_days_below_ma21": 18,
+      "max_qqq_days_below_ma21": 18
+    }
+  ],
+  "combo_watchlist": [
+    {
+      "ticker": "UPRO",
+      "dte": 14,
+      "otm": "ATM",
+      "vix_band": "stress_28_35",
+      "n_trades": 21,
+      "win_rate_pct": 85.7,
+      "avg_pnl_pct": 0.082,
+      "median_pnl_pct": 0.894,
+      "mean_loss_pct": -5.427,
+      "worst_pnl_pct": -13.393,
+      "cvar_5_pct": -13.393,
+      "worst_raw_pnl_pct": -53.574
+    },
+    {
+      "ticker": "UPRO",
+      "dte": 14,
+      "otm": "5%OTM",
+      "vix_band": "stress_28_35",
+      "n_trades": 22,
+      "win_rate_pct": 86.4,
+      "avg_pnl_pct": 0.102,
+      "median_pnl_pct": 0.816,
+      "mean_loss_pct": -4.753,
+      "worst_pnl_pct": -13.128,
+      "cvar_5_pct": -13.128,
+      "worst_raw_pnl_pct": -52.512
+    },
+    {
+      "ticker": "TQQQ",
+      "dte": 14,
+      "otm": "ATM",
+      "vix_band": "stress_28_35",
+      "n_trades": 14,
+      "win_rate_pct": 78.6,
+      "avg_pnl_pct": -0.354,
+      "median_pnl_pct": 1.149,
+      "mean_loss_pct": -6.147,
+      "worst_pnl_pct": -12.341,
+      "cvar_5_pct": -12.341,
+      "worst_raw_pnl_pct": -49.364
+    },
+    {
+      "ticker": "TQQQ",
+      "dte": 14,
+      "otm": "5%OTM",
+      "vix_band": "stress_28_35",
+      "n_trades": 19,
+      "win_rate_pct": 78.9,
+      "avg_pnl_pct": -0.078,
+      "median_pnl_pct": 0.907,
+      "mean_loss_pct": -4.253,
+      "worst_pnl_pct": -11.997,
+      "cvar_5_pct": -11.997,
+      "worst_raw_pnl_pct": -47.988
+    },
+    {
+      "ticker": "UPRO",
+      "dte": 35,
+      "otm": "5%OTM",
+      "vix_band": "stress_28_35",
+      "n_trades": 21,
+      "win_rate_pct": 95.2,
+      "avg_pnl_pct": 0.873,
+      "median_pnl_pct": 1.325,
+      "mean_loss_pct": -9.435,
+      "worst_pnl_pct": -9.435,
+      "cvar_5_pct": -9.435,
+      "worst_raw_pnl_pct": -37.74
+    },
+    {
+      "ticker": "TQQQ",
+      "dte": 35,
+      "otm": "5%OTM",
+      "vix_band": "stress_28_35",
+      "n_trades": 19,
+      "win_rate_pct": 94.7,
+      "avg_pnl_pct": 1.216,
+      "median_pnl_pct": 1.597,
+      "mean_loss_pct": -6.548,
+      "worst_pnl_pct": -6.548,
+      "cvar_5_pct": -6.548,
+      "worst_raw_pnl_pct": -26.191
+    },
+    {
+      "ticker": "TQQQ",
+      "dte": 7,
+      "otm": "ATM",
+      "vix_band": "stress_28_35",
+      "n_trades": 15,
+      "win_rate_pct": 80.0,
+      "avg_pnl_pct": -0.063,
+      "median_pnl_pct": 0.769,
+      "mean_loss_pct": -3.606,
+      "worst_pnl_pct": -6.042,
+      "cvar_5_pct": -6.042,
+      "worst_raw_pnl_pct": -24.17
+    },
+    {
+      "ticker": "TQQQ",
+      "dte": 7,
+      "otm": "5%OTM",
+      "vix_band": "stress_28_35",
+      "n_trades": 19,
+      "win_rate_pct": 84.2,
+      "avg_pnl_pct": 0.135,
+      "median_pnl_pct": 0.631,
+      "mean_loss_pct": -2.86,
+      "worst_pnl_pct": -5.421,
+      "cvar_5_pct": -5.421,
+      "worst_raw_pnl_pct": -21.685
+    },
+    {
+      "ticker": "SPY",
+      "dte": 14,
+      "otm": "ATM",
+      "vix_band": "stress_28_35",
+      "n_trades": 22,
+      "win_rate_pct": 86.4,
+      "avg_pnl_pct": 0.045,
+      "median_pnl_pct": 0.346,
+      "mean_loss_pct": -1.952,
+      "worst_pnl_pct": -4.974,
+      "cvar_5_pct": -4.974,
+      "worst_raw_pnl_pct": -19.898
+    },
+    {
+      "ticker": "QQQ",
+      "dte": 14,
+      "otm": "ATM",
+      "vix_band": "stress_28_35",
+      "n_trades": 19,
+      "win_rate_pct": 78.9,
+      "avg_pnl_pct": -0.095,
+      "median_pnl_pct": 0.336,
+      "mean_loss_pct": -1.853,
+      "worst_pnl_pct": -4.818,
+      "cvar_5_pct": -4.818,
+      "worst_raw_pnl_pct": -19.271
+    }
+  ],
+  "outputs": {
+    "markdown": "crash_playbook.md",
+    "episodes_csv": "crash_episodes.csv",
+    "combo_stress_csv": "crash_combo_stress.csv"
+  }
+}

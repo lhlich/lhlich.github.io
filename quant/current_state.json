@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-27T01:54:00.889850",
+  "generated": "2026-05-27T02:00:09.143001",
   "vix": {
     "latest": 16.97,
     "date": "2026-05-27",
@@ -297,6 +297,51 @@
         }
       ]
     }
+  },
+  "crash_playbook": {
+    "generated_at": "2026-05-27T02:00:02",
+    "current_stage": "Clear",
+    "latest": {
+      "date": "2026-05-26",
+      "vix": 17.01,
+      "risk_score": 23.0,
+      "vol_regime": "Normal vol",
+      "trend_regime": "Bullish",
+      "composite_regime": "Constructive",
+      "SPY_drawdown_252_pct": 0.0,
+      "QQQ_drawdown_252_pct": 0.0,
+      "SPY_days_below_ma21": 0,
+      "QQQ_days_below_ma21": 0
+    },
+    "active_triggers": [],
+    "current_rule": {
+      "entry": "Use the weekly ranking, standard VIX gate, and live bid/ask mids when available.",
+      "allowed": "All configured candidates, with sensitivity label checked before entry.",
+      "forbidden": "Do not override stale data, missing chain mids, or circuit breakers.",
+      "size": "Per current VIX gate."
+    },
+    "reentry_ladder": [
+      {
+        "step": 1,
+        "trigger": "VIX falls below 35 and is below its 21d average for 2+ sessions.",
+        "action": "Allow only SPY/QQQ 35DTE 5% OTM at minimum size."
+      },
+      {
+        "step": 2,
+        "trigger": "VIX falls below 28 and regime risk score is below 60.",
+        "action": "Allow SPY/QQQ 14DTE or 35DTE candidates; keep leveraged tickers off."
+      },
+      {
+        "step": 3,
+        "trigger": "SPY and QQQ both reclaim 21d MA and days-below count is under 5.",
+        "action": "Allow leveraged OTM candidates only if sensitivity label is Watch or better."
+      },
+      {
+        "step": 4,
+        "trigger": "VIX returns below 22, trend regime is Bullish, and model health has no hard errors.",
+        "action": "Return to normal weekly ranking; ATM leveraged entries still require a fresh liquidity check."
+      }
+    ]
   },
   "strategy_name": "Put Selling / Theta Harvesting"
 }

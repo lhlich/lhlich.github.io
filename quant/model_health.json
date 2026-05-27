@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T01:54:10",
+  "generated_at": "2026-05-27T02:00:11",
   "status": "warning",
   "errors": [],
   "warnings": [
@@ -59,6 +59,12 @@
     "sensitivity_watch_candidates": 5,
     "sensitivity_fragile_candidates": 4,
     "sensitivity_stress_positive_candidates": 0,
-    "sensitivity_business_day_lag": 0
+    "sensitivity_business_day_lag": 0,
+    "crash_playbook_stage": "Clear",
+    "crash_playbook_latest_date": "2026-05-26",
+    "crash_playbook_trigger_count": 0,
+    "crash_playbook_analog_count": 8,
+    "crash_playbook_combo_watchlist_count": 10,
+    "crash_playbook_business_day_lag": 1
   }
 }
