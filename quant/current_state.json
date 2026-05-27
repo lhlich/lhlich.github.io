@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-26T22:27:31.844530",
+  "generated": "2026-05-26T22:30:24.611249",
   "vix": {
     "latest": 16.59,
     "date": "2026-05-25",
@@ -44,6 +44,7 @@
       "dte": 10,
       "strike": 78.0,
       "premium_est": 1.84,
+      "sized_notional": "$7.8k",
       "yield_est": "134.7%",
       "expected_ann": "33.6%",
       "source": "Chain"
@@ -53,6 +54,7 @@
       "dte": 17,
       "strike": 143.0,
       "premium_est": 4.15,
+      "sized_notional": "$14.3k",
       "yield_est": "84.8%",
       "expected_ann": "19.3%",
       "source": "Chain"
@@ -62,6 +64,7 @@
       "dte": 17,
       "strike": 78.0,
       "premium_est": 2.71,
+      "sized_notional": "$7.8k",
       "yield_est": "108.5%",
       "expected_ann": "15.2%",
       "source": "Chain"
