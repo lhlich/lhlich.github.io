@@ -586,6 +586,13 @@
         const resp = await fetch('current_state.json');
         if (!resp.ok) throw new Error('JSON not found');
         const state = await resp.json();
+        const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (ch) => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[ch]));
+        const pct = (value, digits = 1) => {
+          const num = Number(value);
+          return Number.isFinite(num) ? `${num.toFixed(digits)}%` : 'n/a';
+        };
 
         // VIX color coding
         let vixColor = 'var(--green)';      // < 12: green
@@ -607,18 +614,77 @@
           topPicksHtml = '<table style="width:100%;font-size:0.8rem;margin-top:1rem;border-collapse:collapse">';
           topPicksHtml += '<tr style="border-bottom:1px solid var(--border);color:var(--text-dim)">';
           topPicksHtml += '<th style="text-align:left;padding:0.4rem 0.6rem;font-weight:600">Ticker</th>';
+          topPicksHtml += '<th style="text-align:right;padding:0.4rem 0.6rem;font-weight:600">DTE</th>';
           topPicksHtml += '<th style="text-align:right;padding:0.4rem 0.6rem;font-weight:600">Strike</th>';
           topPicksHtml += '<th style="text-align:right;padding:0.4rem 0.6rem;font-weight:600">Premium</th>';
-          topPicksHtml += '<th style="text-align:right;padding:0.4rem 0.6rem;font-weight:600">Yield/yr</th></tr>';
+          topPicksHtml += '<th style="text-align:right;padding:0.4rem 0.6rem;font-weight:600">E[ann]</th>';
+          topPicksHtml += '<th style="text-align:right;padding:0.4rem 0.6rem;font-weight:600">Src</th></tr>';
           for (const pick of state.top_picks) {
             topPicksHtml += '<tr style="border-bottom:1px solid var(--border-dim)">';
-            topPicksHtml += `<td style="padding:0.4rem 0.6rem;color:var(--teal);font-weight:600;font-family:var(--mono)">${pick.ticker}</td>`;
-            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;font-family:var(--mono)">$${pick.strike}</td>`;
-            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;font-family:var(--mono)">$${pick.premium_est}</td>`;
-            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;color:var(--gold);font-weight:600">${pick.yield_est}</td></tr>`;
+            topPicksHtml += `<td style="padding:0.4rem 0.6rem;color:var(--teal);font-weight:600;font-family:var(--mono)">${esc(pick.ticker)}</td>`;
+            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;font-family:var(--mono)">${esc(pick.dte)}</td>`;
+            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;font-family:var(--mono)">$${esc(pick.strike)}</td>`;
+            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;font-family:var(--mono)">$${esc(pick.premium_est)}</td>`;
+            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;color:var(--gold);font-weight:600">${esc(pick.expected_ann || pick.yield_est)}</td>`;
+            topPicksHtml += `<td style="padding:0.4rem 0.6rem;text-align:right;color:var(--text-dim)">${esc(pick.source || 'Model')}</td></tr>`;
           }
           topPicksHtml += '</table>';
         }
+
+        const regime = state.regime_model;
+        const regimeHtml = regime ? `
+          <div style="border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:rgba(255,255,255,0.02)">
+            <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.55rem;font-weight:700">Regime Model</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:0.35rem">${esc(regime.composite_regime)} <span style="color:var(--text-dim);font-size:0.82rem;font-weight:500">risk ${esc(regime.risk_score)}/100</span></div>
+            <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.7">${esc(regime.vol_regime)} | VIX rank ${pct(regime.vix_rank_252, 0)}<br>${esc(regime.trend_regime)} | SPY/QQQ DD ${pct(regime.SPY_drawdown_252_pct)} / ${pct(regime.QQQ_drawdown_252_pct)}</div>
+          </div>` : '';
+
+        const sens = state.sensitivity;
+        const sensSummary = sens && sens.summary ? sens.summary : null;
+        const sensRows = sens && sens.top_candidates ? sens.top_candidates.slice(0, 3).map((row) => `
+          <div style="display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--border-dim);padding:0.5rem 0;font-size:0.76rem">
+            <span style="color:var(--text);font-weight:600">${esc(row.candidate)}</span>
+            <span style="color:${row.label === 'Fragile' ? 'var(--orange)' : 'var(--gold)'};font-family:var(--mono)">${esc(row.label)} ${pct(row.combined_stress_e_ann_pct)}</span>
+          </div>`).join('') : '';
+        const sensitivityHtml = sensSummary ? `
+          <div style="border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:rgba(255,255,255,0.02)">
+            <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.55rem;font-weight:700">Sensitivity</div>
+            <div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:0.45rem">
+              <span style="color:var(--green);font-family:var(--mono);font-size:0.78rem">Robust ${esc(sensSummary.robust_candidates ?? 0)}</span>
+              <span style="color:var(--gold);font-family:var(--mono);font-size:0.78rem">Watch ${esc(sensSummary.watch_candidates ?? 0)}</span>
+              <span style="color:var(--orange);font-family:var(--mono);font-size:0.78rem">Fragile ${esc(sensSummary.fragile_candidates ?? 0)}</span>
+            </div>
+            ${sensRows}
+          </div>` : '';
+
+        const crash = state.crash_playbook;
+        const crashRule = crash && crash.current_rule ? crash.current_rule : {};
+        const crashColor = crash && ['Stress','Secondary Breaker','Crisis Watch','Circuit Breaker'].includes(crash.current_stage) ? 'var(--orange)' : 'var(--green)';
+        const crashHtml = crash ? `
+          <div style="border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:rgba(255,255,255,0.02)">
+            <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.55rem;font-weight:700">Crash Playbook</div>
+            <div style="font-size:1.05rem;font-weight:700;color:${crashColor};margin-bottom:0.35rem">${esc(crash.current_stage)}</div>
+            <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.7">${esc(crashRule.entry || '')}<br>Triggers: ${esc((crash.active_triggers || []).length)}</div>
+          </div>` : '';
+
+        const archive = state.option_chain_archive;
+        const archiveHtml = archive ? `
+          <div style="border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:rgba(255,255,255,0.02)">
+            <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.55rem;font-weight:700">Chain Archive</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:0.35rem">${esc(archive.rows)} rows <span style="color:var(--text-dim);font-size:0.82rem;font-weight:500">${esc(archive.snapshot_date)}</span></div>
+            <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.7">Bid/ask mids: ${esc(archive.bid_ask_mid_rows)} (${pct(archive.bid_ask_mid_pct)})<br>Candidate mids: ${esc(archive.candidate_bid_ask_count)} / ${esc(archive.candidate_count)}</div>
+          </div>` : '';
+
+        const health = state.model_health;
+        const warningRows = health && health.warnings ? health.warnings.slice(0, 5).map((warning) =>
+          `<li style="font-size:0.76rem;margin-bottom:0.35rem">${esc(warning)}</li>`
+        ).join('') : '';
+        const healthHtml = health ? `
+          <div style="border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:${health.status === 'ok' ? 'rgba(6,214,160,0.05)' : 'rgba(255,209,102,0.06)'};margin-top:1rem">
+            <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.55rem;font-weight:700">Model Health</div>
+            <div style="font-size:0.95rem;color:${health.status === 'ok' ? 'var(--green)' : 'var(--gold)'};font-weight:700;margin-bottom:0.45rem">${esc((health.status || 'unknown').toUpperCase())}</div>
+            ${warningRows ? `<ul style="margin:0;padding-left:1.1rem;color:var(--text-dim)">${warningRows}</ul>` : '<div style="font-size:0.78rem;color:var(--text-dim)">No warnings</div>'}
+          </div>` : '';
 
         // Latest brief link
         let briefHtml = '';
@@ -627,7 +693,7 @@
         }
 
         const html = `
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-bottom:1.5rem">
             <div>
               <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;font-weight:600">VIX Level</div>
               <div style="font-size:2.2rem;font-family:var(--mono);font-weight:700;color:${vixColor};letter-spacing:-0.02em">${state.vix.latest}</div>
@@ -638,6 +704,13 @@
               <div style="font-size:1.5rem;font-weight:700;color:var(--text)">${state.regime}</div>
               <div style="font-size:0.75rem;color:${cbColor};margin-top:0.3rem;font-weight:600">🔒 ${state.circuit_breaker.label}</div>
             </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:1rem">
+            ${regimeHtml}
+            ${sensitivityHtml}
+            ${crashHtml}
+            ${archiveHtml}
           </div>
 
           <div style="background:var(--navy-card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem">
@@ -652,9 +725,11 @@
           </div>
 
           ${topPicksHtml ? `<div style="background:var(--navy-card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
-            <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;font-weight:600">Top 35 DTE Candidates</div>
+            <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;font-weight:600">Top Ranked Candidates</div>
             ${topPicksHtml}
           </div>` : ''}
+
+          ${healthHtml}
 
           ${briefHtml}
         `;

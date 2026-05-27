@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-27T02:00:09.143001",
+  "generated": "2026-05-27T02:06:19.568364",
   "vix": {
     "latest": 16.97,
     "date": "2026-05-27",
@@ -101,7 +101,7 @@
     "composite_regime": "Constructive"
   },
   "sensitivity": {
-    "generated_at": "2026-05-27T01:52:33",
+    "generated_at": "2026-05-27T02:06:06",
     "baseline_date": "2026-05-27",
     "baseline_vix": 16.97,
     "summary": {
@@ -299,7 +299,7 @@
     }
   },
   "crash_playbook": {
-    "generated_at": "2026-05-27T02:00:02",
+    "generated_at": "2026-05-27T02:06:06",
     "current_stage": "Clear",
     "latest": {
       "date": "2026-05-26",
@@ -340,6 +340,91 @@
         "step": 4,
         "trigger": "VIX returns below 22, trend regime is Bullish, and model health has no hard errors.",
         "action": "Return to normal weekly ranking; ATM leveraged entries still require a fresh liquidity check."
+      }
+    ]
+  },
+  "model_health": {
+    "generated_at": "2026-05-27T02:06:13",
+    "status": "warning",
+    "errors": [],
+    "warnings": [
+      "option-chain archive candidate coverage has no bid/ask mids",
+      "option-chain calibration has no bid/ask mid rows; rerun during regular market hours",
+      "avg abs model/chain error is 39.0%",
+      "top candidates fragile under sensitivity stress: TQQQ 14DTE ATM",
+      "no eligible candidate stays positive under combined sensitivity stress"
+    ],
+    "metrics": {
+      "options_rows": 628754,
+      "options_date_range": [
+        "2015-01-02",
+        "2026-05-26"
+      ],
+      "backtest_trades": 6141,
+      "calibration_avg_abs_error_pct": 39.02,
+      "sensitivity_robust_candidates": 0,
+      "sensitivity_watch_candidates": 5,
+      "sensitivity_fragile_candidates": 4,
+      "crash_playbook_stage": "Clear"
+    }
+  },
+  "option_chain_archive": {
+    "generated_at": "2026-05-27T01:45:42",
+    "snapshot_date": "2026-05-27",
+    "rows": 2639,
+    "bid_ask_mid_rows": 38,
+    "bid_ask_mid_pct": 1.4,
+    "candidate_count": 18,
+    "candidate_bid_ask_count": 0,
+    "candidate_tradeable_count": 0,
+    "quality_by_ticker": [
+      {
+        "ticker": "QQQ",
+        "rows": 1106,
+        "puts": 580,
+        "calls": 526,
+        "bid_ask_mid_rows": 11,
+        "last_price_rows": 1095,
+        "bid_ask_mid_pct": 1.0,
+        "median_spread_pct": 2.54,
+        "median_open_interest": 0.0,
+        "median_volume": 10.0
+      },
+      {
+        "ticker": "SPY",
+        "rows": 1078,
+        "puts": 549,
+        "calls": 529,
+        "bid_ask_mid_rows": 27,
+        "last_price_rows": 1051,
+        "bid_ask_mid_pct": 2.5,
+        "median_spread_pct": 2.46,
+        "median_open_interest": 0.0,
+        "median_volume": 14.0
+      },
+      {
+        "ticker": "TQQQ",
+        "rows": 337,
+        "puts": 166,
+        "calls": 171,
+        "bid_ask_mid_rows": 0,
+        "last_price_rows": 337,
+        "bid_ask_mid_pct": 0.0,
+        "median_spread_pct": 0.0,
+        "median_open_interest": 0,
+        "median_volume": 26
+      },
+      {
+        "ticker": "UPRO",
+        "rows": 118,
+        "puts": 62,
+        "calls": 56,
+        "bid_ask_mid_rows": 0,
+        "last_price_rows": 118,
+        "bid_ask_mid_pct": 0.0,
+        "median_spread_pct": 0.0,
+        "median_open_interest": 0.0,
+        "median_volume": 3.5
       }
     ]
   },
