@@ -41,7 +41,7 @@
 <br>
 <h1>Quant Options Playbook — Weekly Brief</h1>
 <p><strong>Week of:</strong> May 25, 2026</p>
-<p><strong>Generated:</strong> 2026-05-27 01:45</p>
+<p><strong>Generated:</strong> 2026-05-27 02:12</p>
 <p><strong>Regime:</strong> 2025+</p>
 <br>
 <hr>
@@ -103,6 +103,30 @@
 <br>
 <hr>
 <br>
+<h2>Risk Controls</h2>
+<br>
+<h3>Sensitivity</h3>
+<br>
+<table class="data-table"><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
+<tr><td>Baseline</td><td>VIX 16.97 on 2026-05-27</td></tr>
+<tr><td>Eligible candidates</td><td>9</td></tr>
+<tr><td>Robust / Watch / Fragile</td><td>0 / 5 / 4</td></tr>
+<tr><td>Positive under combined stress</td><td>0</td></tr>
+<tr><td>Top stress read</td><td>TQQQ 7DTE ATM Watch (-23.9% stress E[ann]); UPRO 14DTE ATM Watch (-29.4% stress E[ann]); TQQQ 14DTE ATM Fragile (-46.4% stress E[ann])</td></tr>
+</tbody></table>
+<br>
+<h3>Crash Playbook</h3>
+<br>
+<table class="data-table"><thead><tr><th>Control</th><th>Rule</th></tr></thead><tbody>
+<tr><td>Stage</td><td>Clear</td></tr>
+<tr><td>Latest state</td><td>VIX 17.01 · risk 23.0/100 · Constructive</td></tr>
+<tr><td>Active triggers</td><td>None</td></tr>
+<tr><td>Entry rule</td><td>Use the weekly ranking, standard VIX gate, and live bid/ask mids when available.</td></tr>
+<tr><td>Forbidden</td><td>Do not override stale data, missing chain mids, or circuit breakers.</td></tr>
+</tbody></table>
+<br>
+<hr>
+<br>
 <h2>Open Positions</h2>
 <br>
 <p>_No open positions file supplied. Add --positions <file.csv> to include._</p>
@@ -151,7 +175,7 @@
 <br>
 <h2>Rule Violations / Flags</h2>
 <br>
-<li>✅ No flags this week.</li>
+<li>Sensitivity: no eligible candidate remains positive under combined stress</li>
 <br>
 <hr>
 <br>

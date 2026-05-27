@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-27T02:06:19.568364",
+  "generated": "2026-05-27T02:13:28.160183",
   "vix": {
     "latest": 16.97,
     "date": "2026-05-27",
@@ -344,7 +344,7 @@
     ]
   },
   "model_health": {
-    "generated_at": "2026-05-27T02:06:13",
+    "generated_at": "2026-05-27T02:13:06",
     "status": "warning",
     "errors": [],
     "warnings": [
