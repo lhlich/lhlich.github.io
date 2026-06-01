@@ -1,10 +1,10 @@
 {
-  "generated": "2026-05-27T02:14:28.060242",
+  "generated": "2026-05-31T22:07:54.587830",
   "vix": {
-    "latest": 16.97,
-    "date": "2026-05-27",
-    "avg_4w": 17.42,
-    "trend": "Flat"
+    "latest": 15.32,
+    "date": "2026-05-29",
+    "avg_4w": 17.25,
+    "trend": "Falling"
   },
   "regime": "2025+",
   "circuit_breaker": {
@@ -19,7 +19,7 @@
   },
   "data_freshness": {
     "stale": false,
-    "max_lag": 1,
+    "max_lag": 0,
     "limit": 2
   },
   "gate": {
@@ -33,40 +33,40 @@
   },
   "recommendation": "Low vol regime (2025+). Favor SPY/QQQ with standard position sizes.",
   "prices": {
-    "SPY": 750.5900268554688,
-    "QQQ": 730.280029296875,
-    "UPRO": 145.86000061035156,
-    "TQQQ": 81.94999694824219
+    "SPY": 756.47998046875,
+    "QQQ": 738.3099975585938,
+    "UPRO": 149.17999267578125,
+    "TQQQ": 84.55999755859375
   },
   "top_picks": [
     {
       "ticker": "TQQQ",
       "dte": 7,
-      "strike": 81.95,
-      "premium_est": 2.56,
-      "sized_notional": "$8.2k",
-      "yield_est": "397.1%",
-      "expected_ann": "107.0%",
+      "strike": 84.56,
+      "premium_est": 2.38,
+      "sized_notional": "$8.5k",
+      "yield_est": "325.3%",
+      "expected_ann": "83.0%",
       "source": "Model"
     },
     {
       "ticker": "UPRO",
       "dte": 14,
-      "strike": 145.86,
-      "premium_est": 5.43,
-      "sized_notional": "$14.6k",
-      "yield_est": "159.6%",
-      "expected_ann": "48.0%",
+      "strike": 149.18,
+      "premium_est": 5.01,
+      "sized_notional": "$14.9k",
+      "yield_est": "136.4%",
+      "expected_ann": "37.0%",
       "source": "Model"
     },
     {
       "ticker": "TQQQ",
       "dte": 14,
-      "strike": 81.95,
-      "premium_est": 3.5,
-      "sized_notional": "$8.2k",
-      "yield_est": "197.5%",
-      "expected_ann": "41.5%",
+      "strike": 84.56,
+      "premium_est": 3.25,
+      "sized_notional": "$8.5k",
+      "yield_est": "167.6%",
+      "expected_ann": "29.6%",
       "source": "Model"
     }
   ],
@@ -75,42 +75,42 @@
     "url": "briefs/2026-05-25.html"
   },
   "regime_model": {
-    "date": "2026-05-26",
-    "vix": 17.01,
-    "vix_ma21": 17.5314,
-    "vix_ma63": 21.1476,
-    "vix_z63": -1.0357,
-    "vix_rank_252": 47.2222,
-    "SPY_close": 750.59,
-    "SPY_ma21_ratio": 0.0247,
-    "SPY_ma50_ratio": 0.0749,
-    "SPY_ma200_ratio": 0.1089,
+    "date": "2026-05-29",
+    "vix": 15.32,
+    "vix_ma21": 17.2371,
+    "vix_ma63": 20.9479,
+    "vix_z63": -1.3582,
+    "vix_rank_252": 13.8889,
+    "SPY_close": 756.48,
+    "SPY_ma21_ratio": 0.0246,
+    "SPY_ma50_ratio": 0.0751,
+    "SPY_ma200_ratio": 0.1146,
     "SPY_drawdown_252_pct": 0.0,
-    "SPY_rv21_pct": 10.1469,
+    "SPY_rv21_pct": 9.8364,
     "SPY_days_below_ma21": 0,
-    "QQQ_close": 730.28,
-    "QQQ_ma21_ratio": 0.0484,
-    "QQQ_ma50_ratio": 0.1326,
-    "QQQ_ma200_ratio": 0.1886,
+    "QQQ_close": 738.31,
+    "QQQ_ma21_ratio": 0.0442,
+    "QQQ_ma50_ratio": 0.1308,
+    "QQQ_ma200_ratio": 0.197,
     "QQQ_drawdown_252_pct": 0.0,
-    "QQQ_rv21_pct": 16.4424,
+    "QQQ_rv21_pct": 15.677,
     "QQQ_days_below_ma21": 0,
-    "risk_score": 23.0,
+    "risk_score": 9.5,
     "vol_regime": "Normal vol",
     "trend_regime": "Bullish",
     "composite_regime": "Constructive"
   },
   "sensitivity": {
-    "generated_at": "2026-05-27T02:06:06",
-    "baseline_date": "2026-05-27",
-    "baseline_vix": 16.97,
+    "generated_at": "2026-05-31T22:07:39",
+    "baseline_date": "2026-05-29",
+    "baseline_vix": 15.32,
     "summary": {
-      "candidate_count": 11,
-      "eligible_candidates": 9,
-      "robust_candidates": 0,
-      "watch_candidates": 5,
-      "fragile_candidates": 4,
-      "stress_positive_candidates": 0
+      "candidate_count": 12,
+      "eligible_candidates": 11,
+      "robust_candidates": 1,
+      "watch_candidates": 4,
+      "fragile_candidates": 6,
+      "stress_positive_candidates": 1
     },
     "top_candidates": [
       {
@@ -120,14 +120,14 @@
         "dte": 7,
         "otm": "ATM",
         "premium_source": "Model",
-        "baseline_e_ann_pct": 106.9626,
-        "combined_mild_e_ann_pct": 28.5559,
-        "combined_stress_e_ann_pct": -23.8586,
+        "baseline_e_ann_pct": 83.0255,
+        "combined_mild_e_ann_pct": 15.8087,
+        "combined_stress_e_ann_pct": -30.223,
         "positive_stress_scenarios": 8,
         "stress_scenario_count": 9,
-        "breakeven_win_rate_pct": 59.2879,
-        "premium_haircut_to_zero_pct": 57.9632,
-        "loss_mult_to_zero": 2.3789,
+        "breakeven_win_rate_pct": 61.7652,
+        "premium_haircut_to_zero_pct": 53.3694,
+        "loss_mult_to_zero": 2.1445,
         "label": "Watch",
         "penalized": false,
         "low_confidence": false
@@ -139,15 +139,15 @@
         "dte": 14,
         "otm": "ATM",
         "premium_source": "Model",
-        "baseline_e_ann_pct": 47.9993,
-        "combined_mild_e_ann_pct": 4.674,
-        "combined_stress_e_ann_pct": -29.37,
-        "positive_stress_scenarios": 8,
+        "baseline_e_ann_pct": 37.0109,
+        "combined_mild_e_ann_pct": -2.0118,
+        "combined_stress_e_ann_pct": -33.192,
+        "positive_stress_scenarios": 7,
         "stress_scenario_count": 9,
-        "breakeven_win_rate_pct": 67.9807,
-        "premium_haircut_to_zero_pct": 50.1984,
-        "loss_mult_to_zero": 2.008,
-        "label": "Watch",
+        "breakeven_win_rate_pct": 70.215,
+        "premium_haircut_to_zero_pct": 44.703,
+        "loss_mult_to_zero": 1.8084,
+        "label": "Fragile",
         "penalized": false,
         "low_confidence": false
       },
@@ -158,14 +158,14 @@
         "dte": 14,
         "otm": "ATM",
         "premium_source": "Model",
-        "baseline_e_ann_pct": 41.5249,
-        "combined_mild_e_ann_pct": -9.8557,
-        "combined_stress_e_ann_pct": -46.3975,
-        "positive_stress_scenarios": 6,
+        "baseline_e_ann_pct": 29.6188,
+        "combined_mild_e_ann_pct": -16.4077,
+        "combined_stress_e_ann_pct": -49.7149,
+        "positive_stress_scenarios": 5,
         "stress_scenario_count": 9,
-        "breakeven_win_rate_pct": 71.7178,
-        "premium_haircut_to_zero_pct": 38.9648,
-        "loss_mult_to_zero": 1.6384,
+        "breakeven_win_rate_pct": 73.7855,
+        "premium_haircut_to_zero_pct": 32.2522,
+        "loss_mult_to_zero": 1.4761,
         "label": "Fragile",
         "penalized": false,
         "low_confidence": false
@@ -175,7 +175,7 @@
       "-5": [
         {
           "candidate": "No new entries",
-          "scenario_vix": 11.97,
+          "scenario_vix": 10.32,
           "expected_ann_pct": null,
           "premium": null,
           "gate": "Skip \u2014 premium too thin"
@@ -184,127 +184,127 @@
       "-3": [
         {
           "candidate": "TQQQ 7DTE ATM",
-          "scenario_vix": 13.97,
-          "expected_ann_pct": 70.17,
-          "premium": 2.1,
+          "scenario_vix": 12.32,
+          "expected_ann_pct": 53.61,
+          "premium": 1.91,
           "gate": "Small size"
         },
         {
           "candidate": "UPRO 14DTE ATM",
-          "scenario_vix": 13.97,
-          "expected_ann_pct": 59.66,
-          "premium": 4.45,
+          "scenario_vix": 12.32,
+          "expected_ann_pct": 47.72,
+          "premium": 4.0,
           "gate": "Small size"
         },
         {
           "candidate": "TQQQ 14DTE ATM",
-          "scenario_vix": 13.97,
-          "expected_ann_pct": 47.09,
-          "premium": 2.87,
+          "scenario_vix": 12.32,
+          "expected_ann_pct": 36.2,
+          "premium": 2.6,
           "gate": "Small size"
         }
       ],
       "+0": [
         {
           "candidate": "TQQQ 7DTE ATM",
-          "scenario_vix": 16.97,
-          "expected_ann_pct": 106.96,
-          "premium": 2.56,
+          "scenario_vix": 15.32,
+          "expected_ann_pct": 83.03,
+          "premium": 2.38,
           "gate": "Standard"
         },
         {
           "candidate": "UPRO 14DTE ATM",
-          "scenario_vix": 16.97,
-          "expected_ann_pct": 48.0,
-          "premium": 5.43,
+          "scenario_vix": 15.32,
+          "expected_ann_pct": 37.01,
+          "premium": 5.01,
           "gate": "Standard"
         },
         {
           "candidate": "TQQQ 14DTE ATM",
-          "scenario_vix": 16.97,
-          "expected_ann_pct": 41.52,
-          "premium": 3.5,
+          "scenario_vix": 15.32,
+          "expected_ann_pct": 29.62,
+          "premium": 3.25,
           "gate": "Standard"
         }
       ],
       "+3": [
         {
           "candidate": "TQQQ 7DTE ATM",
-          "scenario_vix": 19.97,
-          "expected_ann_pct": 85.24,
-          "premium": 3.02,
+          "scenario_vix": 18.32,
+          "expected_ann_pct": 63.91,
+          "premium": 2.85,
           "gate": "Standard"
         },
         {
           "candidate": "TQQQ 14DTE ATM",
-          "scenario_vix": 19.97,
-          "expected_ann_pct": 77.53,
-          "premium": 4.13,
+          "scenario_vix": 18.32,
+          "expected_ann_pct": 62.67,
+          "premium": 3.9,
           "gate": "Standard"
         },
         {
           "candidate": "UPRO 14DTE ATM",
-          "scenario_vix": 19.97,
-          "expected_ann_pct": 75.0,
-          "premium": 6.42,
+          "scenario_vix": 18.32,
+          "expected_ann_pct": 62.12,
+          "premium": 6.01,
           "gate": "Standard"
         }
       ],
       "+6": [
         {
           "candidate": "TQQQ 7DTE ATM",
-          "scenario_vix": 22.97,
-          "expected_ann_pct": 189.21,
-          "premium": 3.48,
-          "gate": "Reduce 50%"
+          "scenario_vix": 21.32,
+          "expected_ann_pct": 156.19,
+          "premium": 3.33,
+          "gate": "Standard"
         },
         {
           "candidate": "UPRO 14DTE ATM",
-          "scenario_vix": 22.97,
-          "expected_ann_pct": 112.94,
-          "premium": 7.4,
-          "gate": "Reduce 50%"
+          "scenario_vix": 21.32,
+          "expected_ann_pct": 97.62,
+          "premium": 7.01,
+          "gate": "Standard"
         },
         {
           "candidate": "TQQQ 14DTE ATM",
-          "scenario_vix": 22.97,
-          "expected_ann_pct": 87.76,
-          "premium": 4.76,
-          "gate": "Reduce 50%"
+          "scenario_vix": 21.32,
+          "expected_ann_pct": 74.01,
+          "premium": 4.55,
+          "gate": "Standard"
         }
       ],
       "+12": [
         {
           "candidate": "TQQQ 7DTE ATM",
-          "scenario_vix": 28.97,
-          "expected_ann_pct": 681.98,
-          "premium": 4.39,
-          "gate": "Reduce 25%"
+          "scenario_vix": 27.32,
+          "expected_ann_pct": 580.65,
+          "premium": 4.27,
+          "gate": "Reduce 50%"
         },
         {
           "candidate": "TQQQ 14DTE ATM",
-          "scenario_vix": 28.97,
-          "expected_ann_pct": 270.23,
-          "premium": 6.02,
-          "gate": "Reduce 25%"
+          "scenario_vix": 27.32,
+          "expected_ann_pct": 238.43,
+          "premium": 5.85,
+          "gate": "Reduce 50%"
         },
         {
           "candidate": "UPRO 14DTE ATM",
-          "scenario_vix": 28.97,
-          "expected_ann_pct": 254.59,
-          "premium": 9.36,
-          "gate": "Reduce 25%"
+          "scenario_vix": 27.32,
+          "expected_ann_pct": 226.43,
+          "premium": 9.02,
+          "gate": "Reduce 50%"
         }
       ]
     }
   },
   "crash_playbook": {
-    "generated_at": "2026-05-27T02:06:06",
+    "generated_at": "2026-05-31T22:07:39",
     "current_stage": "Clear",
     "latest": {
-      "date": "2026-05-26",
-      "vix": 17.01,
-      "risk_score": 23.0,
+      "date": "2026-05-29",
+      "vix": 15.32,
+      "risk_score": 9.5,
       "vol_regime": "Normal vol",
       "trend_regime": "Bullish",
       "composite_regime": "Constructive",
@@ -344,27 +344,26 @@
     ]
   },
   "model_health": {
-    "generated_at": "2026-05-27T02:14:19",
+    "generated_at": "2026-05-31T22:07:49",
     "status": "warning",
     "errors": [],
     "warnings": [
       "option-chain archive candidate coverage has no bid/ask mids",
       "option-chain calibration has no bid/ask mid rows; rerun during regular market hours",
       "avg abs model/chain error is 39.0%",
-      "top candidates fragile under sensitivity stress: TQQQ 14DTE ATM",
-      "no eligible candidate stays positive under combined sensitivity stress"
+      "top candidates fragile under sensitivity stress: UPRO 14DTE ATM, TQQQ 14DTE ATM"
     ],
     "metrics": {
-      "options_rows": 628754,
+      "options_rows": 629421,
       "options_date_range": [
         "2015-01-02",
-        "2026-05-26"
+        "2026-05-29"
       ],
       "backtest_trades": 6141,
       "calibration_avg_abs_error_pct": 39.02,
-      "sensitivity_robust_candidates": 0,
-      "sensitivity_watch_candidates": 5,
-      "sensitivity_fragile_candidates": 4,
+      "sensitivity_robust_candidates": 1,
+      "sensitivity_watch_candidates": 4,
+      "sensitivity_fragile_candidates": 6,
       "crash_playbook_stage": "Clear"
     }
   },

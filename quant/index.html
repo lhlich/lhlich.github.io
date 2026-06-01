@@ -688,9 +688,15 @@
 
         // Latest brief link
         let briefHtml = '';
+        const generatedAt = state.generated ? new Date(state.generated) : null;
+        const generatedLabel = generatedAt && !Number.isNaN(generatedAt.getTime())
+          ? generatedAt.toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' })
+          : esc(state.generated || 'unknown');
         if (state.latest_brief) {
           briefHtml = `<p style="margin-top:1rem;font-size:0.85rem"><a href="${state.latest_brief.url}" style="color:var(--teal)">→ View latest brief (${state.latest_brief.date})</a></p>`;
         }
+
+        briefHtml = `<p style="margin-top:1rem;margin-bottom:0;font-size:0.82rem;color:var(--text-dim)">Dashboard refreshed: <span style="color:var(--text)">${esc(generatedLabel)}</span></p>` + briefHtml;
 
         const html = `
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-bottom:1.5rem">
