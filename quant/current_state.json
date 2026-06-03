@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-01T14:32:20.143094",
+  "generated": "2026-06-03T14:31:36.508256",
   "vix": {
     "latest": 16.06,
     "date": "2026-06-01",
@@ -19,7 +19,7 @@
   },
   "data_freshness": {
     "stale": false,
-    "max_lag": 0,
+    "max_lag": 2,
     "limit": 2
   },
   "gate": {
@@ -101,7 +101,7 @@
     "composite_regime": "Constructive"
   },
   "sensitivity": {
-    "generated_at": "2026-06-01T14:32:16",
+    "generated_at": "2026-06-03T14:31:33",
     "baseline_date": "2026-06-01",
     "baseline_vix": 16.06,
     "summary": {
@@ -299,7 +299,7 @@
     }
   },
   "crash_playbook": {
-    "generated_at": "2026-06-01T14:32:17",
+    "generated_at": "2026-06-03T14:31:33",
     "current_stage": "Clear",
     "latest": {
       "date": "2026-06-01",
@@ -344,7 +344,7 @@
     ]
   },
   "model_health": {
-    "generated_at": "2026-06-01T14:32:19",
+    "generated_at": "2026-06-03T14:31:36",
     "status": "warning",
     "errors": [],
     "warnings": [
