@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-10T07:32:26.669231",
+  "generated": "2026-06-11T07:33:53.055977",
   "vix": {
     "latest": 18.43,
     "date": "2026-06-08",
@@ -18,8 +18,8 @@
     "label": "clear"
   },
   "data_freshness": {
-    "stale": false,
-    "max_lag": 2,
+    "stale": true,
+    "max_lag": 3,
     "limit": 2
   },
   "gate": {
@@ -31,45 +31,14 @@
     "yield_pct": 7.5,
     "size_mult": 1.0
   },
-  "recommendation": "Low vol regime (2025+). Favor SPY/QQQ with standard position sizes.",
+  "recommendation": "Market data stale by 3 trading days. Refresh data before new entries.",
   "prices": {
     "SPY": 745.030029296875,
     "QQQ": 721.4199829101562,
     "UPRO": 141.77999877929688,
     "TQQQ": 77.97000122070312
   },
-  "top_picks": [
-    {
-      "ticker": "TQQQ",
-      "dte": 4,
-      "strike": 78.0,
-      "premium_est": 3.42,
-      "sized_notional": "$7.8k",
-      "yield_est": "4946.8%",
-      "expected_ann": "406.5%",
-      "source": "Chain"
-    },
-    {
-      "ticker": "TQQQ",
-      "dte": 10,
-      "strike": 78.0,
-      "premium_est": 4.6,
-      "sized_notional": "$7.8k",
-      "yield_est": "709.7%",
-      "expected_ann": "190.7%",
-      "source": "Chain"
-    },
-    {
-      "ticker": "UPRO",
-      "dte": 10,
-      "strike": 142.0,
-      "premium_est": 5.55,
-      "sized_notional": "$14.2k",
-      "yield_est": "305.3%",
-      "expected_ann": "92.2%",
-      "source": "Chain"
-    }
-  ],
+  "top_picks": [],
   "latest_brief": {
     "date": "2026-06-01",
     "url": "briefs/2026-06-01.html"
@@ -101,7 +70,7 @@
     "composite_regime": "Caution"
   },
   "sensitivity": {
-    "generated_at": "2026-06-10T07:32:23",
+    "generated_at": "2026-06-11T07:33:49",
     "baseline_date": "2026-06-08",
     "baseline_vix": 18.43,
     "summary": {
@@ -313,7 +282,7 @@
     }
   },
   "crash_playbook": {
-    "generated_at": "2026-06-10T07:32:23",
+    "generated_at": "2026-06-11T07:33:49",
     "current_stage": "Clear",
     "latest": {
       "date": "2026-06-08",
@@ -358,7 +327,7 @@
     ]
   },
   "model_health": {
-    "generated_at": "2026-06-10T07:32:26",
+    "generated_at": "2026-06-11T07:33:52",
     "status": "warning",
     "errors": [],
     "warnings": [
