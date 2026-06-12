@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-11T07:33:53.055977",
+  "generated": "2026-06-12T07:33:14.228593",
   "vix": {
     "latest": 18.43,
     "date": "2026-06-08",
@@ -19,7 +19,7 @@
   },
   "data_freshness": {
     "stale": true,
-    "max_lag": 3,
+    "max_lag": 4,
     "limit": 2
   },
   "gate": {
@@ -31,7 +31,7 @@
     "yield_pct": 7.5,
     "size_mult": 1.0
   },
-  "recommendation": "Market data stale by 3 trading days. Refresh data before new entries.",
+  "recommendation": "Market data stale by 4 trading days. Refresh data before new entries.",
   "prices": {
     "SPY": 745.030029296875,
     "QQQ": 721.4199829101562,
@@ -70,7 +70,7 @@
     "composite_regime": "Caution"
   },
   "sensitivity": {
-    "generated_at": "2026-06-11T07:33:49",
+    "generated_at": "2026-06-12T07:33:10",
     "baseline_date": "2026-06-08",
     "baseline_vix": 18.43,
     "summary": {
@@ -282,7 +282,7 @@
     }
   },
   "crash_playbook": {
-    "generated_at": "2026-06-11T07:33:49",
+    "generated_at": "2026-06-12T07:33:11",
     "current_stage": "Clear",
     "latest": {
       "date": "2026-06-08",
@@ -327,14 +327,16 @@
     ]
   },
   "model_health": {
-    "generated_at": "2026-06-11T07:33:52",
+    "generated_at": "2026-06-12T07:33:14",
     "status": "warning",
     "errors": [],
     "warnings": [
+      "options data lag is 4 business days",
+      "regime features lag is 4 business days",
       "avg abs model/chain error is 31.9%",
       "wide option spreads: UPRO 14DTE 0%OTM, UPRO 14DTE 5%OTM, UPRO 35DTE 5%OTM",
       "low option open interest: UPRO 14DTE 0%OTM, UPRO 35DTE 5%OTM",
-      "no eligible candidate stays positive under combined sensitivity stress"
+      "sensitivity report lag is 4 business days"
     ],
     "metrics": {
       "options_rows": 630758,
