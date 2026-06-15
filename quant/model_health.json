@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-12T07:33:14",
+  "generated_at": "2026-06-15T07:33:41",
   "status": "warning",
   "errors": [],
   "warnings": [
-    "options data lag is 4 business days",
-    "regime features lag is 4 business days",
+    "options data lag is 5 business days",
+    "regime features lag is 5 business days",
     "avg abs model/chain error is 31.9%",
     "wide option spreads: UPRO 14DTE 0%OTM, UPRO 14DTE 5%OTM, UPRO 35DTE 5%OTM",
     "low option open interest: UPRO 14DTE 0%OTM, UPRO 35DTE 5%OTM",
-    "sensitivity report lag is 4 business days",
+    "sensitivity report lag is 5 business days",
     "no eligible candidate stays positive under combined sensitivity stress",
-    "crash playbook lag is 4 business days"
+    "crash playbook lag is 5 business days"
   ],
   "metrics": {
     "options_rows": 630758,
@@ -24,7 +24,7 @@
       "TQQQ",
       "UPRO"
     ],
-    "options_business_day_lag": 4,
+    "options_business_day_lag": 5,
     "backtest_trades": 6175,
     "backtest_combos": 18,
     "expected_combos": 18,
@@ -42,10 +42,10 @@
     "regime_composite": "Caution",
     "regime_risk_score": 42.5,
     "regime_vix_rank_252": 69.4444,
-    "regime_business_day_lag": 4,
+    "regime_business_day_lag": 5,
     "option_chain_archive_latest": "2026-06-08",
     "option_chain_archive_rows": 2798,
-    "option_chain_archive_lag_days": 4,
+    "option_chain_archive_lag_days": 7,
     "option_chain_archive_bid_ask_rows": 2453,
     "option_chain_archive_bid_ask_pct": 87.7,
     "option_chain_candidate_count": 18,
@@ -62,12 +62,12 @@
     "sensitivity_watch_candidates": 8,
     "sensitivity_fragile_candidates": 0,
     "sensitivity_stress_positive_candidates": 0,
-    "sensitivity_business_day_lag": 4,
+    "sensitivity_business_day_lag": 5,
     "crash_playbook_stage": "Clear",
     "crash_playbook_latest_date": "2026-06-08",
     "crash_playbook_trigger_count": 0,
     "crash_playbook_analog_count": 8,
     "crash_playbook_combo_watchlist_count": 10,
-    "crash_playbook_business_day_lag": 4
+    "crash_playbook_business_day_lag": 5
   }
 }
