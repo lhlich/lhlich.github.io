@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-15T10:47:15.247294",
+  "generated": "2026-06-18T07:32:54.830017",
   "vix": {
     "latest": 16.27,
     "date": "2026-06-15",
@@ -18,8 +18,8 @@
     "label": "clear"
   },
   "data_freshness": {
-    "stale": false,
-    "max_lag": 0,
+    "stale": true,
+    "max_lag": 3,
     "limit": 2
   },
   "gate": {
@@ -31,45 +31,14 @@
     "yield_pct": 4.5,
     "size_mult": 1.0
   },
-  "recommendation": "Low vol regime (2025+). Favor SPY/QQQ with standard position sizes.",
+  "recommendation": "Market data stale by 3 trading days. Refresh data before new entries.",
   "prices": {
     "SPY": 754.2449951171875,
     "QQQ": 741.510009765625,
     "UPRO": 146.50650024414062,
     "TQQQ": 84.01000213623047
   },
-  "top_picks": [
-    {
-      "ticker": "TQQQ",
-      "dte": 3,
-      "strike": 84.0,
-      "premium_est": 2.58,
-      "sized_notional": "$8.4k",
-      "yield_est": "3895.3%",
-      "expected_ann": "361.6%",
-      "source": "Chain"
-    },
-    {
-      "ticker": "TQQQ",
-      "dte": 11,
-      "strike": 84.0,
-      "premium_est": 4.47,
-      "sized_notional": "$8.4k",
-      "yield_est": "459.7%",
-      "expected_ann": "112.0%",
-      "source": "Chain"
-    },
-    {
-      "ticker": "UPRO",
-      "dte": 11,
-      "strike": 147.0,
-      "premium_est": 5.3,
-      "sized_notional": "$14.7k",
-      "yield_est": "223.9%",
-      "expected_ann": "61.9%",
-      "source": "Chain"
-    }
-  ],
+  "top_picks": [],
   "latest_brief": {
     "date": "2026-06-15",
     "url": "briefs/2026-06-15.html"
@@ -101,7 +70,7 @@
     "composite_regime": "Constructive"
   },
   "sensitivity": {
-    "generated_at": "2026-06-15T10:46:46",
+    "generated_at": "2026-06-18T07:32:51",
     "baseline_date": "2026-06-15",
     "baseline_vix": 16.27,
     "summary": {
@@ -299,7 +268,7 @@
     }
   },
   "crash_playbook": {
-    "generated_at": "2026-06-15T10:46:53",
+    "generated_at": "2026-06-18T07:32:51",
     "current_stage": "Clear",
     "latest": {
       "date": "2026-06-15",
@@ -344,7 +313,7 @@
     ]
   },
   "model_health": {
-    "generated_at": "2026-06-15T10:47:01",
+    "generated_at": "2026-06-18T07:32:54",
     "status": "warning",
     "errors": [],
     "warnings": [

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T10:47:01",
+  "generated_at": "2026-06-18T07:32:54",
   "status": "warning",
   "errors": [],
   "warnings": [
@@ -19,7 +19,7 @@
       "TQQQ",
       "UPRO"
     ],
-    "options_business_day_lag": 0,
+    "options_business_day_lag": 3,
     "backtest_trades": 6191,
     "backtest_combos": 18,
     "expected_combos": 18,
@@ -37,10 +37,10 @@
     "regime_composite": "Constructive",
     "regime_risk_score": 19.9,
     "regime_vix_rank_252": 28.9683,
-    "regime_business_day_lag": 0,
+    "regime_business_day_lag": 3,
     "option_chain_archive_latest": "2026-06-15",
     "option_chain_archive_rows": 3319,
-    "option_chain_archive_lag_days": 0,
+    "option_chain_archive_lag_days": 3,
     "option_chain_archive_bid_ask_rows": 3154,
     "option_chain_archive_bid_ask_pct": 95.0,
     "option_chain_candidate_count": 18,
@@ -57,12 +57,12 @@
     "sensitivity_watch_candidates": 7,
     "sensitivity_fragile_candidates": 1,
     "sensitivity_stress_positive_candidates": 1,
-    "sensitivity_business_day_lag": 0,
+    "sensitivity_business_day_lag": 3,
     "crash_playbook_stage": "Clear",
     "crash_playbook_latest_date": "2026-06-15",
     "crash_playbook_trigger_count": 0,
     "crash_playbook_analog_count": 8,
     "crash_playbook_combo_watchlist_count": 10,
-    "crash_playbook_business_day_lag": 0
+    "crash_playbook_business_day_lag": 3
   }
 }
