@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-22T10:50:21.158656",
+  "generated": "2026-06-22T10:50:57.080865",
   "vix": {
     "latest": 17.59,
     "date": "2026-06-22",
@@ -101,7 +101,7 @@
     "composite_regime": "Caution"
   },
   "sensitivity": {
-    "generated_at": "2026-06-22T10:50:17",
+    "generated_at": "2026-06-22T10:50:53",
     "baseline_date": "2026-06-22",
     "baseline_vix": 17.59,
     "summary": {
@@ -313,7 +313,7 @@
     }
   },
   "crash_playbook": {
-    "generated_at": "2026-06-22T10:50:17",
+    "generated_at": "2026-06-22T10:50:54",
     "current_stage": "Clear",
     "latest": {
       "date": "2026-06-22",
@@ -358,7 +358,7 @@
     ]
   },
   "model_health": {
-    "generated_at": "2026-06-22T10:50:20",
+    "generated_at": "2026-06-22T10:50:56",
     "status": "warning",
     "errors": [],
     "warnings": [
