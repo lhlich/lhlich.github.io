@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-22T10:50:54",
+  "generated_at": "2026-07-06T08:01:22",
   "current_stage": "Clear",
   "latest": {
-    "date": "2026-06-22",
-    "vix": 17.59,
-    "risk_score": 35.7,
+    "date": "2026-07-06",
+    "vix": 16.06,
+    "risk_score": 24.7,
     "vol_regime": "Normal vol",
     "trend_regime": "Bullish",
-    "composite_regime": "Caution",
-    "SPY_drawdown_252_pct": -1.7,
-    "QQQ_drawdown_252_pct": -1.1,
-    "SPY_days_below_ma21": 1,
+    "composite_regime": "Constructive",
+    "SPY_drawdown_252_pct": -1.0,
+    "QQQ_drawdown_252_pct": -2.8,
+    "SPY_days_below_ma21": 0,
     "QQQ_days_below_ma21": 0
   },
   "active_triggers": [],
@@ -206,10 +206,10 @@
       "win_rate_pct": 85.7,
       "avg_pnl_pct": 0.082,
       "median_pnl_pct": 0.894,
-      "mean_loss_pct": -5.427,
-      "worst_pnl_pct": -13.393,
-      "cvar_5_pct": -13.393,
-      "worst_raw_pnl_pct": -53.574
+      "mean_loss_pct": -5.426,
+      "worst_pnl_pct": -13.394,
+      "cvar_5_pct": -13.394,
+      "worst_raw_pnl_pct": -53.575
     },
     {
       "ticker": "UPRO",
@@ -218,7 +218,7 @@
       "vix_band": "stress_28_35",
       "n_trades": 22,
       "win_rate_pct": 86.4,
-      "avg_pnl_pct": 0.102,
+      "avg_pnl_pct": 0.101,
       "median_pnl_pct": 0.816,
       "mean_loss_pct": -4.753,
       "worst_pnl_pct": -13.128,
@@ -261,11 +261,11 @@
       "n_trades": 21,
       "win_rate_pct": 95.2,
       "avg_pnl_pct": 0.873,
-      "median_pnl_pct": 1.325,
+      "median_pnl_pct": 1.326,
       "mean_loss_pct": -9.435,
       "worst_pnl_pct": -9.435,
       "cvar_5_pct": -9.435,
-      "worst_raw_pnl_pct": -37.74
+      "worst_raw_pnl_pct": -37.741
     },
     {
       "ticker": "TQQQ",
