@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-16T14:31:49.176208",
+  "generated": "2026-07-17T08:03:44.214999",
   "vix": {
     "latest": 16.73,
     "date": "2026-07-16",
@@ -19,7 +19,7 @@
   },
   "data_freshness": {
     "stale": false,
-    "max_lag": 0,
+    "max_lag": 1,
     "limit": 2
   },
   "gate": {
@@ -71,8 +71,8 @@
     }
   ],
   "latest_brief": {
-    "date": "2026-07-13",
-    "url": "briefs/2026-07-13.html"
+    "date": "2026-07-17",
+    "url": "briefs/2026-07-17.html"
   },
   "regime_model": {
     "date": "2026-07-16",
