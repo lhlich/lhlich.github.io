@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-20T08:01:46",
+  "generated_at": "2026-07-20T14:31:46",
   "current_stage": "Stress",
   "latest": {
     "date": "2026-07-20",
-    "vix": 18.25,
-    "risk_score": 61.6,
+    "vix": 18.65,
+    "risk_score": 73.9,
     "vol_regime": "Elevated vol",
-    "trend_regime": "Mixed",
-    "composite_regime": "Defensive",
-    "SPY_drawdown_252_pct": -1.8,
-    "QQQ_drawdown_252_pct": -6.3,
+    "trend_regime": "Bearish",
+    "composite_regime": "Stress",
+    "SPY_drawdown_252_pct": -2.0,
+    "QQQ_drawdown_252_pct": -6.6,
     "SPY_days_below_ma21": 2,
     "QQQ_days_below_ma21": 6
   },

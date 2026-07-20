@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-20T08:01:46",
+  "generated_at": "2026-07-20T14:31:47",
   "baseline_date": "2026-07-20",
-  "baseline_vix": 18.25,
+  "baseline_vix": 18.65,
   "risk_stage": "Stress",
   "latest_prices": {
-    "SPY": 743.84,
-    "QQQ": 698.08,
-    "UPRO": 139.42,
-    "TQQQ": 68.31
+    "SPY": 742.09,
+    "QQQ": 696.06,
+    "UPRO": 138.47,
+    "TQQQ": 67.65
   },
   "scenarios": [
     {
@@ -87,14 +87,14 @@
       "dte": 14,
       "otm": "5% OTM",
       "premium_source": "Chain",
-      "baseline_e_ann_pct": 4.1536,
-      "combined_mild_e_ann_pct": 0.8244,
-      "combined_stress_e_ann_pct": -3.2079,
+      "baseline_e_ann_pct": 4.6202,
+      "combined_mild_e_ann_pct": 1.2101,
+      "combined_stress_e_ann_pct": -2.8963,
       "positive_stress_scenarios": 8,
       "stress_scenario_count": 9,
-      "breakeven_win_rate_pct": 86.7897,
-      "premium_haircut_to_zero_pct": 78.2815,
-      "loss_mult_to_zero": 4.6044,
+      "breakeven_win_rate_pct": 85.8143,
+      "premium_haircut_to_zero_pct": 80.0021,
+      "loss_mult_to_zero": 5.0005,
       "label": "Watch",
       "penalized": false,
       "low_confidence": false
@@ -108,14 +108,14 @@
       "dte": 14,
       "otm": "5% OTM",
       "premium_source": "Chain",
-      "baseline_e_ann_pct": 4.1536,
-      "combined_mild_e_ann_pct": 0.8244,
-      "combined_stress_e_ann_pct": -3.2079,
+      "baseline_e_ann_pct": 4.6202,
+      "combined_mild_e_ann_pct": 1.2101,
+      "combined_stress_e_ann_pct": -2.8963,
       "positive_stress_scenarios": 8,
       "stress_scenario_count": 9,
-      "breakeven_win_rate_pct": 86.7897,
-      "premium_haircut_to_zero_pct": 78.2815,
-      "loss_mult_to_zero": 4.6044,
+      "breakeven_win_rate_pct": 85.8143,
+      "premium_haircut_to_zero_pct": 80.0021,
+      "loss_mult_to_zero": 5.0005,
       "label": "Watch",
       "penalized": false,
       "low_confidence": false
@@ -125,54 +125,54 @@
     "-5": [
       {
         "candidate": "SPY 11DTE 5% OTM",
-        "scenario_vix": 13.25,
-        "expected_ann_pct": -1.78,
-        "premium": 1.15,
+        "scenario_vix": 13.65,
+        "expected_ann_pct": -1.37,
+        "premium": 1.24,
         "gate": "Small size"
       }
     ],
     "-3": [
       {
         "candidate": "SPY 11DTE 5% OTM",
-        "scenario_vix": 15.25,
-        "expected_ann_pct": 1.38,
-        "premium": 1.15,
+        "scenario_vix": 15.65,
+        "expected_ann_pct": 1.84,
+        "premium": 1.24,
         "gate": "Standard"
       }
     ],
     "+0": [
       {
         "candidate": "SPY 11DTE 5% OTM",
-        "scenario_vix": 18.25,
-        "expected_ann_pct": 4.15,
-        "premium": 1.15,
+        "scenario_vix": 18.65,
+        "expected_ann_pct": 4.62,
+        "premium": 1.24,
         "gate": "Standard"
       }
     ],
     "+3": [
       {
         "candidate": "SPY 11DTE 5% OTM",
-        "scenario_vix": 21.25,
-        "expected_ann_pct": -4.71,
-        "premium": 1.15,
+        "scenario_vix": 21.65,
+        "expected_ann_pct": -4.31,
+        "premium": 1.24,
         "gate": "Standard"
       }
     ],
     "+6": [
       {
         "candidate": "SPY 11DTE 5% OTM",
-        "scenario_vix": 24.25,
-        "expected_ann_pct": -1.27,
-        "premium": 1.15,
+        "scenario_vix": 24.65,
+        "expected_ann_pct": -0.85,
+        "premium": 1.24,
         "gate": "Reduce 50%"
       }
     ],
     "+12": [
       {
         "candidate": "SPY 11DTE 5% OTM",
-        "scenario_vix": 30.25,
-        "expected_ann_pct": -9.01,
-        "premium": 1.15,
+        "scenario_vix": 30.65,
+        "expected_ann_pct": -8.63,
+        "premium": 1.24,
         "gate": "Reduce 25%"
       }
     ]
