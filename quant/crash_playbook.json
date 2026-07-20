@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-17T14:31:45",
+  "generated_at": "2026-07-20T08:01:46",
   "current_stage": "Stress",
   "latest": {
-    "date": "2026-07-17",
-    "vix": 18.77,
-    "risk_score": 63.4,
+    "date": "2026-07-20",
+    "vix": 18.25,
+    "risk_score": 61.6,
     "vol_regime": "Elevated vol",
     "trend_regime": "Mixed",
     "composite_regime": "Defensive",
-    "SPY_drawdown_252_pct": -1.9,
-    "QQQ_drawdown_252_pct": -6.7,
-    "SPY_days_below_ma21": 1,
-    "QQQ_days_below_ma21": 5
+    "SPY_drawdown_252_pct": -1.8,
+    "QQQ_drawdown_252_pct": -6.3,
+    "SPY_days_below_ma21": 2,
+    "QQQ_days_below_ma21": 6
   },
   "active_triggers": [
     "Regime model stress: risk score >= 60"
