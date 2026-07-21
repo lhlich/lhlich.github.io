@@ -1,26 +1,24 @@
 {
-  "generated_at": "2026-07-20T14:31:46",
-  "current_stage": "Stress",
+  "generated_at": "2026-07-21T14:31:48",
+  "current_stage": "Caution",
   "latest": {
-    "date": "2026-07-20",
-    "vix": 18.65,
-    "risk_score": 73.9,
-    "vol_regime": "Elevated vol",
-    "trend_regime": "Bearish",
-    "composite_regime": "Stress",
-    "SPY_drawdown_252_pct": -2.0,
-    "QQQ_drawdown_252_pct": -6.6,
-    "SPY_days_below_ma21": 2,
-    "QQQ_days_below_ma21": 6
+    "date": "2026-07-21",
+    "vix": 17.05,
+    "risk_score": 52.8,
+    "vol_regime": "Normal vol",
+    "trend_regime": "Mixed",
+    "composite_regime": "Defensive",
+    "SPY_drawdown_252_pct": -1.2,
+    "QQQ_drawdown_252_pct": -4.9,
+    "SPY_days_below_ma21": 0,
+    "QQQ_days_below_ma21": 7
   },
-  "active_triggers": [
-    "Regime model stress: risk score >= 60"
-  ],
+  "active_triggers": [],
   "current_rule": {
-    "entry": "New entries are optional, not required. Favor defined, index-only theta.",
-    "allowed": "SPY/QQQ 14DTE or 35DTE 5% OTM only, minimum practical size.",
-    "forbidden": "No TQQQ/UPRO ATM. No roll that increases notional. No averaging down.",
-    "size": "25% to 50% of normal, whichever is lower than the VIX gate."
+    "entry": "Prefer SPY/QQQ and reduce concentration. Demand better premium and liquid bid/ask.",
+    "allowed": "SPY/QQQ ATM or 5% OTM; leveraged only if sensitivity is Watch or better.",
+    "forbidden": "No adding to existing stressed underlyings. Avoid low-liquidity chain rows.",
+    "size": "Use VIX gate size; cap any single new entry at half of normal discretion."
   },
   "rules": {
     "Clear": {
@@ -309,7 +307,7 @@
       "mean_loss_pct": -2.857,
       "worst_pnl_pct": -5.414,
       "cvar_5_pct": -5.414,
-      "worst_raw_pnl_pct": -21.658
+      "worst_raw_pnl_pct": -21.657
     },
     {
       "ticker": "SPY",
