@@ -1,24 +1,26 @@
 {
-  "generated_at": "2026-07-22T14:31:48",
-  "current_stage": "Caution",
+  "generated_at": "2026-07-23T14:31:48",
+  "current_stage": "Crisis Watch",
   "latest": {
-    "date": "2026-07-22",
-    "vix": 16.64,
-    "risk_score": 51.6,
-    "vol_regime": "Normal vol",
-    "trend_regime": "Mixed",
-    "composite_regime": "Defensive",
-    "SPY_drawdown_252_pct": -1.3,
-    "QQQ_drawdown_252_pct": -5.4,
-    "SPY_days_below_ma21": 0,
-    "QQQ_days_below_ma21": 8
+    "date": "2026-07-23",
+    "vix": 18.7,
+    "risk_score": 77.4,
+    "vol_regime": "Elevated vol",
+    "trend_regime": "Bearish",
+    "composite_regime": "Stress",
+    "SPY_drawdown_252_pct": -2.6,
+    "QQQ_drawdown_252_pct": -7.2,
+    "SPY_days_below_ma21": 1,
+    "QQQ_days_below_ma21": 9
   },
-  "active_triggers": [],
+  "active_triggers": [
+    "Regime model crisis watch: risk score >= 75"
+  ],
   "current_rule": {
-    "entry": "Prefer SPY/QQQ and reduce concentration. Demand better premium and liquid bid/ask.",
-    "allowed": "SPY/QQQ ATM or 5% OTM; leveraged only if sensitivity is Watch or better.",
-    "forbidden": "No adding to existing stressed underlyings. Avoid low-liquidity chain rows.",
-    "size": "Use VIX gate size; cap any single new entry at half of normal discretion."
+    "entry": "No new entries until volatility and trend stabilize.",
+    "allowed": "Risk reduction and pre-planned assignment decisions only.",
+    "forbidden": "No new puts, no rolling down for extra credit, no leveraged entries.",
+    "size": "Zero new notional."
   },
   "rules": {
     "Clear": {
@@ -307,7 +309,7 @@
       "mean_loss_pct": -2.857,
       "worst_pnl_pct": -5.414,
       "cvar_5_pct": -5.414,
-      "worst_raw_pnl_pct": -21.657
+      "worst_raw_pnl_pct": -21.658
     },
     {
       "ticker": "SPY",
