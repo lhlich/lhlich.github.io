@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-08-03T14:31:26",
-  "current_stage": "Caution",
+  "generated_at": "2026-08-04T14:31:22",
+  "current_stage": "Clear",
   "latest": {
-    "date": "2026-08-03",
-    "vix": 15.86,
-    "risk_score": 47.5,
+    "date": "2026-08-04",
+    "vix": 16.5,
+    "risk_score": 27.3,
     "vol_regime": "Normal vol",
-    "trend_regime": "Mixed",
-    "composite_regime": "Caution",
+    "trend_regime": "Bullish",
+    "composite_regime": "Constructive",
     "SPY_drawdown_252_pct": 0.0,
-    "QQQ_drawdown_252_pct": -6.1,
+    "QQQ_drawdown_252_pct": -2.9,
     "SPY_days_below_ma21": 0,
-    "QQQ_days_below_ma21": 16
+    "QQQ_days_below_ma21": 0
   },
   "active_triggers": [],
   "current_rule": {
-    "entry": "Prefer SPY/QQQ and reduce concentration. Demand better premium and liquid bid/ask.",
-    "allowed": "SPY/QQQ ATM or 5% OTM; leveraged only if sensitivity is Watch or better.",
-    "forbidden": "No adding to existing stressed underlyings. Avoid low-liquidity chain rows.",
-    "size": "Use VIX gate size; cap any single new entry at half of normal discretion."
+    "entry": "Use the weekly ranking, standard VIX gate, and live bid/ask mids when available.",
+    "allowed": "All configured candidates, with sensitivity label checked before entry.",
+    "forbidden": "Do not override stale data, missing chain mids, or circuit breakers.",
+    "size": "Per current VIX gate."
   },
   "rules": {
     "Clear": {
@@ -307,7 +307,7 @@
       "mean_loss_pct": -2.857,
       "worst_pnl_pct": -5.414,
       "cvar_5_pct": -5.414,
-      "worst_raw_pnl_pct": -21.658
+      "worst_raw_pnl_pct": -21.657
     },
     {
       "ticker": "SPY",
