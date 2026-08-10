@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-07T14:31:22",
+  "generated_at": "2026-08-10T08:01:30",
   "current_stage": "Clear",
   "latest": {
-    "date": "2026-08-07",
-    "vix": 14.9,
-    "risk_score": 15.8,
+    "date": "2026-08-10",
+    "vix": 15.18,
+    "risk_score": 17.9,
     "vol_regime": "Normal vol",
     "trend_regime": "Bullish",
     "composite_regime": "Constructive",
     "SPY_drawdown_252_pct": 0.0,
-    "QQQ_drawdown_252_pct": -3.0,
+    "QQQ_drawdown_252_pct": -3.1,
     "SPY_days_below_ma21": 0,
     "QQQ_days_below_ma21": 0
   },
