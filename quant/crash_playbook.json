@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-25T14:31:26",
+  "generated_at": "2026-08-26T14:31:25",
   "current_stage": "Clear",
   "latest": {
-    "date": "2026-08-25",
-    "vix": 15.45,
-    "risk_score": 31.7,
+    "date": "2026-08-26",
+    "vix": 15.21,
+    "risk_score": 30.5,
     "vol_regime": "Normal vol",
     "trend_regime": "Mixed",
     "composite_regime": "Caution",
     "SPY_drawdown_252_pct": -1.5,
     "QQQ_drawdown_252_pct": -4.6,
     "SPY_days_below_ma21": 0,
-    "QQQ_days_below_ma21": 0
+    "QQQ_days_below_ma21": 1
   },
   "active_triggers": [],
   "current_rule": {
@@ -307,7 +307,7 @@
       "mean_loss_pct": -2.857,
       "worst_pnl_pct": -5.414,
       "cvar_5_pct": -5.414,
-      "worst_raw_pnl_pct": -21.657
+      "worst_raw_pnl_pct": -21.658
     },
     {
       "ticker": "SPY",
