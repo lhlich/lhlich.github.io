@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-26T14:31:25",
+  "generated_at": "2026-08-27T14:31:24",
   "current_stage": "Clear",
   "latest": {
-    "date": "2026-08-26",
-    "vix": 15.21,
-    "risk_score": 30.5,
+    "date": "2026-08-27",
+    "vix": 14.51,
+    "risk_score": 13.3,
     "vol_regime": "Normal vol",
-    "trend_regime": "Mixed",
-    "composite_regime": "Caution",
-    "SPY_drawdown_252_pct": -1.5,
-    "QQQ_drawdown_252_pct": -4.6,
+    "trend_regime": "Bullish",
+    "composite_regime": "Constructive",
+    "SPY_drawdown_252_pct": -0.9,
+    "QQQ_drawdown_252_pct": -3.3,
     "SPY_days_below_ma21": 0,
-    "QQQ_days_below_ma21": 1
+    "QQQ_days_below_ma21": 0
   },
   "active_triggers": [],
   "current_rule": {
