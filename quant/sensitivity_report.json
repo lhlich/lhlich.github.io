@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-07T08:01:24",
+  "generated_at": "2026-09-07T14:31:21",
   "baseline_date": "2026-09-07",
-  "baseline_vix": 15.19,
+  "baseline_vix": 15.3,
   "risk_stage": "Clear",
   "latest_prices": {
     "SPY": 770.19,
@@ -260,14 +260,14 @@
       "dte": 14,
       "otm": "5% OTM",
       "premium_source": "Chain",
-      "baseline_e_ann_pct": 2.844,
-      "combined_mild_e_ann_pct": -5.7919,
-      "combined_stress_e_ann_pct": -15.9158,
+      "baseline_e_ann_pct": 2.8426,
+      "combined_mild_e_ann_pct": -5.7955,
+      "combined_stress_e_ann_pct": -15.9217,
       "positive_stress_scenarios": 5,
       "stress_scenario_count": 9,
-      "breakeven_win_rate_pct": 93.3188,
-      "premium_haircut_to_zero_pct": 38.7648,
-      "loss_mult_to_zero": 1.633,
+      "breakeven_win_rate_pct": 93.3208,
+      "premium_haircut_to_zero_pct": 38.7455,
+      "loss_mult_to_zero": 1.6325,
       "label": "Fragile",
       "penalized": false,
       "low_confidence": false
@@ -277,7 +277,7 @@
     "-5": [
       {
         "candidate": "No new entries",
-        "scenario_vix": 10.19,
+        "scenario_vix": 10.3,
         "expected_ann_pct": null,
         "premium": null,
         "gate": "Skip \u2014 premium too thin"
@@ -286,21 +286,21 @@
     "-3": [
       {
         "candidate": "TQQQ 7DTE ATM",
-        "scenario_vix": 12.19,
+        "scenario_vix": 12.3,
         "expected_ann_pct": 55.81,
         "premium": 1.66,
         "gate": "Small size"
       },
       {
         "candidate": "QQQ 7DTE ATM",
-        "scenario_vix": 12.19,
+        "scenario_vix": 12.3,
         "expected_ann_pct": 24.82,
         "premium": 6.69,
         "gate": "Small size"
       },
       {
         "candidate": "QQQ 11DTE ATM",
-        "scenario_vix": 12.19,
+        "scenario_vix": 12.3,
         "expected_ann_pct": 21.81,
         "premium": 8.79,
         "gate": "Small size"
@@ -309,21 +309,21 @@
     "+0": [
       {
         "candidate": "TQQQ 7DTE ATM",
-        "scenario_vix": 15.19,
+        "scenario_vix": 15.3,
         "expected_ann_pct": 34.87,
         "premium": 1.66,
         "gate": "Standard"
       },
       {
         "candidate": "QQQ 7DTE ATM",
-        "scenario_vix": 15.19,
+        "scenario_vix": 15.3,
         "expected_ann_pct": 20.17,
         "premium": 6.69,
         "gate": "Standard"
       },
       {
         "candidate": "QQQ 11DTE ATM",
-        "scenario_vix": 15.19,
+        "scenario_vix": 15.3,
         "expected_ann_pct": 12.75,
         "premium": 8.79,
         "gate": "Standard"
@@ -332,21 +332,21 @@
     "+3": [
       {
         "candidate": "QQQ 11DTE ATM",
-        "scenario_vix": 18.19,
+        "scenario_vix": 18.3,
         "expected_ann_pct": 17.22,
         "premium": 8.79,
         "gate": "Standard"
       },
       {
         "candidate": "TQQQ 7DTE ATM",
-        "scenario_vix": 18.19,
+        "scenario_vix": 18.3,
         "expected_ann_pct": 13.67,
         "premium": 1.66,
         "gate": "Standard"
       },
       {
         "candidate": "QQQ 7DTE ATM",
-        "scenario_vix": 18.19,
+        "scenario_vix": 18.3,
         "expected_ann_pct": 13.21,
         "premium": 6.69,
         "gate": "Standard"
@@ -355,21 +355,21 @@
     "+6": [
       {
         "candidate": "TQQQ 7DTE ATM",
-        "scenario_vix": 21.19,
+        "scenario_vix": 21.3,
         "expected_ann_pct": 33.76,
         "premium": 1.66,
         "gate": "Standard"
       },
       {
         "candidate": "QQQ 7DTE ATM",
-        "scenario_vix": 21.19,
+        "scenario_vix": 21.3,
         "expected_ann_pct": 23.34,
         "premium": 6.69,
         "gate": "Standard"
       },
       {
         "candidate": "QQQ 11DTE ATM",
-        "scenario_vix": 21.19,
+        "scenario_vix": 21.3,
         "expected_ann_pct": 19.0,
         "premium": 8.79,
         "gate": "Standard"
@@ -378,21 +378,21 @@
     "+12": [
       {
         "candidate": "TQQQ 7DTE ATM",
-        "scenario_vix": 27.19,
+        "scenario_vix": 27.3,
         "expected_ann_pct": 92.98,
         "premium": 1.66,
         "gate": "Reduce 50%"
       },
       {
         "candidate": "QQQ 7DTE ATM",
-        "scenario_vix": 27.19,
+        "scenario_vix": 27.3,
         "expected_ann_pct": 39.2,
         "premium": 6.69,
         "gate": "Reduce 50%"
       },
       {
         "candidate": "QQQ 11DTE ATM",
-        "scenario_vix": 27.19,
+        "scenario_vix": 27.3,
         "expected_ann_pct": 27.12,
         "premium": 8.79,
         "gate": "Reduce 50%"
