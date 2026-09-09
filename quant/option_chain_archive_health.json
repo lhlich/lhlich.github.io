@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-09-08T14:31:21",
-  "archive_path": "option_chain_archive\\2026-09-08\\chains.csv",
-  "snapshot_date": "2026-09-08",
-  "rows": 1836,
-  "bid_ask_mid_rows": 1723,
-  "bid_ask_mid_pct": 93.8,
+  "generated_at": "2026-09-09T14:31:18",
+  "archive_path": "option_chain_archive\\2026-09-09\\chains.csv",
+  "snapshot_date": "2026-09-09",
+  "rows": 1824,
+  "bid_ask_mid_rows": 1714,
+  "bid_ask_mid_pct": 94.0,
   "candidate_count": 18,
   "candidate_bid_ask_count": 18,
-  "candidate_tradeable_count": 15,
+  "candidate_tradeable_count": 14,
   "quality_by_ticker": [
     {
       "ticker": "QQQ",
-      "rows": 787,
-      "puts": 383,
-      "calls": 404,
-      "bid_ask_mid_rows": 720,
-      "last_price_rows": 67,
-      "bid_ask_mid_pct": 91.5,
-      "median_spread_pct": 2.4,
-      "median_open_interest": 235,
-      "median_volume": 12
+      "rows": 782,
+      "puts": 381,
+      "calls": 401,
+      "bid_ask_mid_rows": 717,
+      "last_price_rows": 65,
+      "bid_ask_mid_pct": 91.7,
+      "median_spread_pct": 2.41,
+      "median_open_interest": 246.5,
+      "median_volume": 10.0
     },
     {
       "ticker": "SPY",
-      "rows": 726,
-      "puts": 344,
-      "calls": 382,
-      "bid_ask_mid_rows": 702,
-      "last_price_rows": 24,
-      "bid_ask_mid_pct": 96.7,
-      "median_spread_pct": 3.47,
-      "median_open_interest": 450.5,
-      "median_volume": 30.5
+      "rows": 718,
+      "puts": 345,
+      "calls": 373,
+      "bid_ask_mid_rows": 692,
+      "last_price_rows": 26,
+      "bid_ask_mid_pct": 96.4,
+      "median_spread_pct": 2.82,
+      "median_open_interest": 490.5,
+      "median_volume": 40.0
     },
     {
       "ticker": "TQQQ",
-      "rows": 191,
+      "rows": 192,
       "puts": 93,
-      "calls": 98,
-      "bid_ask_mid_rows": 183,
-      "last_price_rows": 8,
-      "bid_ask_mid_pct": 95.8,
-      "median_spread_pct": 19.44,
-      "median_open_interest": 201,
-      "median_volume": 40
+      "calls": 99,
+      "bid_ask_mid_rows": 187,
+      "last_price_rows": 5,
+      "bid_ask_mid_pct": 97.4,
+      "median_spread_pct": 11.9,
+      "median_open_interest": 205.0,
+      "median_volume": 28.5
     },
     {
       "ticker": "UPRO",
@@ -53,9 +53,9 @@
       "bid_ask_mid_rows": 118,
       "last_price_rows": 14,
       "bid_ask_mid_pct": 89.4,
-      "median_spread_pct": 26.62,
-      "median_open_interest": 6.0,
-      "median_volume": 1.5
+      "median_spread_pct": 32.98,
+      "median_open_interest": 6.5,
+      "median_volume": 1.0
     }
   ]
 }
