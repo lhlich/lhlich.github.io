@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-24T14:31:25",
+  "generated_at": "2026-09-25T14:31:25",
   "current_stage": "Clear",
   "latest": {
-    "date": "2026-09-24",
-    "vix": 15.67,
-    "risk_score": 13.9,
+    "date": "2026-09-25",
+    "vix": 14.87,
+    "risk_score": 8.5,
     "vol_regime": "Normal vol",
     "trend_regime": "Bullish",
     "composite_regime": "Constructive",
-    "SPY_drawdown_252_pct": -1.1,
-    "QQQ_drawdown_252_pct": -0.9,
+    "SPY_drawdown_252_pct": -0.6,
+    "QQQ_drawdown_252_pct": -0.4,
     "SPY_days_below_ma21": 0,
     "QQQ_days_below_ma21": 0
   },
@@ -218,9 +218,9 @@
       "vix_band": "stress_28_35",
       "n_trades": 22,
       "win_rate_pct": 86.4,
-      "avg_pnl_pct": 0.101,
+      "avg_pnl_pct": 0.102,
       "median_pnl_pct": 0.816,
-      "mean_loss_pct": -4.753,
+      "mean_loss_pct": -4.752,
       "worst_pnl_pct": -13.128,
       "cvar_5_pct": -13.128,
       "worst_raw_pnl_pct": -52.512
@@ -265,7 +265,7 @@
       "mean_loss_pct": -9.435,
       "worst_pnl_pct": -9.435,
       "cvar_5_pct": -9.435,
-      "worst_raw_pnl_pct": -37.741
+      "worst_raw_pnl_pct": -37.74
     },
     {
       "ticker": "TQQQ",
