@@ -3,287 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>He Li — Senior ML Engineer</title>
-  <meta name="description" content="Senior ML Engineer specializing in search, RAG, LLMs, and recommendation systems.">
+  <title>He Li — Projects & Applied AI</title>
+  <meta name="description" content="Machine learning systems, small tools, and independent projects by He Li. Applied AI at Uber, previously Meta.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #fdfdfd;
-      --surface: #fff;
-      --surface-2: #f5f5f5;
-      --fg: #1a1a1a;
-      --fg-muted: #666;
-      --accent: #4f46e5;
-      --accent-dim: rgba(79, 70, 229, 0.08);
-      --accent-2: #0ea5e9;
-      --border: #e5e5e5;
-      --radius: 10px;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 4rem 2rem 3rem;
-    }
-
-    /* ── Hero ── */
-    .hero {
-      margin-bottom: 3.5rem;
-    }
-
-    .hero-name {
-      font-size: 2.8rem;
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1.15;
-      background: linear-gradient(135deg, var(--fg) 0%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-role {
-      font-size: 1.15rem;
-      color: var(--fg-muted);
-      margin: 0.5rem 0 1.25rem;
-      font-weight: 400;
-    }
-
-    .hero-links {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 500;
-      padding: 0.4rem 0.85rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      transition: all 0.2s;
-    }
-
-    .hero-links a:hover {
-      background: var(--accent-dim);
-      border-color: var(--accent);
-    }
-
-    /* ── About ── */
-    .about {
-      font-size: 1.05rem;
-      color: var(--fg);
-      margin-bottom: 3rem;
-      line-height: 1.75;
-    }
-
-    .about strong { color: var(--accent); font-weight: 600; }
-
-    .about p { margin-bottom: 1rem; }
-
-    .about ul {
-      list-style: none;
-      margin: 0.75rem 0 1rem;
-    }
-
-    .about ul li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--fg);
-    }
-
-    .about ul li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* ── Section headers ── */
-    .section {
-      margin-bottom: 3rem;
-    }
-
-    .section-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* ── Cards ── */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 0.75rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover { border-color: #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .card-title {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .card-company { color: var(--fg-muted); }
-
-    .card-date {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--fg-muted);
-      font-size: 0.8rem;
-      white-space: nowrap;
-    }
-
-    .card-desc {
-      color: var(--fg-muted);
-      font-size: 0.9rem;
-    }
-
-    /* ── Footer ── */
-    footer {
-      color: var(--fg-muted);
-      font-size: 0.78rem;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 600px) {
-      .page { padding: 2.5rem 1.25rem 2rem; }
-      .hero-name { font-size: 2rem; }
-      .card-header { flex-direction: column; gap: 0.1rem; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="page">
+<main class="page">
+  <header class="hero">
+    <h1 class="hero-name">He Li</h1>
+    <p class="hero-intro">I build machine learning systems and small tools for questions I care about.</p>
+    <p class="hero-context">Currently working on applied AI at Uber. Previously Meta.</p>
+    <nav class="hero-links" aria-label="Profile links">
+      <a href="https://github.com/lhlich">GitHub</a>
+      <a href="https://www.linkedin.com/in/he-li-36100a64/">LinkedIn</a>
+      <a href="mailto:lhlich@gmail.com">Email</a>
+      <a href="https://github.com/lhlich/lhlich.github.io/blob/main/resume_26.md">Résumé</a>
+    </nav>
+  </header>
 
-  <div class="hero">
-    <div class="hero-name">He Li</div>
-    <div class="hero-role">Senior ML Engineer · San Francisco Bay Area</div>
-    <div class="hero-links">
-      <a href="mailto:lhlich@gmail.com">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Email
-      </a>
-      <a href="https://www.linkedin.com/in/he-li-36100a64/">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-    </div>
-  </div>
+  <section class="section" aria-labelledby="projects-heading">
+    <h2 class="section-title" id="projects-heading">What I’m building</h2>
+    <article class="project">
+      <h3><a href="quant/">Quant Options Playbook</a></h3>
+      <p>Exploring systematic options strategies through market briefs, scenario analysis, and model diagnostics.</p>
+      <a class="project-link" href="quant/">Explore project <span aria-hidden="true">↗</span></a>
+    </article>
+  </section>
 
-  <div class="about">
-    <p>
-      I build ML systems that ship — from RAG pipelines and ranking to recommendation systems.
-      I like taking ideas from zero to production and measuring what actually moves the needle.
-    </p>
-    <ul>
-      <li>Make search and recommendations smarter with LLMs, embeddings, and retrieval-augmented generation</li>
-      <li>Own the full lifecycle — data, models, experiments, deployment, monitoring</li>
-      <li>Design experiments that actually prove something — A/B tests, offline evaluation, statistical rigor</li>
-    </ul>
-    <p>
-      Currently at <strong>Uber</strong>, working on AI generated entity profile, semantic id, ranking.
-      Previously 6 years at <strong>Meta</strong> across search AI, RAG, fraud detection, and billing personalization.
-    </p>
-  </div>
+  <section class="section background" aria-labelledby="background-heading">
+    <h2 class="section-title" id="background-heading">Background</h2>
+    <p>My work spans search, recommendations, RAG, and experimentation. I enjoy taking projects from an initial idea through evaluation and production.</p>
+    <p class="credentials">Uber · Meta · PhD, Virginia Tech</p>
+    <a class="project-link" href="about.html">More about me <span aria-hidden="true">↗</span></a>
+  </section>
 
-  <div class="section">
-    <div class="section-title">Experience</div>
-
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title">Senior ML Engineer, Applied AI <span class="card-company">· Uber</span></span>
-        <span class="card-date">2024.12 –</span>
-      </div>
-      <div class="card-desc">AI generated entity profile, semantic id, ranking.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title">Research Scientist <span class="card-company">· Meta</span></span>
-        <span class="card-date">2018.10 – 2024.11</span>
-      </div>
-      <div class="card-desc">Search AI, RAG, ranking, fraud detection, billing personalization. IC to tech lead.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title">Software Engineer Intern <span class="card-company">· Facebook</span></span>
-        <span class="card-date">2016 summer</span>
-      </div>
-      <div class="card-desc">Data security systems.</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Education</div>
-
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title">PhD, Electrical & Computer Engineering <span class="card-company">· Virginia Tech</span></span>
-        <span class="card-date">2014 – 2018</span>
-      </div>
-      <div class="card-desc">Concurrent MS in Mathematics.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title">MS & BS, Electrical Engineering <span class="card-company">· Shanghai Jiao Tong University</span></span>
-        <span class="card-date">2006 – 2013</span>
-      </div>
-    </div>
-  </div>
-
-  <footer>&copy; 2024 He Li</footer>
-
-</div>
+  <footer>He Li · San Francisco Bay Area</footer>
+</main>
 </body>
 </html>
