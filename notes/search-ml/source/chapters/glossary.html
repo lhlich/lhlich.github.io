@@ -1,0 +1,51 @@
+<p class="lead">Use this page as a notation map. Follow a topic link to return to the mechanism or example.</p>
+<h2 id="notation">Notation and key distinctions</h2>
+<table><thead><tr><th>Symbol / term</th><th>Meaning in this guide</th><th>Study location</th></tr></thead><tbody>
+<tr><td>q, d</td><td>Query and document; d also denotes embedding width when used in a tensor shape</td><td><a href="search.html#ann">Dense retrieval</a></td></tr>
+<tr><td>df, IDF</td><td>Document frequency of a term; inverse-frequency term weight</td><td><a href="search.html#bm25">BM25</a></td></tr>
+<tr><td>k</td><td>Number of retained results; k₁ is a separate BM25 parameter</td><td><a href="coding.html#heap">Top-k</a></td></tr>
+<tr><td>θ</td><td>Current top-k admission threshold, or a generic parameter in gradient checks; context distinguishes them</td><td><a href="search.html#wand">WAND</a></td></tr>
+<tr><td>IVF</td><td>Inverted file index that groups vectors by coarse cells; not the same keys as a term index</td><td><a href="search.html#ann">Two kinds of inverted index</a></td></tr>
+<tr><td>ANN recall</td><td>Agreement with exact nearest-neighbor results under a fixed embedding and metric</td><td><a href="search.html#ann">ANN versus relevance recall</a></td></tr>
+<tr><td>z, p, y</td><td>Logits, predicted probabilities, target labels/distributions</td><td><a href="modeling.html#ce">Cross-entropy</a></td></tr>
+<tr><td>τ, T</td><td>Contrastive and distillation temperatures, respectively</td><td><a href="modeling.html#contrastive">Contrastive learning</a></td></tr>
+<tr><td>Q, K, V</td><td>Attention query, key, value matrices; Q and D separately denote query/document batches in retrieval</td><td><a href="coding.html#attention">Attention shapes</a></td></tr>
+<tr><td>CE / KL</td><td>Cross-entropy; Kullback–Leibler divergence. CE(p,q)=H(p)+KL(p‖q)</td><td><a href="modeling.html#contrastive">Distillation connection</a></td></tr>
+<tr><td>μ, π</td><td>Logging and target action policies</td><td><a href="modeling.html#bias">Off-policy evaluation</a></td></tr>
+<tr><td>Calibration</td><td>Agreement of predicted probabilities with observed outcome frequencies under a specified population</td><td><a href="modeling.html#metrics">Metrics</a></td></tr>
+<tr><td>Unjudged / nonrelevant</td><td>Missing relevance evidence / an assessed relevance label; not interchangeable</td><td><a href="modeling.html#targets">Label semantics</a></td></tr>
+<tr><td>P[r,c]</td><td>Sum of rows [0,r), columns [0,c); exclusive prefix with zero padding</td><td><a href="coding.html#prefix">Rectangle sums</a></td></tr>
+<tr><td>MRL</td><td>Training nested embedding prefixes; quality at smaller widths must be evaluated</td><td><a href="efficiency.html#dimensions">Embedding dimensions</a></td></tr>
+<tr><td>LoRA rank r</td><td>Adapter factor width; r(dᵢₙ+dₒᵤₜ) parameters per projection</td><td><a href="efficiency.html#adapters">Adapter arithmetic</a></td></tr>
+<tr><td>KV heads</td><td>Number of retained key/value heads, distinct from query-head count under GQA</td><td><a href="efficiency.html#kv">Cache memory</a></td></tr>
+<tr><td>Frecency half-life h</td><td>Time needed for a past event's weight to halve</td><td><a href="coding.html#drill-frecency">Decayed usage</a></td></tr>
+<tr><td>MMR λ</td><td>Relevance versus redundancy weighting; not a coverage guarantee</td><td><a href="coding.html#drill-context">Evidence selection</a></td></tr>
+</tbody></table>
+<h2 id="sources">Primary references and optional reading</h2>
+<p>The guide's calculations, code, and design exercises are original. The references below establish the underlying methods. Read the indicated topic rather than every paper end to end. Sources were checked while compiling these notes on October 3, 2026 PT; no vendor benchmark or current model leaderboard is assumed.</p>
+<ol>
+<li><a href="https://nlp.stanford.edu/IR-book/html/htmledition/irbook.html">Manning, Raghavan, and Schütze — Introduction to Information Retrieval</a>. Consult inverted indexes, BM25, and evaluation chapters.</li>
+<li><a href="https://research.ibm.com/publications/efficient-query-evaluation-using-a-two-level-retrieval-process">Broder et al. — Efficient Query Evaluation Using a Two-Level Retrieval Process</a>. WAND's bound-based retrieval idea.</li>
+<li><a href="https://docs.vespa.ai/en/ranking/wand.html">Vespa — WAND: Accelerated OR Search</a>. Distinguish algorithm intuition from deployed operator guarantees.</li>
+<li><a href="https://github.com/facebookresearch/faiss/wiki/Faiss-indexes">Faiss — Index reference</a>. Flat, IVF, HNSW, and compressed vector representations.</li>
+<li><a href="https://cs231n.github.io/linear-classify/">Stanford CS231n — Linear classification</a>. Softmax, cross-entropy, likelihood, and regularization.</li>
+<li><a href="https://arxiv.org/abs/1807.03748">van den Oord, Li, and Vinyals — Representation Learning with Contrastive Predictive Coding</a>. InfoNCE and its sampling interpretation.</li>
+<li><a href="https://arxiv.org/abs/1608.04468">Joachims, Swaminathan, and Schnabel — Unbiased Learning-to-Rank with Biased Feedback</a>. Examination bias and propensity-weighted learning.</li>
+<li><a href="https://arxiv.org/abs/1706.03762">Vaswani et al. — Attention Is All You Need</a>. Scaled dot-product attention and multi-head shapes.</li>
+<li><a href="https://arxiv.org/abs/1503.02531">Hinton, Vinyals, and Dean — Distilling the Knowledge in a Neural Network</a>. Soft targets and temperature.</li>
+<li><a href="https://arxiv.org/abs/1502.03167">Ioffe and Szegedy — Batch Normalization</a>; <a href="https://arxiv.org/abs/1607.06450">Ba, Kiros, and Hinton — Layer Normalization</a>. Compare normalization axes and train/eval behavior.</li>
+<li><a href="https://arxiv.org/abs/1711.05101">Loshchilov and Hutter — Decoupled Weight Decay Regularization</a>. Why adaptive-optimizer L2 and decoupled decay differ.</li>
+</ol>
+<h2 id="source-context">Reading context</h2>
+<p>These notes focus on search, modeling, evaluation, and on-device systems. Use the primary references below to explore a mechanism in more depth; the worked examples are intended for study and experimentation.</p>
+<h2 id="ondevice-sources">On-device extensions: primary reading map</h2>
+<table><thead><tr><th>Read selectively</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><a href="https://developer.apple.com/videos/play/wwdc2024/10131/">Core Spotlight, WWDC24</a></td><td>Index donation, semantic search, engagement interfaces</td></tr>
+<tr><td><a href="https://developer.apple.com/videos/play/wwdc2026/246/">Search tool, WWDC26</a></td><td>Tool guidance, item hydration, pipeline and trajectory evaluation</td></tr>
+<tr><td><a href="https://developer.apple.com/videos/play/wwdc2026/319/">Foundation Models context, WWDC26</a></td><td>Runtime-dependent capacity; avoid fixed context assumptions</td></tr>
+<tr><td><a href="https://machinelearning.apple.com/research/apple-foundation-models-tech-report-2025">Apple 2025 model report</a></td><td>One architecture's quantization and cache choices; optional detail</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2205.13147">Matryoshka Representation Learning</a></td><td>Nested embedding dimensions</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2106.09685">LoRA</a></td><td>Low-rank weight updates; optional training detail</td></tr>
+<tr><td><a href="https://machinelearning.apple.com/research/learning-real-world-application">Apple PFL app-selection case</a> and <a href="https://machinelearning.apple.com/research/federated-personalization">federated personalization/evaluation</a></td><td>Privacy-aware learning with explicit protocol assumptions</td></tr>
+</tbody></table>
+<p>Public sources explain mechanisms and documented interfaces. They do not establish private product architectures. Performance and capacity examples should be checked against the model, runtime, and device being studied.</p>
