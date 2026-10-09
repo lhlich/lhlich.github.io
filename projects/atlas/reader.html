@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reader — My Doc Hub</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; height: 100vh; height: 100dvh; display: flex; flex-direction: column; color: #182434; background: #f8fafc; font: 14px/1.5 system-ui, sans-serif; }
+    header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 12px 20px; border-bottom: 1px solid #cfd8e5; }
+    a { color: #385996; text-underline-offset: 3px; }
+    a:focus-visible { outline: 2px solid #385996; outline-offset: 4px; }
+    h1 { flex: 1; min-width: 0; margin: 0; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+    iframe { flex: 1; width: 100%; min-height: 0; border: 0; background: white; }
+    #status { margin: 20px; }
+    [hidden] { display: none; }
+    @media (max-width: 600px) { h1 { order: 3; flex-basis: 100%; } #original { margin-left: auto; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="./">← My Doc Hub</a>
+    <h1 id="title">Document reader</h1>
+    <a id="original" hidden target="_blank" rel="noopener">Open original ↗</a>
+  </header>
+  <p id="status" role="status">Loading document…</p>
+  <noscript><p>JavaScript is needed to select a document. Return to the hub or open a document file directly.</p></noscript>
+  <script>
+    async function openDocument() {
+      const status = document.getElementById('status');
+      try {
+        const id = new URLSearchParams(location.search).get('id');
+        if (!id) throw new Error('Choose a document from My Doc Hub.');
+        const response = await fetch('catalog.json');
+        if (!response.ok) throw new Error('Unable to load the catalog. Please refresh.');
+        const catalog = await response.json();
+        const doc = catalog.documents.find(entry => entry.id === id);
+        if (!doc) throw new Error('This document is not in the catalog. Return to My Doc Hub to choose another.');
+        const root = new URL('./', location.href);
+        const url = new URL(doc.href, root);
+        if (url.origin !== root.origin || !url.pathname.startsWith(root.pathname + 'documents/') || !['html', 'pdf'].includes(doc.format)) {
+          throw new Error('This document has an unsupported path or format.');
+        }
+        document.title = doc.title + ' — My Doc Hub';
+        document.getElementById('title').textContent = doc.title;
+        const original = document.getElementById('original');
+        original.href = url.href;
+        original.hidden = false;
+        const frame = document.createElement('iframe');
+        frame.title = doc.title;
+        frame.src = url.href;
+        // Documents are reviewed, trusted site content; keep their scripts and relative assets working.
+        document.body.append(frame);
+        if (doc.format === 'pdf') {
+          status.textContent = 'If the PDF does not display in your browser, use Open original.';
+        } else {
+          status.hidden = true;
+        }
+      } catch (error) {
+        status.textContent = error.message;
+      }
+    }
+    openDocument();
+  </script>
+</body>
+</html>
