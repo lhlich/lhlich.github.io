@@ -2,6 +2,30 @@
   "schema_version": 1,
   "documents": [
     {
+      "id": "ranking-systems",
+      "title": "Designing Ranking Systems",
+      "kind": "Case studies",
+      "details": "4 case chapters · Calculators · Design exercises",
+      "contents": ["Video recommendations", "Comment ranking", "Ad prediction", "Marketplace search"],
+      "description": "Four ranking surfaces, from objectives and candidate generation to serving, feedback, and evaluation. Worked tradeoffs and interactive calculators.",
+      "topics": ["Machine Learning", "Ranking", "System Design"],
+      "format": "html",
+      "href": "documents/ranking-systems/index.html",
+      "updated": "2026-10-09"
+    },
+    {
+      "id": "spreadsheet-engine",
+      "title": "Build a Spreadsheet Engine",
+      "kind": "Interactive guide",
+      "details": "Live workbench · Runnable JavaScript · 13 tests",
+      "contents": ["Formula parsing", "Dependency graphs", "Cycle detection", "Lazy & eager recalculation"],
+      "description": "Build a small calculation engine and watch edits propagate through its dependency graph. Includes a live workbench, downloadable code, and automated tests.",
+      "topics": ["Systems", "JavaScript", "Algorithms"],
+      "format": "html",
+      "href": "documents/spreadsheet-engine/index.html",
+      "updated": "2026-10-09"
+    },
+    {
       "id": "search-ml",
       "title": "Search & ML Study Notes",
       "kind": "Study guide",
