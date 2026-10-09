@@ -10,6 +10,8 @@ My Doc Hub is a self-contained project within the personal GitHub Pages website,
 5. For revisions, preserve stable document URLs and describe substantive changes in Git commit messages. Review AI-generated HTML/JS before publication.
 
 ## Publishing
+Optional catalog fields: `kind` (e.g. Study guide), `details` (short factual summary of scope), and `contents` (array of subject labels). These enrich library entries without requiring changes to the documents. Omit fields that do not apply; do not invent section counts or review status.
+
 Commit the document and updated catalog together to `main` (or through a reviewed PR). GitHub Pages already deploys this repository from its branch. No custom Actions workflow is needed.
 
 The catalog is also the agent-facing discovery interface at `/projects/atlas/catalog.json`.

@@ -4,6 +4,9 @@
     {
       "id": "search-ml",
       "title": "Search & ML Study Notes",
+      "kind": "Study guide",
+      "details": "7 sections · Worked examples · Coding exercises",
+      "contents": ["Search & retrieval", "Modeling & evaluation", "On-device systems", "Efficient implementation", "Coding practice", "Glossary & references"],
       "description": "Search mechanics, modeling and evaluation, on-device systems, and efficient implementation. Worked examples, equations, and coding exercises.",
       "topics": [
         "Search",
