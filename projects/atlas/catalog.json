@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "id": "bm25",
+      "title": "BM25: Retrieval Notes",
+      "description": "Term saturation, IDF and length normalization.",
+      "topics": [
+        "Search",
+        "Ranking"
+      ],
+      "format": "html",
+      "href": "documents/bm25.html",
+      "updated": "2026-10-08"
+    },
+    {
+      "id": "llm-serving",
+      "title": "LLM Serving: System Design",
+      "description": "Batching, prefill/decode and GPU capacity.",
+      "topics": [
+        "LLM",
+        "Systems"
+      ],
+      "format": "html",
+      "href": "documents/llm-serving.html",
+      "updated": "2026-10-08"
+    }
+  ]
+}
