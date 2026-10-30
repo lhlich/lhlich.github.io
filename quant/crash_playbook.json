@@ -1,24 +1,26 @@
 {
-  "generated_at": "2026-10-08T14:31:23",
-  "current_stage": "Clear",
+  "generated_at": "2026-10-30T16:57:13",
+  "current_stage": "Crisis Watch",
   "latest": {
-    "date": "2026-10-08",
-    "vix": 15.41,
-    "risk_score": 14.3,
-    "vol_regime": "Normal vol",
-    "trend_regime": "Bullish",
-    "composite_regime": "Constructive",
-    "SPY_drawdown_252_pct": -0.7,
-    "QQQ_drawdown_252_pct": -1.6,
-    "SPY_days_below_ma21": 0,
-    "QQQ_days_below_ma21": 0
+    "date": "2026-10-30",
+    "vix": 19.42,
+    "risk_score": 84.9,
+    "vol_regime": "Elevated vol",
+    "trend_regime": "Bearish",
+    "composite_regime": "Stress",
+    "SPY_drawdown_252_pct": -3.0,
+    "QQQ_drawdown_252_pct": -9.1,
+    "SPY_days_below_ma21": 2,
+    "QQQ_days_below_ma21": 13
   },
-  "active_triggers": [],
+  "active_triggers": [
+    "Regime model crisis watch: risk score >= 75"
+  ],
   "current_rule": {
-    "entry": "Use the weekly ranking, standard VIX gate, and live bid/ask mids when available.",
-    "allowed": "All configured candidates, with sensitivity label checked before entry.",
-    "forbidden": "Do not override stale data, missing chain mids, or circuit breakers.",
-    "size": "Per current VIX gate."
+    "entry": "No new entries until volatility and trend stabilize.",
+    "allowed": "Risk reduction and pre-planned assignment decisions only.",
+    "forbidden": "No new puts, no rolling down for extra credit, no leveraged entries.",
+    "size": "Zero new notional."
   },
   "rules": {
     "Clear": {
