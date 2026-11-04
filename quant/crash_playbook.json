@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-11-03T14:31:23",
-  "current_stage": "Crisis Watch",
+  "generated_at": "2026-11-04T14:31:25",
+  "current_stage": "Stress",
   "latest": {
-    "date": "2026-11-03",
-    "vix": 20.83,
-    "risk_score": 89.3,
-    "vol_regime": "Elevated vol",
-    "trend_regime": "Bearish",
-    "composite_regime": "Stress",
-    "SPY_drawdown_252_pct": -3.2,
-    "QQQ_drawdown_252_pct": -9.8,
-    "SPY_days_below_ma21": 4,
-    "QQQ_days_below_ma21": 15
+    "date": "2026-11-04",
+    "vix": 16.61,
+    "risk_score": 60.2,
+    "vol_regime": "Normal vol",
+    "trend_regime": "Mixed",
+    "composite_regime": "Defensive",
+    "SPY_drawdown_252_pct": -1.6,
+    "QQQ_drawdown_252_pct": -8.9,
+    "SPY_days_below_ma21": 5,
+    "QQQ_days_below_ma21": 16
   },
   "active_triggers": [
-    "Regime model crisis watch: risk score >= 75"
+    "Regime model stress: risk score >= 60"
   ],
   "current_rule": {
-    "entry": "No new entries until volatility and trend stabilize.",
-    "allowed": "Risk reduction and pre-planned assignment decisions only.",
-    "forbidden": "No new puts, no rolling down for extra credit, no leveraged entries.",
-    "size": "Zero new notional."
+    "entry": "New entries are optional, not required. Favor defined, index-only theta.",
+    "allowed": "SPY/QQQ 14DTE or 35DTE 5% OTM only, minimum practical size.",
+    "forbidden": "No TQQQ/UPRO ATM. No roll that increases notional. No averaging down.",
+    "size": "25% to 50% of normal, whichever is lower than the VIX gate."
   },
   "rules": {
     "Clear": {
