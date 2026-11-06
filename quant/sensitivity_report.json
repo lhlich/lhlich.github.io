@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-05T14:31:21",
-  "baseline_date": "2026-11-05",
-  "baseline_vix": 28.18,
+  "generated_at": "2026-11-06T14:31:32",
+  "baseline_date": "2026-11-06",
+  "baseline_vix": 25.64,
   "risk_stage": "Secondary Breaker",
   "latest_prices": {
-    "SPY": 733.0,
-    "QQQ": 647.05,
-    "UPRO": 127.87,
-    "TQQQ": 50.47
+    "SPY": 735.29,
+    "QQQ": 656.1,
+    "UPRO": 128.94,
+    "TQQQ": 52.25
   },
   "scenarios": [
     {

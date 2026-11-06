@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-05T14:31:21",
+  "generated_at": "2026-11-06T14:31:31",
   "current_stage": "Secondary Breaker",
   "latest": {
-    "date": "2026-11-05",
-    "vix": 28.18,
-    "risk_score": 97.4,
+    "date": "2026-11-06",
+    "vix": 25.64,
+    "risk_score": 96.1,
     "vol_regime": "High vol",
     "trend_regime": "Bearish",
     "composite_regime": "Stress",
-    "SPY_drawdown_252_pct": -5.9,
-    "QQQ_drawdown_252_pct": -14.8,
-    "SPY_days_below_ma21": 6,
-    "QQQ_days_below_ma21": 17
+    "SPY_drawdown_252_pct": -5.6,
+    "QQQ_drawdown_252_pct": -13.6,
+    "SPY_days_below_ma21": 7,
+    "QQQ_days_below_ma21": 18
   },
   "active_triggers": [
     "Secondary circuit breaker: VIX >= 25 and trend below 21d MA for 10+ days",
-    "Stress: VIX >= 28",
+    "Caution: VIX >= 22",
     "Regime model crisis watch: risk score >= 75"
   ],
   "current_rule": {
