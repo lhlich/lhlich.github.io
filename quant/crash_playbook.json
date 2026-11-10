@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-09T14:31:42",
+  "generated_at": "2026-11-10T14:31:30",
   "current_stage": "Crisis Watch",
   "latest": {
-    "date": "2026-11-09",
-    "vix": 19.92,
-    "risk_score": 90.8,
+    "date": "2026-11-10",
+    "vix": 19.46,
+    "risk_score": 89.4,
     "vol_regime": "Elevated vol",
     "trend_regime": "Bearish",
     "composite_regime": "Stress",
-    "SPY_drawdown_252_pct": -3.4,
-    "QQQ_drawdown_252_pct": -10.6,
-    "SPY_days_below_ma21": 8,
-    "QQQ_days_below_ma21": 19
+    "SPY_drawdown_252_pct": -3.7,
+    "QQQ_drawdown_252_pct": -11.2,
+    "SPY_days_below_ma21": 9,
+    "QQQ_days_below_ma21": 20
   },
   "active_triggers": [
     "Regime model crisis watch: risk score >= 75"
