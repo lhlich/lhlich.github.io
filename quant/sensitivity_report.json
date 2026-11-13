@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-12T14:31:47",
-  "baseline_date": "2026-11-12",
-  "baseline_vix": 18.7,
+  "generated_at": "2026-11-13T14:31:41",
+  "baseline_date": "2026-11-13",
+  "baseline_vix": 19.3,
   "risk_stage": "Crisis Watch",
   "latest_prices": {
-    "SPY": 757.12,
-    "QQQ": 688.17,
-    "UPRO": 140.23,
-    "TQQQ": 59.88
+    "SPY": 754.37,
+    "QQQ": 679.89,
+    "UPRO": 138.5,
+    "TQQQ": 57.68
   },
   "scenarios": [
     {
