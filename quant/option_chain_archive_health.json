@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-16T08:01:46",
+  "generated_at": "2026-11-16T14:31:41",
   "archive_path": "option_chain_archive\\2026-11-16\\chains.csv",
   "snapshot_date": "2026-11-16",
   "rows": 3025,
-  "bid_ask_mid_rows": 2762,
-  "bid_ask_mid_pct": 91.3,
+  "bid_ask_mid_rows": 2725,
+  "bid_ask_mid_pct": 90.1,
   "candidate_count": 18,
   "candidate_bid_ask_count": 18,
   "candidate_tradeable_count": 15,
@@ -14,48 +14,48 @@
       "rows": 1267,
       "puts": 625,
       "calls": 642,
-      "bid_ask_mid_rows": 1163,
-      "last_price_rows": 104,
-      "bid_ask_mid_pct": 91.8,
-      "median_spread_pct": 2.37,
+      "bid_ask_mid_rows": 1154,
+      "last_price_rows": 113,
+      "bid_ask_mid_pct": 91.1,
+      "median_spread_pct": 3.36,
       "median_open_interest": 339,
-      "median_volume": 9
+      "median_volume": 20
     },
     {
       "ticker": "SPY",
       "rows": 1217,
       "puts": 630,
       "calls": 587,
-      "bid_ask_mid_rows": 1149,
-      "last_price_rows": 68,
-      "bid_ask_mid_pct": 94.4,
-      "median_spread_pct": 2.35,
+      "bid_ask_mid_rows": 1141,
+      "last_price_rows": 76,
+      "bid_ask_mid_pct": 93.8,
+      "median_spread_pct": 2.78,
       "median_open_interest": 634,
-      "median_volume": 15
+      "median_volume": 52
     },
     {
       "ticker": "TQQQ",
       "rows": 340,
       "puts": 170,
       "calls": 170,
-      "bid_ask_mid_rows": 294,
-      "last_price_rows": 46,
-      "bid_ask_mid_pct": 86.5,
-      "median_spread_pct": 11.58,
+      "bid_ask_mid_rows": 283,
+      "last_price_rows": 57,
+      "bid_ask_mid_pct": 83.2,
+      "median_spread_pct": 15.98,
       "median_open_interest": 269.0,
-      "median_volume": 10.0
+      "median_volume": 29.5
     },
     {
       "ticker": "UPRO",
       "rows": 201,
       "puts": 100,
       "calls": 101,
-      "bid_ask_mid_rows": 156,
-      "last_price_rows": 45,
-      "bid_ask_mid_pct": 77.6,
-      "median_spread_pct": 26.74,
+      "bid_ask_mid_rows": 147,
+      "last_price_rows": 54,
+      "bid_ask_mid_pct": 73.1,
+      "median_spread_pct": 23.64,
       "median_open_interest": 26,
-      "median_volume": 2
+      "median_volume": 3
     }
   ]
 }

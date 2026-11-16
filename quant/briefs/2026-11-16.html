@@ -25,7 +25,7 @@
       <div style="display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start">
         <div style="text-align:center">
           <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim);margin-bottom:0.2rem">VIX</div>
-          <div style="font-family:var(--mono);font-size:2rem;font-weight:700;color:var(--gold);line-height:1">21.49</div>
+          <div style="font-family:var(--mono);font-size:2rem;font-weight:700;color:var(--gold);line-height:1">22.91</div>
         </div>
         <div style="text-align:center">
           <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim);margin-bottom:0.4rem">Circuit Breaker</div>
@@ -41,7 +41,7 @@
 <br>
 <h1>Quant Options Playbook — Daily Brief</h1>
 <p><strong>Brief date:</strong> November 16, 2026</p>
-<p><strong>Generated:</strong> 2026-11-16 08:01</p>
+<p><strong>Generated:</strong> 2026-11-16 14:31</p>
 <p><strong>Regime:</strong> 2025+</p>
 <br>
 <hr>
@@ -49,8 +49,8 @@
 <h2>Market Snapshot</h2>
 <br>
 <table class="data-table"><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
-<tr><td>VIX (latest)</td><td>21.49 (2026-11-16)</td></tr>
-<tr><td>VIX 4-week avg</td><td>19.53</td></tr>
+<tr><td>VIX (latest)</td><td>22.91 (2026-11-16)</td></tr>
+<tr><td>VIX 4-week avg</td><td>19.61</td></tr>
 <tr><td>VIX trend</td><td>Rising ↑</td></tr>
 <tr><td>Data freshness</td><td>Fresh: latest 2026-11-16, oldest 2026-11-16, max lag 0 trading days</td></tr>
 <tr><td>Trend guard</td><td>Underlying trend guard active (SPY 13d, QQQ 24d below 21d MA)</td></tr>
@@ -58,37 +58,37 @@
 <tr><td>Days below 21-day MA</td><td>24</td></tr>
 </tbody></table>
 <br>
-<p><strong>Regime note:</strong> Vol regime: Standard. Size multiplier: 1.0x standard.</p>
+<p><strong>Regime note:</strong> Vol regime: Reduce 50%. Size multiplier: 0.5x standard.</p>
 <br>
 <table class="data-table"><thead><tr><th>Model Feature</th><th>Value</th></tr></thead><tbody>
-<tr><td>Composite regime</td><td>Stress (risk 93.6/100)</td></tr>
-<tr><td>Vol regime</td><td>Elevated vol · VIX rank 87%</td></tr>
+<tr><td>Composite regime</td><td>Stress (risk 94.4/100)</td></tr>
+<tr><td>Vol regime</td><td>Elevated vol · VIX rank 88%</td></tr>
 <tr><td>Trend regime</td><td>Bearish</td></tr>
-<tr><td>SPY / QQQ 52w drawdown</td><td>-4.2% / -12.1%</td></tr>
-<tr><td>SPY / QQQ realized vol</td><td>22.0% / 35.4%</td></tr>
+<tr><td>SPY / QQQ 52w drawdown</td><td>-5.0% / -12.9%</td></tr>
+<tr><td>SPY / QQQ realized vol</td><td>22.7% / 36.1%</td></tr>
 </tbody></table>
 <br>
 <hr>
 <br>
 <h2>Entry Gate</h2>
 <br>
-<p><strong>Entry OK — VIX 18–22 · Standard · target ~$219/contract · ~7.5% yield</strong></p>
+<p><strong>Entry OK — VIX 22–28 · Reduce 50% · target ~$303/contract · ~12.4% yield</strong></p>
 <br>
 <hr>
 <br>
 <h2>Candidate Trades</h2>
 <br>
 <table class="data-table"><thead><tr><th>Rank</th><th>Ticker</th><th>DTE</th><th>OTM</th><th>Strike</th><th>Prem</th><th>Src</th><th>Sized Notional</th><th>Delta</th><th>WR%</th><th>Sized Loss</th><th>Raw Loss</th><th>Ann Yield</th><th>E[ann]</th><th>Signal</th><th>Note</th></tr></thead><tbody>
-<tr><td>—</td><td>TQQQ</td><td>7DTE</td><td>ATM</td><td>$55.00</td><td>$3.38</td><td>Chain</td><td>$5.5k</td><td>49.5%</td><td>78%</td><td>-5.3%</td><td>-9.5%</td><td>2132%</td><td>531.8%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model -28%</td></tr>
-<tr><td>—</td><td>TQQQ</td><td>11DTE</td><td>ATM</td><td>$55.00</td><td>$3.85</td><td>Chain</td><td>$5.5k</td><td>48.6%</td><td>71%</td><td>-5.6%</td><td>-9.8%</td><td>844.1%</td><td>192.5%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model -24%</td></tr>
-<tr><td>—</td><td>QQQ</td><td>7DTE</td><td>ATM</td><td>$668.00</td><td>$12.43</td><td>Chain</td><td>$66.8k</td><td>48.8%</td><td>83%</td><td>-2.1%</td><td>-3.4%</td><td>161.4%</td><td>84.8%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model -34%</td></tr>
-<tr><td>—</td><td>UPRO</td><td>11DTE</td><td>ATM</td><td>$134.00</td><td>$4.80</td><td>Chain</td><td>$13.4k</td><td>47.1%</td><td>80%</td><td>-5.4%</td><td>-10.3%</td><td>221.5%</td><td>80.3%</td><td>⚠ Skip</td><td>wide spread 42%; low OI 5; Crisis Watch: no new entries; live chain mid; model +17%</td></tr>
-<tr><td>—</td><td>QQQ</td><td>14DTE</td><td>ATM</td><td>$668.00</td><td>$15.04</td><td>Chain</td><td>$66.8k</td><td>48.0%</td><td>81%</td><td>-2.4%</td><td>-4.0%</td><td>78.7%</td><td>42.6%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model -26%</td></tr>
-<tr><td>—</td><td>SPY</td><td>7DTE</td><td>ATM</td><td>$746.00</td><td>$7.61</td><td>Chain</td><td>$74.6k</td><td>47.8%</td><td>76%</td><td>-1.0%</td><td>-1.9%</td><td>69.8%</td><td>30.9%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model +18%</td></tr>
-<tr><td>—</td><td>SPY</td><td>14DTE</td><td>ATM</td><td>$746.00</td><td>$9.43</td><td>Chain</td><td>$74.6k</td><td>47.0%</td><td>85%</td><td>-2.1%</td><td>-4.1%</td><td>38.7%</td><td>21.6%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model +29%</td></tr>
-<tr><td>—</td><td>QQQ</td><td>7DTE</td><td>5% OTM</td><td>$634.00</td><td>$2.95</td><td>Chain</td><td>$63.4k</td><td>14.2%</td><td>93%</td><td>-0.9%</td><td>-1.7%</td><td>27.4%</td><td>21.3%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model -74%</td></tr>
-<tr><td>—</td><td>SPY</td><td>14DTE</td><td>5% OTM</td><td>$709.00</td><td>$2.06</td><td>Chain</td><td>$70.9k</td><td>10.9%</td><td>90%</td><td>-2.9%</td><td>-5.8%</td><td>7.8%</td><td>-0.8%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; low-sample bucket; conservative cap; live chain mid; model +30%</td></tr>
-<tr><td>—</td><td>SPY</td><td>7DTE</td><td>5% OTM</td><td>$709.00</td><td>$0.98</td><td>Chain</td><td>$70.9k</td><td>6.4%</td><td>90%</td><td>-2.0%</td><td>-2.0%</td><td>7.5%</td><td>-3.8%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; low-sample bucket; conservative cap; live chain mid; model -10%</td></tr>
+<tr><td>—</td><td>TQQQ</td><td>7DTE</td><td>ATM</td><td>$53.00</td><td>$2.83</td><td>Chain</td><td>$2.6k</td><td>47.0%</td><td>78%</td><td>-5.3%</td><td>-9.5%</td><td>1400%</td><td>360.3%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model -21%</td></tr>
+<tr><td>—</td><td>TQQQ</td><td>11DTE</td><td>ATM</td><td>$53.00</td><td>$3.30</td><td>Chain</td><td>$2.6k</td><td>46.5%</td><td>71%</td><td>-5.6%</td><td>-9.8%</td><td>642.1%</td><td>145.3%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model -17%</td></tr>
+<tr><td>—</td><td>UPRO</td><td>11DTE</td><td>ATM</td><td>$131.00</td><td>$5.60</td><td>Chain</td><td>$6.5k</td><td>48.4%</td><td>80%</td><td>-5.4%</td><td>-10.3%</td><td>301.1%</td><td>115.8%</td><td>⚠ Skip</td><td>wide spread 29%; low OI 21; Crisis Watch: no new entries; live chain mid; model +9%</td></tr>
+<tr><td>—</td><td>QQQ</td><td>7DTE</td><td>ATM</td><td>$662.00</td><td>$11.96</td><td>Chain</td><td>$33.1k</td><td>48.7%</td><td>83%</td><td>-2.1%</td><td>-3.4%</td><td>154.4%</td><td>80.6%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model -27%</td></tr>
+<tr><td>—</td><td>QQQ</td><td>14DTE</td><td>ATM</td><td>$662.00</td><td>$14.76</td><td>Chain</td><td>$33.1k</td><td>47.9%</td><td>81%</td><td>-2.4%</td><td>-4.0%</td><td>77.7%</td><td>42.0%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model -21%</td></tr>
+<tr><td>—</td><td>SPY</td><td>7DTE</td><td>ATM</td><td>$740.00</td><td>$8.02</td><td>Chain</td><td>$37.0k</td><td>48.2%</td><td>76%</td><td>-1.0%</td><td>-1.9%</td><td>75.4%</td><td>34.2%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model +20%</td></tr>
+<tr><td>—</td><td>SPY</td><td>14DTE</td><td>ATM</td><td>$740.00</td><td>$10.07</td><td>Chain</td><td>$37.0k</td><td>47.3%</td><td>85%</td><td>-2.1%</td><td>-4.1%</td><td>42.3%</td><td>24.2%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model +29%</td></tr>
+<tr><td>—</td><td>QQQ</td><td>7DTE</td><td>5% OTM</td><td>$629.00</td><td>$2.98</td><td>Chain</td><td>$31.4k</td><td>14.2%</td><td>93%</td><td>-0.9%</td><td>-1.7%</td><td>27.9%</td><td>21.8%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; live chain mid; model -65%</td></tr>
+<tr><td>—</td><td>SPY</td><td>14DTE</td><td>5% OTM</td><td>$703.00</td><td>$2.48</td><td>Chain</td><td>$35.1k</td><td>12.1%</td><td>90%</td><td>-2.9%</td><td>-5.8%</td><td>9.6%</td><td>0.7%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; low-sample bucket; conservative cap; live chain mid; model +29%</td></tr>
+<tr><td>—</td><td>SPY</td><td>7DTE</td><td>5% OTM</td><td>$703.00</td><td>$1.06</td><td>Chain</td><td>$35.1k</td><td>6.7%</td><td>90%</td><td>-2.0%</td><td>-2.0%</td><td>8.2%</td><td>-3.3%</td><td>⚠ Skip</td><td>Crisis Watch: no new entries; low-sample bucket; conservative cap; live chain mid; model +6%</td></tr>
 </tbody></table>
 <br>
 <p><em>Eligible candidates pass: VIX gate · strategy delta cap · premium ≥ minimum · current market data · live-chain quality gates · current playbook risk stage. Skipped rows show hard-gate reasons.</em></p>
@@ -100,7 +100,7 @@
 <h3>Sensitivity</h3>
 <br>
 <table class="data-table"><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
-<tr><td>Baseline</td><td>VIX 21.49 on 2026-11-16</td></tr>
+<tr><td>Baseline</td><td>VIX 22.91 on 2026-11-16</td></tr>
 <tr><td>Eligible candidates</td><td>0</td></tr>
 <tr><td>Robust / Watch / Fragile</td><td>0 / 0 / 0</td></tr>
 <tr><td>Positive under combined stress</td><td>0</td></tr>
@@ -110,8 +110,8 @@
 <br>
 <table class="data-table"><thead><tr><th>Control</th><th>Rule</th></tr></thead><tbody>
 <tr><td>Stage</td><td>Crisis Watch</td></tr>
-<tr><td>Latest state</td><td>VIX 21.49 · risk 93.6/100 · Stress</td></tr>
-<tr><td>Active triggers</td><td>Regime model crisis watch: risk score >= 75</td></tr>
+<tr><td>Latest state</td><td>VIX 22.91 · risk 94.4/100 · Stress</td></tr>
+<tr><td>Active triggers</td><td>Caution: VIX >= 22; Regime model crisis watch: risk score >= 75</td></tr>
 <tr><td>Entry rule</td><td>No new entries until volatility and trend stabilize.</td></tr>
 <tr><td>Forbidden</td><td>No new puts, no rolling down for extra credit, no leveraged entries.</td></tr>
 </tbody></table>
@@ -167,7 +167,7 @@
 <h2>Rule Violations / Flags</h2>
 <br>
 <li>Crash playbook stage: Crisis Watch</li>
-<li>Regime model: Stress risk score 93.6/100</li>
+<li>Regime model: Stress risk score 94.4/100</li>
 <br>
 <hr>
 <br>
@@ -187,8 +187,8 @@
 <li><strong>SPY</strong> — SPDR S&P 500 ETF (SPY) Sells Apple and Nvidia on Thursday <a href="https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110358769.html?.tsrc=rss">↗</a> · Mon, 16 Nov 2026</li>
 <li><strong>SPY</strong> — Exchange-Traded Funds, Equity Futures Lower Pre-Bell Monday Amid Weakness in AI-Linked Stocks <a href="https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141346501.html?.tsrc=rss">↗</a> · Mon, 16 Nov 2026</li>
 <li><strong>SPY</strong> — ETFs Are Net Sellers of Deere (DE) on Nov. 12 <a href="https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-deere-nov-110339768.html?.tsrc=rss">↗</a> · Mon, 16 Nov 2026</li>
+<li><strong>QQQ</strong> — Exchange-Traded Funds Lower as US Equities Drop After Midday <a href="https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-lower-us-181915979.html?.tsrc=rss">↗</a> · Mon, 16 Nov 2026</li>
 <li><strong>QQQ</strong> — Invesco QQQ (QQQ) Adds Apple and Nvidia on Nov. 12 <a href="https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-qqq-adds-apple-110402348.html?.tsrc=rss">↗</a> · Mon, 16 Nov 2026</li>
-<li><strong>QQQ</strong> — 64 ETFs Add to Micron (MU) Holdings on Nov. 12 <a href="https://finance.yahoo.com/markets/stocks/articles/64-etfs-add-micron-mu-110146232.html?.tsrc=rss">↗</a> · Mon, 16 Nov 2026</li>
 <li><strong>UPRO</strong> — UPRO: The One Rule You Need to Know Before Buying This 3X S&P 500 ETF <a href="https://247wallst.com/investing/etf/2026/07/27/upro-the-one-rule-you-need-to-know-before-buying-this-3x-sp-500-etf/?.tsrc=rss">↗</a> · Mon, 27 Jul 2026</li>
 <li><strong>UPRO</strong> — Leveraged ETFs in 2026: How They Work, the Best Funds, and the Risks You Can't Ignore <a href="http://www.etf.com/sections/news/leveraged-etfs-2026-how-they-work-best-funds-and-risks-you-cant-ignore?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss&.tsrc=rss">↗</a> · Wed, 15 Jul 2026</li>
 <li><strong>UPRO</strong> — Analyst Reveals How $200 Billion in Leveraged ETFs Could Amplify the Next Market Selloff <a href="https://247wallst.com/investing/2026/07/10/analyst-reveals-how-200-billion-in-leveraged-etfs-could-amplify-the-next-market-selloff/?.tsrc=rss">↗</a> · Fri, 10 Jul 2026</li>
