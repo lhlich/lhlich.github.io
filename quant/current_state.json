@@ -1,21 +1,21 @@
 {
-  "generated": "2026-11-18T14:32:02.763948",
+  "generated": "2026-11-19T14:31:52.445035",
   "vix": {
-    "latest": 24.56,
-    "date": "2026-11-18",
-    "avg_4w": 20.41,
+    "latest": 28.44,
+    "date": "2026-11-19",
+    "avg_4w": 20.88,
     "trend": "Rising"
   },
   "regime": "2025+",
   "circuit_breaker": {
-    "status": "clear",
-    "label": "Clear",
-    "active": false
+    "status": "secondary",
+    "label": "Secondary Active \u2014 Bear mode (SPY 16d below MA, QQQ 27d below MA)",
+    "active": true
   },
   "trend_guard": {
     "active": true,
-    "days_below": 26,
-    "label": "SPY 15d below MA, QQQ 26d below MA"
+    "days_below": 27,
+    "label": "SPY 16d below MA, QQQ 27d below MA"
   },
   "data_freshness": {
     "stale": false,
@@ -23,58 +23,58 @@
     "limit": 2
   },
   "gate": {
-    "min": 22,
-    "max": 28,
+    "min": 28,
+    "max": 35,
     "action": "entry",
-    "label": "Reduce 50%",
-    "est_premium": 303,
-    "yield_pct": 12.4,
-    "size_mult": 0.5
+    "label": "Reduce 25%",
+    "est_premium": 445,
+    "yield_pct": 26.0,
+    "size_mult": 0.25
   },
-  "recommendation": "Low vol regime (2025+). Favor SPY/QQQ with 50% position sizes.",
+  "recommendation": "Circuit breaker active. Manage existing positions only. No new entries.",
   "prices": {
-    "SPY": 730.2000122070312,
-    "QQQ": 659.510009765625,
-    "UPRO": 125.4000015258789,
-    "TQQQ": 52.439998626708984
+    "SPY": 715.8699951171875,
+    "QQQ": 645.0399780273438,
+    "UPRO": 117.88999938964844,
+    "TQQQ": 49.0099983215332
   },
   "top_picks": [],
   "latest_brief": {
-    "date": "2026-11-18",
-    "url": "briefs/2026-11-18.html"
+    "date": "2026-11-19",
+    "url": "briefs/2026-11-19.html"
   },
   "regime_model": {
-    "date": "2026-11-18",
-    "vix": 24.56,
-    "vix_ma21": 20.229,
-    "vix_ma63": 17.2913,
-    "vix_z63": 2.4622,
-    "vix_rank_252": 92.4603,
-    "SPY_close": 730.2,
-    "SPY_ma21_ratio": -0.0324,
-    "SPY_ma50_ratio": -0.0421,
-    "SPY_ma200_ratio": 0.0002,
-    "SPY_drawdown_252_pct": -6.2753,
-    "SPY_rv21_pct": 22.6828,
-    "SPY_days_below_ma21": 15,
-    "QQQ_close": 659.51,
-    "QQQ_ma21_ratio": -0.0416,
-    "QQQ_ma50_ratio": -0.0766,
-    "QQQ_ma200_ratio": -0.0327,
-    "QQQ_drawdown_252_pct": -13.1835,
-    "QQQ_rv21_pct": 35.7332,
-    "QQQ_days_below_ma21": 26,
-    "risk_score": 95.9,
-    "vol_regime": "Elevated vol",
+    "date": "2026-11-19",
+    "vix": 28.44,
+    "vix_ma21": 20.789,
+    "vix_ma63": 17.4911,
+    "vix_z63": 3.3606,
+    "vix_rank_252": 98.8095,
+    "SPY_close": 715.87,
+    "SPY_ma21_ratio": -0.0479,
+    "SPY_ma50_ratio": -0.0599,
+    "SPY_ma200_ratio": -0.0196,
+    "SPY_drawdown_252_pct": -8.1146,
+    "SPY_rv21_pct": 23.2635,
+    "SPY_days_below_ma21": 16,
+    "QQQ_close": 645.04,
+    "QQQ_ma21_ratio": -0.0574,
+    "QQQ_ma50_ratio": -0.0953,
+    "QQQ_ma200_ratio": -0.0542,
+    "QQQ_drawdown_252_pct": -15.0883,
+    "QQQ_rv21_pct": 35.8535,
+    "QQQ_days_below_ma21": 27,
+    "risk_score": 98.5,
+    "vol_regime": "High vol",
     "trend_regime": "Bearish",
     "composite_regime": "Stress"
   },
   "sensitivity": {
-    "generated_at": "2026-11-18T14:31:44",
-    "baseline_date": "2026-11-18",
-    "baseline_vix": 24.56,
+    "generated_at": "2026-11-19T14:31:42",
+    "baseline_date": "2026-11-19",
+    "baseline_vix": 28.44,
     "summary": {
-      "candidate_count": 9,
+      "candidate_count": 8,
       "eligible_candidates": 0,
       "robust_candidates": 0,
       "watch_candidates": 0,
@@ -85,28 +85,30 @@
     "vix_shift_top_picks": {}
   },
   "crash_playbook": {
-    "generated_at": "2026-11-18T14:31:44",
-    "current_stage": "Crisis Watch",
+    "generated_at": "2026-11-19T14:31:42",
+    "current_stage": "Secondary Breaker",
     "latest": {
-      "date": "2026-11-18",
-      "vix": 24.56,
-      "risk_score": 95.9,
-      "vol_regime": "Elevated vol",
+      "date": "2026-11-19",
+      "vix": 28.44,
+      "risk_score": 98.5,
+      "vol_regime": "High vol",
       "trend_regime": "Bearish",
       "composite_regime": "Stress",
-      "SPY_drawdown_252_pct": -6.3,
-      "QQQ_drawdown_252_pct": -13.2,
-      "SPY_days_below_ma21": 15,
-      "QQQ_days_below_ma21": 26
+      "SPY_drawdown_252_pct": -8.1,
+      "QQQ_drawdown_252_pct": -15.1,
+      "SPY_days_below_ma21": 16,
+      "QQQ_days_below_ma21": 27
     },
     "active_triggers": [
-      "Caution: VIX >= 22",
-      "Regime model crisis watch: risk score >= 75"
+      "Secondary circuit breaker: VIX >= 25 and trend below 21d MA for 10+ days",
+      "Stress: VIX >= 28",
+      "Regime model crisis watch: risk score >= 75",
+      "Drawdown trigger: SPY <= -10% or QQQ <= -15% from 52w high"
     ],
     "current_rule": {
-      "entry": "No new entries until volatility and trend stabilize.",
-      "allowed": "Risk reduction and pre-planned assignment decisions only.",
-      "forbidden": "No new puts, no rolling down for extra credit, no leveraged entries.",
+      "entry": "No new entries. Manage open risk only.",
+      "allowed": "Closing winners, reducing risk, or rolling only to reduce assignment/notional risk.",
+      "forbidden": "No new short puts. No leveraged ETF entries.",
       "size": "Zero new notional."
     },
     "reentry_ladder": [
@@ -133,85 +135,85 @@
     ]
   },
   "model_health": {
-    "generated_at": "2026-11-18T14:31:52",
+    "generated_at": "2026-11-19T14:31:47",
     "status": "warning",
     "errors": [],
     "warnings": [
-      "regime model is Stress with risk score 95.9",
-      "wide option spreads: UPRO 14DTE 0%OTM, UPRO 14DTE 5%OTM, UPRO 35DTE 5%OTM, TQQQ 14DTE 0%OTM",
-      "low option open interest: UPRO 35DTE 5%OTM",
-      "crash playbook stage is Crisis Watch"
+      "regime model is Stress with risk score 98.5",
+      "wide option spreads: UPRO 14DTE 0%OTM, UPRO 14DTE 5%OTM, TQQQ 14DTE 0%OTM, TQQQ 14DTE 5%OTM",
+      "low option open interest: UPRO 14DTE 0%OTM, UPRO 35DTE 5%OTM",
+      "crash playbook stage is Secondary Breaker"
     ],
     "metrics": {
-      "options_rows": 656119,
+      "options_rows": 656343,
       "options_date_range": [
         "2015-01-02",
-        "2026-11-18"
+        "2026-11-19"
       ],
       "backtest_trades": 6521,
-      "calibration_avg_abs_error_pct": 23.98,
+      "calibration_avg_abs_error_pct": 22.56,
       "sensitivity_robust_candidates": 0,
       "sensitivity_watch_candidates": 0,
       "sensitivity_fragile_candidates": 0,
-      "crash_playbook_stage": "Crisis Watch"
+      "crash_playbook_stage": "Secondary Breaker"
     }
   },
   "option_chain_archive": {
-    "generated_at": "2026-11-18T14:31:41",
-    "snapshot_date": "2026-11-18",
-    "rows": 2156,
-    "bid_ask_mid_rows": 2025,
-    "bid_ask_mid_pct": 93.9,
+    "generated_at": "2026-11-19T14:31:39",
+    "snapshot_date": "2026-11-19",
+    "rows": 1912,
+    "bid_ask_mid_rows": 1766,
+    "bid_ask_mid_pct": 92.4,
     "candidate_count": 18,
     "candidate_bid_ask_count": 18,
-    "candidate_tradeable_count": 14,
+    "candidate_tradeable_count": 13,
     "quality_by_ticker": [
       {
         "ticker": "QQQ",
-        "rows": 771,
-        "puts": 379,
-        "calls": 392,
-        "bid_ask_mid_rows": 742,
-        "last_price_rows": 29,
-        "bid_ask_mid_pct": 96.2,
-        "median_spread_pct": 3.42,
-        "median_open_interest": 147,
-        "median_volume": 22
+        "rows": 765,
+        "puts": 369,
+        "calls": 396,
+        "bid_ask_mid_rows": 730,
+        "last_price_rows": 35,
+        "bid_ask_mid_pct": 95.4,
+        "median_spread_pct": 3.97,
+        "median_open_interest": 126,
+        "median_volume": 47
       },
       {
         "ticker": "SPY",
-        "rows": 917,
-        "puts": 479,
-        "calls": 438,
-        "bid_ask_mid_rows": 888,
-        "last_price_rows": 29,
-        "bid_ask_mid_pct": 96.8,
-        "median_spread_pct": 3.2,
-        "median_open_interest": 262,
-        "median_volume": 27
+        "rows": 679,
+        "puts": 331,
+        "calls": 348,
+        "bid_ask_mid_rows": 660,
+        "last_price_rows": 19,
+        "bid_ask_mid_pct": 97.2,
+        "median_spread_pct": 4.51,
+        "median_open_interest": 247,
+        "median_volume": 80
       },
       {
         "ticker": "TQQQ",
         "rows": 312,
         "puts": 154,
         "calls": 158,
-        "bid_ask_mid_rows": 262,
-        "last_price_rows": 50,
-        "bid_ask_mid_pct": 84.0,
-        "median_spread_pct": 25.16,
-        "median_open_interest": 78.5,
-        "median_volume": 10.0
+        "bid_ask_mid_rows": 253,
+        "last_price_rows": 59,
+        "bid_ask_mid_pct": 81.1,
+        "median_spread_pct": 19.64,
+        "median_open_interest": 92.5,
+        "median_volume": 17.5
       },
       {
         "ticker": "UPRO",
         "rows": 156,
         "puts": 82,
         "calls": 74,
-        "bid_ask_mid_rows": 133,
-        "last_price_rows": 23,
-        "bid_ask_mid_pct": 85.3,
-        "median_spread_pct": 33.11,
-        "median_open_interest": 9.0,
+        "bid_ask_mid_rows": 123,
+        "last_price_rows": 33,
+        "bid_ask_mid_pct": 78.8,
+        "median_spread_pct": 21.54,
+        "median_open_interest": 7.0,
         "median_volume": 2.0
       }
     ]

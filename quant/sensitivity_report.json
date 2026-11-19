@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-18T14:31:44",
-  "baseline_date": "2026-11-18",
-  "baseline_vix": 24.56,
-  "risk_stage": "Crisis Watch",
+  "generated_at": "2026-11-19T14:31:42",
+  "baseline_date": "2026-11-19",
+  "baseline_vix": 28.44,
+  "risk_stage": "Secondary Breaker",
   "latest_prices": {
-    "SPY": 730.2,
-    "QQQ": 659.51,
-    "UPRO": 125.4,
-    "TQQQ": 52.44
+    "SPY": 715.87,
+    "QQQ": 645.04,
+    "UPRO": 117.89,
+    "TQQQ": 49.01
   },
   "scenarios": [
     {
@@ -72,7 +72,7 @@
     }
   ],
   "summary": {
-    "candidate_count": 9,
+    "candidate_count": 8,
     "eligible_candidates": 0,
     "robust_candidates": 0,
     "watch_candidates": 0,
